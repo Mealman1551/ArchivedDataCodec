@@ -276,11 +276,11 @@ Now its time to prepare the building environment:
 
 check afterwards which version with `python --version`, 3.10 and up is supported.
 
-3. Download a C compiler, however not open source, i would recommend [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/?q=build+tools#build-tools-for-visual-studio-2026). Make absolutely sure cl/`cl.exe` is is installed!
+3. Download a C compiler, however not open source, i would recommend [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/?q=build+tools#build-tools-for-visual-studio-2026). Make absolutely sure cl/`cl.exe`/MSVC is is installed! Check from a VS 2022 PowerShell
 
 4. Download and extract the source code: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
 
-5. Open a terminal in the source folder.
+5. Open a Visual Studio 2022 Developer PowerShell in the source folder.
 
 6. Install all dependencies via `make`:
 
