@@ -25,5 +25,8 @@ debug-linux:
 debug-windows:
 	python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
 
-clean:
-	rm -rf dist
+clean-windows:
+	del /Q dist\*
+
+clean-linux:
+	rm -rf dist/*
