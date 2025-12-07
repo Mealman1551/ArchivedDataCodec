@@ -327,6 +327,12 @@ cd dist
 ./ADC_Archiver_1.4.2.exe
 ```
 
+To clean type:
+
+```powershell
+make clean-windows
+```
+
 ---
 
 ### Building on Linux
@@ -377,6 +383,12 @@ cd dist
 
 ```bash
 ./ADC_Archiver_1.4.2.bin
+```
+
+To clean type:
+
+```bash
+make clean-linux
 ```
 
 #### Building with Debugging
