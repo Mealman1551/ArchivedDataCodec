@@ -42,7 +42,7 @@
 * [Prepare Build environment on Windows](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux](#preparing-build-environment-on-linux)
 
-  * [Start building on windows .2](#start-build-on-windows)
+  * [Start building on windows .2](#start-building-on-windows)
   * [Start building on Linux .2](#start-building-on-linux)
 
 
@@ -235,73 +235,57 @@ You can ofc run the source code but official binaries and/or setups are not comp
 ## Build ADC
 
 >[!Note]
->Please note that for compiling on Python 3.13 and up you need a C compiler, on Linux GCC is enough, on Windows its more complex, ADC will be compiled with MSVC(CL.exe), you need Visual Studio Build Tools 2022 for this. If you are on Python 3.12 you can compile ADC without a C compiler as Python 3.12/Nuitka has MinGW64.
+>For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required > >via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
+Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.0, 1.4.2. Use `make windows` or `make linux` for the latest version (1.4.2), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
 #### Preparing build environment on Windows
 
-Please disable Windows Defender as it will stop compilation due to a not signed and new binary.
+Please disable Windows Defender as it may block compilation.
 
 ##### Installing Make
 
-To use the `make` commands in this repository on Windows, you need GNU Make. Here are some options:
+Options to install GNU Make:
 
-
-##### Option 1 — WinGet (Recommended)
-
-If you have WinGet, run:
+**Option 1 — WinGet (Recommended)**
 
 ```
 winget install GnuWin32.Make
 ```
 
-For this option you need to add `Make` in path. [Find out more on how to do this here.](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)
+Add Make to PATH. [More info](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)
 
-
-##### Option 2 — Chocolatey
-
-If you have [Chocolatey](https://chocolatey.org/) installed, open an elevated PowerShell and run:
+**Option 2 — Chocolatey**
 
 ```
 choco install make
 ```
 
-Now its time to prepare the building environment:
+##### Downloading and extracting source code
 
-1. Install Python 3.13.x: [Download here](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe) (64-bit). (Python 3.14 not supported)
+1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
 
-Make sure pip is installed.
+##### Installing Python and VS Build Tools
 
-2. Add Python to PATH during installation.
+1. Install Python 3.13.x (64-bit). Ensure pip is installed and Python is added to PATH.
 
-check afterwards which version with `python --version`, 3.10 and up is supported.
+```
+python --version
+```
 
-3. Download Visual Studio Build Tools 2022. Install with:
+2. Install Visual Studio Build Tools 2022:
 
 ```powershell
 make buildtools22
 ```
-Select "C++ Build Tools"
 
-And press "install"
-
-4. Download and extract the source code: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
-
-5. Open a PowerShell window in `ArchivedDataCodec-main`
-
-Then paste this:
+3. Open VS Developer PowerShell:
 
 ```powershell
 & "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
-```
-
-Navigate with CD to the just extracted `ArchivedDataCodec-main` folder.
-
-6. Install all dependencies via `make`:
-
-```powershell
+cd ArchivedDataCodec-main
 make deps-windows
 ```
 
@@ -310,35 +294,41 @@ make deps-windows
 >[!Warning]
 >Do ***NOT*** run the binary while compiling!
 
-Run the compilation command from the VS Developer PowerShell:
+Compile the latest version:
 
 ```powershell
 make windows
 ```
-or
-```pwsh
+
+Or specific version:
+
+```powershell
 make 1.3.0-windows
 ```
-to compile version 1.3.0
 
-Open the folder with the binary
+Run the binary:
 
 ```powershell
 cd dist
-```
-
-```powershell
 ./ADC_Archiver_1.4.2.exe
 ```
+
 or
+
 ```bash
 ./ADC_Archiver_1.3.0.exe
 ```
 
-To clean type:
+Clean build:
 
 ```powershell
 make clean-windows
+```
+
+Debug build (Optional) Only use if you really need to, normally `make windows` is the best option:
+
+```powershell
+make debug-windows
 ```
 
 ---
@@ -347,81 +337,74 @@ make clean-windows
 
 #### Preparing build environment on Linux
 
-1.
+Install dependencies:
 
 ```bash
 sudo apt install build-essential pip python3-tk make patchelf ccache scons
 ```
 
-2. Python is preinstalled on most Linux distributions. use:
+Ensure Python 3.10+:
 
 ```bash
 python3 --version
 ```
-Python 3.10 and up is required
 
+Download and extract source: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.tar.gz)
 
-3. Download the source code: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.tar.gz)
-
-4. Open a terminal in the source folder.
-
-
-5. Install additional dependencies and build tools via `make`:
+Install additional dependencies:
 
 ```bash
 make deps-linux
 ```
 
-6. Restart or logoff to apply packages
+Restart or logoff to apply packages.
 
 #### Start building on Linux
 
->[!Warning]
->Do ***NOT*** run the binary while compiling!
+> [!Warning]
+> Do ***NOT*** run the binary while compiling!
 
-Run the compilation command:
+Compile latest version:
 
 ```bash
 make linux
 ```
-or
+
+Or specific version:
+
 ```bash
 make 1.3.0-linux
 ```
-to compile version 1.3.0
+
+Run the binary:
 
 ```bash
 cd dist
-```
-
-```bash
 ./ADC_Archiver_1.4.2.bin
 ```
+
 or
+
 ```bash
 ./ADC_Archiver_1.3.0.bin
 ```
 
-To clean type:
+Clean build:
 
 ```bash
 make clean-linux
 ```
 
-#### Building with Debugging
->[!Caution]
->Only use the Debugging mode if you get errors or segmentation errors.
->This will take longer and will create a debug-report.
+Debug build (optional):
 
-Windows:
-```powershell
-make debug-windows
-```
-
-Linux:
 ```bash
 make debug-linux
 ```
+
+#### Notes
+
+Specific old versions can be compiled with commands like `make 1.1.0-windows` or `make 1.2.0-linux`. Version 1.0.0 is deprecated; compilation is possible but not recommended.
+
 
 ---
 
