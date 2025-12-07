@@ -281,6 +281,9 @@ check afterwards which version with `python --version`, 3.10 and up is supported
 ```powershell
 make buildtools22
 ```
+Select "C++ Build Tools"
+
+And press "install"
 
 4. Download and extract the source code: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
 
