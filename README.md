@@ -315,6 +315,11 @@ Run the compilation command from the VS Developer PowerShell:
 ```powershell
 make windows
 ```
+or
+```pwsh
+make 1.3.0-windows
+```
+to compile version 1.3.0
 
 Open the folder with the binary
 
@@ -324,6 +329,10 @@ cd dist
 
 ```powershell
 ./ADC_Archiver_1.4.2.exe
+```
+or
+```bash
+./ADC_Archiver_1.3.0.exe
 ```
 
 To clean type:
@@ -375,6 +384,11 @@ Run the compilation command:
 ```bash
 make linux
 ```
+or
+```bash
+make 1.3.0-linux
+```
+to compile version 1.3.0
 
 ```bash
 cd dist
@@ -382,6 +396,10 @@ cd dist
 
 ```bash
 ./ADC_Archiver_1.4.2.bin
+```
+or
+```bash
+./ADC_Archiver_1.3.0.bin
 ```
 
 To clean type:
