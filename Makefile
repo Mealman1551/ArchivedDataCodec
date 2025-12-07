@@ -30,3 +30,9 @@ clean-windows:
 
 clean-linux:
 	rm -rf dist/*
+
+1.3.0-windows:
+	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist src/ADC_Archiver_1.3.0.py
+
+1.3.0-linux:
+	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/ADC_Archiver_1.3.0.py
