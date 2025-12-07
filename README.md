@@ -270,7 +270,7 @@ choco install make
 
 Now its time to prepare the building environment:
 
-1. Install Python 3.12.x: [Download here](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe) (64-bit).
+1. Install Python 3.13.x: [Download here](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe) (64-bit). (Python 3.14 not supported)
 
 Make sure pip is installed.
 
@@ -289,13 +289,14 @@ And press "install"
 
 4. Download and extract the source code: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
 
-5. Open a Visual Studio 2022 Developer PowerShell in the source folder by running:
+5. Open a PowerShell window in `ArchivedDataCodec-main`
+
+Then paste this:
 
 ```powershell
-& "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
+Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+Enter-VsDevShell 9ca0027d
 ```
-
-in PowerShell regular.
 
 Navigate with CD to the just extracted `ArchivedDataCodec-main` folder.
 
