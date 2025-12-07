@@ -294,7 +294,7 @@ make deps-windows
 >[!Warning]
 >Do ***NOT*** run the binary while compiling!
 
-Run the compilation command:
+Run the compilation command from the VS Developer PowerShell:
 
 ```powershell
 make windows
