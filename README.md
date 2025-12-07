@@ -294,8 +294,7 @@ And press "install"
 Then paste this:
 
 ```powershell
-Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
-Enter-VsDevShell 9ca0027d
+& "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
 ```
 
 Navigate with CD to the just extracted `ArchivedDataCodec-main` folder.
