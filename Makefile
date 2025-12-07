@@ -2,7 +2,8 @@ NAME=ADC_Archiver_1.4.2
 SRC=src/ADC_Archiver_1.4.2.py
 
 buildtools22:
-	winget install --id=Microsoft.VisualStudio.2022.BuildTools -e
+	winget install Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --quiet --wait --norestart"
+
 
 linux:
 	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist $(SRC)
