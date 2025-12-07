@@ -365,7 +365,7 @@ cd dist
 #### Building with Debugging
 >[!Caution]
 >Only use the Debugging mode if you get errors or segmentation errors.
->This will take longer and will create a report
+>This will take longer and will create a debug-report.
 
 Windows:
 ```powershell
