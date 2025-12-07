@@ -272,11 +272,13 @@ Now its time to prepare the building environment:
 
 1. Install Python 3.12.x: [Download here](https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe) (64-bit).
 
+Make sure pip is installed.
+
 2. Add Python to PATH during installation.
 
 check afterwards which version with `python --version`, 3.10 and up is supported.
 
-3. Download Visual Studio Build Tools 2022. Make absolutely sure cl/`cl.exe`/MSVC is is installed! Check from a VS 2022 Developer PowerShell.
+3. Download Visual Studio Build Tools 2022. Install with:
 
 ```powershell
 make buildtools22
@@ -287,7 +289,15 @@ And press "install"
 
 4. Download and extract the source code: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/main.zip)
 
-5. Open a Visual Studio 2022 Developer PowerShell in the source folder.
+5. Open a Visual Studio 2022 Developer PowerShell in the source folder by running:
+
+```powershell
+& "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
+```
+
+in PowerShell regular.
+
+Navigate with CD to the just extracted `ArchivedDataCodec-main` folder.
 
 6. Install all dependencies via `make`:
 
