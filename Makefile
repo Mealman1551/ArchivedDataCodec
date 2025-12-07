@@ -2,7 +2,7 @@ NAME=ADC_Archiver_1.4.2
 SRC=src/ADC_Archiver_1.4.2.py
 
 buildtools22:
-	winget install Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --norestart"
+	winget install Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Component.VC.CoreBuildTools --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.26100"
 
 
 linux:
