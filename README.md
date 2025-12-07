@@ -345,7 +345,10 @@ make deps-linux
 
 #### Start building on Linux
 
-Run:
+>[!Warning]
+>Do ***NOT*** run the binary while compiling!
+
+Run the compilation command:
 
 ```bash
 make linux
@@ -362,6 +365,7 @@ cd dist
 #### Building with Debugging
 >[!Caution]
 >Only use the Debugging mode if you get errors or segmentation errors.
+>This will take longer and will create a report
 
 Windows:
 ```powershell
@@ -372,8 +376,6 @@ Linux:
 ```bash
 make debug-linux
 ```
-
-
 
 ---
 
