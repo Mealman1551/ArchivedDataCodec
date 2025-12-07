@@ -235,7 +235,7 @@ You can ofc run the source code but official binaries and/or setups are not comp
 ## Build ADC
 
 >[!Note]
->Please note that for compiling on Python3.13 and up you need a C compiler, on Linux GCC is enough, on Windows its more complex, ADC will be compiled with CLang, you need Visual Studio latest Build Tools for this. If you are like me still on Python 3.12 you can compile ADC without a C compiler as Python 3.12 has MinGW.
+>Please note that for compiling on Python 3.13 and up you need a C compiler, on Linux GCC is enough, on Windows its more complex, ADC will be compiled with MSVC(CL.exe), you need Visual Studio Build Tools 2022 for this. If you are on Python 3.12 you can compile ADC without a C compiler as Python 3.12/Nuitka has MinGW64.
 
 
 ### Building on Windows
