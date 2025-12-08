@@ -55,5 +55,5 @@ clean-linux:
 	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist src/older/1.0.0/src1.0.0.py
 
 1.0.0-linux:
-	echo This version is deprecated, please use at least 1.1.0
-	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/older/1.0.0/src1.0.0py
+	@echo This version is deprecated, please use at least 1.1.0
+	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/older/1.0.0/src1.0.0.py
