@@ -317,6 +317,8 @@ Or specific version:
 make 1.3.0-windows
 ```
 
+If Nuitka for MinGW46 or cached asks, do not accept otherwise it will give errors
+
 Run the binary:
 
 ```powershell
