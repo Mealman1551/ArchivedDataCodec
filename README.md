@@ -305,6 +305,9 @@ make deps-windows
 >[!Warning]
 >Do ***NOT*** run the binary while compiling!
 
+>[!Warning]
+>Do ***NOT*** install modules which Nuitka asks for, eg. MinGW64.
+
 Compile the latest version:
 
 ```powershell
@@ -316,8 +319,6 @@ Or specific version:
 ```powershell
 make 1.3.0-windows
 ```
-
-If Nuitka for MinGW46 or cached asks, do not accept otherwise it will give errors
 
 Run the binary:
 
