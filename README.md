@@ -284,8 +284,19 @@ make buildtools22
 3. Open VS Developer PowerShell:
 
 ```powershell
-& "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
+Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools"
+```
+
+Then:
+
+```powershell
 cd ArchivedDataCodec-main
+```
+
+Then:
+
+```
 make deps-windows
 ```
 
