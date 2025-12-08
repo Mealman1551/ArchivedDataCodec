@@ -306,7 +306,8 @@ make deps-windows
 >Do ***NOT*** run the binary while compiling!
 
 >[!Warning]
->Do ***NOT*** install modules which Nuitka asks for, eg. MinGW64.
+>Do ***NOT*** install MinGW64 if Nuitka asks for it.
+>You ***CAN*** install depends.exe if Nuitka asks for it.
 
 Compile the latest version:
 
