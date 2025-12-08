@@ -2,7 +2,7 @@
 
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
-[Forum](https://groups.google.com/g/adc-archiver)
+[Forum](https://groups.google.com/g/adc-archiver) (Main announcement channel)
 
 [Gitter](https://matrix.to/#/#adc:gitter.im)
 
