@@ -280,7 +280,7 @@ python --version
 2. Install Visual Studio Build Tools 2022:
 
 ```powershell
-make buildtools22
+winget install Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
 ```
 
 3. Open VS Developer PowerShell:
