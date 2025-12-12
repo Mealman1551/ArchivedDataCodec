@@ -1,16 +1,13 @@
-# This is a live development version of ADC Archiver.
-# It is not recommended and meant for use in this state.
 # If you want to use ADC Archiver stable, You can find the stable version on the GitHub page.
 
 
 # ADC Archiver Aurora
-# Version: n/a
+# Version: 2025.12.1
 # byte-key: 8
 # GitHub page: https://github.com/Mealman1551/ADC
 # Webpage: https://mealman1551.github.io/adc.html
 # Webpage 2: https://mealman1551.github.io/ADC.html
 
-# This source code was made in Python 3.12.11 and Python 3.12.x is required to compile.
 
 # (c) 2025 Mealman1551
 
@@ -28,6 +25,7 @@ from cryptography.fernet import Fernet
 import base64
 import zipfile
 import tarfile
+import platform
 
 init(autoreset=True)
 
@@ -48,7 +46,6 @@ LIGHT_PURPLE = "\033[95m"
 LIGHT_CYAN = "\033[96m"
 LIGHT_YELLOW = "\033[93m"
 LIGHT_ORANGE = "\033[38;5;214m"
-LIGHT_GRAY = "\033[90m"
 LIGHT_TEAL = "\033[38;5;123m"
 LIGHT_MAGENTA = "\033[95m"
 BLINK = "\033[5m"
@@ -66,11 +63,11 @@ def run():
 
 dev = socket.gethostname()
 name = getpass.getuser()
-opr = os.sys.platform
+opr = platform.system().lower()
 
-if opr in ["linux", "posix"]:
+if opr in ["linux"]:
     print(
-        rf"""{BLUE}
+        rf"""{TEAL}
     _    ____   ____      _             _     _                
    / \  |  _ \ / ___|    / \   _ __ ___| |__ (_)_   _____ _ __ 
   / _ \ | | | | |       / _ \ | '__/ __| '_ \| \ \ / / _ \ '__|
@@ -81,8 +78,40 @@ if opr in ["linux", "posix"]:
  / _| ___  _ __  | |   (_)_ __  _   ___  __
 | |_ / _ \| '__| | |   | | '_ \| | | \ \/ /
 |  _| (_) | |    | |___| | | | | |_| |>  < 
-|_|  \___/|_|    |_____|_|_| |_|\__,_/_/\_\
-        
+|_|  \___/|_|    |_____|_|_| |_|\__,_/_/\_\  
+    {reset}"""
+    )
+
+elif opr in ["windows"]:
+    print(
+        rf"""{BLUE}
+    _    ____   ____      _             _     _
+   / \  |  _ \ / ___|    / \   _ __ ___| |__ (_)_   _____ _ __
+  / _ \ | | | | |       / _ \ | '__/ __| '_ \| \ \ / / _ \ '__|
+ / ___ \| |_| | |___   / ___ \| | | (__| | | | |\ V /  __/ |
+/_/   \_\____/ \____| /_/   \_\_|  \___|_| |_|_| \_/ \___|_|
+
+  __             __        ___           _
+ / _| ___  _ __  \ \      / (_)_ __   __| | _____      _____
+| |_ / _ \| '__|  \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / __|
+|  _| (_) | |      \ V  V / | | | | | (_| | (_) \ V  V /\__ \
+|_|  \___/|_|       \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/ |___/               
+    {reset}"""
+    )
+else:
+    print(
+        rf"""{LIGHT_GREEN}
+    _    ____   ____      _             _     _
+   / \  |  _ \ / ___|    / \   _ __ ___| |__ (_)_   _____ _ __
+  / _ \ | | | | |       / _ \ | '__/ __| '_ \| \ \ / / _ \ '__|
+ / ___ \| |_| | |___   / ___ \| | | (__| | | | |\ V /  __/ |
+/_/   \_\____/ \____| /_/   \_\_|  \___|_| |_|_| \_/ \___|_|
+
+  __                    _   _                  ___  ____
+ / _| ___  _ __    ___ | |_| |__   ___ _ __   / _ \/ ___|
+| |_ / _ \| '__|  / _ \| __| '_ \ / _ \ '__| | | | \___ \
+|  _| (_) | |    | (_) | |_| | | |  __/ |    | |_| |___) |
+|_|  \___/|_|     \___/ \__|_| |_|\___|_|     \___/|____/
     {reset}"""
     )
 
@@ -168,6 +197,7 @@ def create_adc_archive(file_paths, output_path, format="adc"):
         .strip()
         .lower()
         == "y"
+        or "yes"
     )
     if use_password:
         pwd = getpass.getpass("Create a password for this archive: ")
@@ -361,15 +391,13 @@ def open_archive_file():
 
 
 def main():
-    # print(
-    # f"""
-    # You are using ADC Aurora, this code is not stable and may not work!
-    # If you are using this on accident quit by pressing 'Q' or 'q'.
-
-    # You can download the stable version of ADC Archiver on GitHub:
-    # {PURPLE}https://github.com/Mealman1551/ADC{reset}
-    # """
-    # )
+    if len(os.sys.argv) > 1:
+        first_arg = os.sys.argv[1]
+        if os.path.isfile(first_arg) and first_arg.lower().endswith(".adc"):
+            output_dir = os.path.dirname(os.path.abspath(first_arg))
+            print(f"{YELLOW}Auto-extracting {first_arg} to {output_dir}{reset}")
+            extract_adc_archive(first_arg, output_dir)
+            return
 
     if len(os.sys.argv) > 1:
         subcommand = os.sys.argv[1]
@@ -455,24 +483,13 @@ def main():
       {RED}####       ###{reset}   {PURPLE}%%%%%%%%%%%%{reset}      {GREEN}************{reset}   
      {RED}####        ####{reset}  {PURPLE}%%%%%%%%%{reset}          {GREEN}*******{reset}  
 
-        | ADC Archiver {TEAL}Aurora{reset} | Version: n/a |
+        | ADC Archiver {TEAL}Aurora{reset} | Version: 2025.12.1 |
 
         
         GitHub page: https://github.com/Mealman1551/ADC
         Webpage: https://mealman1551.github.io/adc.html
         Webpage 2: https://mealman1551.github.io/ADC
         E-mail: adc@linuxmail.org
-
-        {BOLD}PLEASE READ{reset}
-        
-        {ITALIC}You are using ADC Archiver {TEAL}Aurora{reset}
-
-        {ITALIC}This is a live development version of ADC Archiver.
-        It is not recommended for use in this state.
-        
-        If you want to use ADC Archiver stable, You can find the stable version on the GitHub page.
-        
-        ADC {TEAL}Aurora{reset} {ITALIC}may not work!{reset}
 
         ---------
 
@@ -484,7 +501,7 @@ def main():
         """
             print(info)
 
-        elif command in ("q", "exit", "quit", "close"):
+        elif command in ("q", "exit", "quit", "close", "sluiten", "afsluiten", "stop"):
             print(f"Thank you for using ADC Archiver {TEAL}Aurora{reset}!")
             break
 
