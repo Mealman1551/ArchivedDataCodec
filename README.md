@@ -54,9 +54,11 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 
 ADC Archiver uses a byte-key of 8, meaning that it can create archives without limitations
 
-For the unstable/rolling release see: [ADC Aurora](https://github.com/Mealman1551/ADC/tree/ADC-Unstable-(Aurora))
+For the unstable/rolling release see: [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable)
 
-Please note: ~~ADC can currently only pack files, folders aren't supported yet.~~ [ADC Canary](https://gitlab.com/Mealman1551/adc-canary) supports this now!
+Please note: ~~ADC can currently only pack files, folders aren't supported yet.~~ [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable) supports this now!
+
+Test files [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
 
 ## Features
 
@@ -93,7 +95,7 @@ Linux
 ## Installation
 
 ### Windows
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ADC/releases/download/v1.4.2/adc1.4.2_amd64setup.exe)
+1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.2/adc1.4.2_amd64setup.exe)
 
 ### Linux
 
