@@ -13,24 +13,18 @@
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
 
-Latest news can be found [here.](https://github.com/Mealman1551/ADC/discussions/categories/adc-unstable-aurora)
+Latest news can be found on the forum [here.](https://groups.google.com/g/adc-archiver)
 
-[ADC contact e-mailadres](mailto:adc@linuxmail.org)
-
-IRC channel: #adcarchiver on OFTC
-
-Forum: [https://groups.google.com/g/adc-archiver](https://groups.google.com/g/adc-archiver)
+[ADC contact e-mailadres](mailto:nathandubuy4+aurora@gmail.com)
 
 
-## Aurora has precompiled binaries. Please note that the binaries aren't signed. 
+### Aurora has precompiled binaries. Please note that the binaries aren't signed. 
 
 [binaries on GitLab](gitlab.com/adc-project/aurora-binaries)
 
-> ### New features in the November update (ADC_Aur_2025.11.1.py):
->
-> Added tar support; tar, tar.gz. tar.xz and tar.bz2
->
-> Added folder selection, see: [this documentation](https://github.com/Mealman1551/ADC/tree/ADC-Unstable?tab=readme-ov-file#folder-selection-feature--new)
+> ### New features in the December update (ADC_Aur_2025.12.1.py):
+> Added new Ascii logos for Windows, Linux and Other OS'es
+> Added optimizations by removing unnecessary comments
 
 
 ### What is Aurora?
@@ -41,7 +35,7 @@ Aurora is the release after [ADC Canary](https://gitlab.com/Mealman1551/adc-cana
 
 ### Which Python version is needed?
 
-Aurora and the main branch use Python 3.12.x
+Aurora and the main branch use Python 3.13.x
 
 ### When to use Aurora?
 
@@ -57,7 +51,7 @@ GitHub issues related to Aurora will not be handled!
 
 Aurora follows a rolling release model by updating the source code to a higher version.
 
-Binaries are available in `binaries`
+Binaries are available [here](https://gitlab.com/adc-project/aurora-binaries)
 
 ### Folder Selection Feature | NEW!
 
@@ -78,14 +72,6 @@ ADC Archiver Aurora now supports archiving entire folders while preserving the c
    - The relative paths of files within folders are maintained
    - Empty directories are also preserved in the archive
 
-**Example workflow:**
-
-- Select files: `document1.txt`, `image.png`
-- Add folder: `MyProject/` (contains `src/`, `docs/`, and `README.md`)
-- Add folder: `Config/` (contains `settings.json`)
-- Click "Cancel" to finish folder selection
-
-The resulting archive will contain all selected files and folders with their complete directory structure intact.
 
 ### Python packages required
 
@@ -101,8 +87,6 @@ The resulting archive will contain all selected files and folders with their com
 - zipfile
 
 ### Additional Installation Requirements
-
-Some of these libraries are included in the default Python installation.
 
 The `progress`, `cryptography` and `colorama` modules need to be installed separately, `TKinter` only on Linux with `sudo apt install python3-tk`.
 
