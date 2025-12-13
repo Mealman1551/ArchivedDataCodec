@@ -47,7 +47,6 @@ jobs:
         chmod +x ./dist/ADC_Archiver_1.4.3.bin
         echo -e "q" | ./dist/ADC_Archiver_1.4.3.bin
 # (c) 2025 Mealman1551
-# This file is part of ADC Archiver 1.4.2 in Main branch.
-# ADC Archiver 1.4.2 is free and libre software: you can freely redistribute it and/or modify.
+
 
 
