@@ -39,8 +39,8 @@
 * [Supported Versions](#supported-versions)
 
 
-* [Prepare Build environment on Windows](#preparing-build-environment-on-windows)
-* [Prepare Build environment on Linux](#preparing-build-environment-on-linux)
+* [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
+* [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
 
   * [Start building on windows .2](#start-building-on-windows)
   * [Start building on Linux .2](#start-building-on-linux)
@@ -227,7 +227,7 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | Version | Release Type | Supported          | EOL (End Of Life) |
 | ------- | ------------ | ------------------ | ----------------- |
 | 1.4.x   | LTS          | :white_check_mark: | 18-10-2029        |
-| 1.3.0   | Regular      | :white_check_mark: | 15-05-2027        |
+| 1.3.x   | Regular      | :white_check_mark: | 15-05-2027        |
 | 1.2.0   | Regular      | :white_check_mark: | 15-11-2026        |
 | 1.1.0   | Regular      | :white_check_mark: | 15-05-2026        |
 | 1.0.0   | Regular      | ❌ | 15-11-2025        |
@@ -239,7 +239,7 @@ You can ofc run the source code but official binaries and/or setups are not comp
 >[!Note]
 >For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required > >via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.0, 1.4.2. Use `make windows` or `make linux` for the latest version (1.4.2), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
+Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.3. Use `make windows` or `make linux` for the latest version (1.4.3), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
@@ -320,20 +320,20 @@ make windows
 Or specific version:
 
 ```powershell
-make 1.3.0-windows
+make 1.3.1-windows
 ```
 
 Run the binary:
 
 ```powershell
 cd dist
-./ADC_Archiver_1.4.2.exe
+./ADC_Archiver_1.4.3.exe
 ```
 
 or
 
 ```bash
-./ADC_Archiver_1.3.0.exe
+./ADC_Archiver_1.3.1.exe
 ```
 
 Clean build:
