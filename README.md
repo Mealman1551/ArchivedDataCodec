@@ -95,7 +95,7 @@ Linux
 ## Installation
 
 ### Windows
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.2/adc1.4.2_amd64setup.exe)
+1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc1.4.3_amd64setup.exe)
 
 ### Linux
 
@@ -125,7 +125,7 @@ wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
 ```
 
 ADC has multiple mirrors
-- [GitHub (Recommended)](https://github.com/Mealman1551/ADC/releases/tag/v1.4.2#:~:text=Mealman1551-,Assets,-6)
+- [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/tag/v1.4.3#:~:text=Assets)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
 
 
@@ -186,6 +186,12 @@ Unstable (Aurora) is only on GitHub!
 
 For Canary/continuous live development see: [ADC Canary on GitLab](https://gitlab.com/Mealman1551/adc-canary)
 #### ***DO NOT USE THE CANARY REPO AS MAIN SOURCE, THIS IS LIVE DEVELOPMENT ONLY!***
+
+---
+
+ADC Core Utils are for OEM manufacturers or people who only want to open a `.adc` file:
+
+[ADC-Core-Util](https://github.com/The-ADC-Archiver-Project/ADC-Core-Util)
 
 ---
 
