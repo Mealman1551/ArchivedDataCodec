@@ -1,5 +1,5 @@
-NAME=ADC_Archiver_1.4.2
-SRC=src/ADC_Archiver_1.4.2.py
+NAME=ADC_Archiver_1.4.3
+SRC=src/ADC_Archiver_1.4.3.py
 
 linux:
 	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist $(SRC)
@@ -27,11 +27,11 @@ clean-windows:
 clean-linux:
 	rm -rf dist/*
 
-1.3.0-windows:
-	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist src/ADC_Archiver_1.3.0.py
+1.3.1-windows:
+	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist src/ADC_Archiver_1.3.1.py
 
-1.3.0-linux:
-	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/ADC_Archiver_1.3.0.py
+1.3.1-linux:
+	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/ADC_Archiver_1.3.1.py
 
 1.2.0-windows:
 	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist src/older/1.2.0/ADC_Archiver_1.2.0.py
