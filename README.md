@@ -31,6 +31,7 @@
   * [Linux](#linux)
 * [Usage](#usage)
 * [License](#license)
+* [Why ADC](#why-adc)
 * [Issues](#issues)
 * [Update Schedule](#update-schedule)
 * [Contributing](#contributing)
@@ -149,6 +150,43 @@ Download the program for Windows or Linux. Tarballs and setups available in the 
 ## License
 
 This project is licensed under the [GNU GPL-3.0 License](LICENSE). You are free to use, modify, and distribute it under the terms of the license.
+
+
+## Why ADC
+
+* **ADC is a purpose-built archiving format**
+  No historical baggage, no legacy compromises. ADC is designed with a single, clear structure and a strict data layout.
+
+* **Linear and predictable archive layout**
+  Archives are written and read sequentially from start to end. No central directories, no backward seeks, no hidden tables.
+
+* **Straightforward to implement in any language**
+  The format is compact and explicit. A complete reader or writer can be implemented without complex or specialized libraries.
+
+* **Full control over the archive contents**
+  Each file is processed, compressed, and stored individually. There is no implicit metadata or opaque behavior.
+
+* **Built-in modern encryption**
+  Optional password protection is integrated into the format using proven cryptography, not external tooling.
+
+* **Deterministic behavior**
+  ADC behaves consistently and predictably. The same input produces the same structural output every time.
+
+* **Tooling-first design**
+  ADC is designed as a technical foundation. The CLI is an interface on top of the format, not the core of it.
+
+* **Extensible without legacy constraints**
+  The format can evolve without being locked into decades of backward-compatibility decisions.
+
+* **Cross-platform by design**
+  ADC archives behave identically across supported operating systems.
+
+* **Fully transparent and open**
+  The format is inspectable, understandable, and auditable. No black boxes, no closed specifications.
+
+* **Built for engineers**
+  ADC is focused, explicit, and controlled. It is designed for people who want to understand and own their tooling.
+
 
 ## Issues
 
