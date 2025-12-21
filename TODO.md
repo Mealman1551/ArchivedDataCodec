@@ -1,4 +1,4 @@
-- [ ] Add support for Python 3.13
+- [x] Add support for Python 3.13
 - [x] Add password support (Added to the testing repo on GitLab)
 - [ ] Add GUI (With Gtk4 support)
 - [x] Add command args
