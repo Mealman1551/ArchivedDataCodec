@@ -1,5 +1,5 @@
 - [x] Add support for Python 3.13
-- [x] Add password support (Added to the testing repo on GitLab)
+- [x] Add password support
 - [ ] Add GUI (With Gtk4 support)
 - [x] Add command args
-- [x] Add ADC to command table and invokable direct from terminal (Available for Linux due to my new installer script to add ADC to Linux Path)
+- [x] Add ADC to command table and invokable direct from terminal
