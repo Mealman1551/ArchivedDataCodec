@@ -8,4 +8,4 @@ You can find the repo and contributing.md for Canary here: [https://gitlab.com/M
 
 I hope to see your contribution soon :D
 
-###### &copy; 2025 Mealman1551
+###### &copy; Mealman1551 - The ADC Project

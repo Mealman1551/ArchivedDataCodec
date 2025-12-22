@@ -44,6 +44,6 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ---
 
-###### &copy; 2025 contributor-covenant.org
+###### &copy; contributor-covenant.org
 
-###### &copy; 2025 Mealman1551
+###### &copy; Mealman1551 - The ADC Project
