@@ -4,7 +4,7 @@
 
 [Forum](https://groups.google.com/g/adc-archiver) (Main announcement channel)
 
-[Gitter](https://matrix.to/#/#adc:gitter.im)
+IRC: OFTC - #adc-archiver (Only used for meetings and events)
 
 # ADC (ArchivedDataCodec)
 [![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)](#)
