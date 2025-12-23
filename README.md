@@ -469,6 +469,9 @@ Specific old versions can be compiled with commands like `make 1.1.0-windows` or
 
 ---
 
-![Made with 💚](https://img.shields.io/badge/Made%20with%20%E2%9D%A4%EF%B8%8F%20by%20Mealman1551-blue?style=for-the-badge)
+###### Made with 💚 by Mealman1551
 
-###### © Mealman1551
+---
+
+###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](contributors.txt)  
+###### Licensed under the GNU GPL v3.0 or later.
