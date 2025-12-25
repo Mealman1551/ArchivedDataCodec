@@ -1,9 +1,10 @@
 name: Update downloads.json
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
 
 jobs:
   update-downloads:
@@ -24,7 +25,8 @@ jobs:
 
       - name: Fetch SourceForge downloads
         run: |
-          SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$(date +%F)" | jq '[.downloads[].value] | add // 0')
+          TODAY=$(date +%F)
+          SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" | jq '[.downloads[].value] | add // 0')
           echo "SourceForge total: $SF_TOTAL"
           echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
