@@ -6,8 +6,6 @@
 
 IRC: OFTC - #adc-archiver (Only used for meetings and events)
 
-<h2><span style="color: red;">Merry Christmas</span></h2>
-
 # ADC (ArchivedDataCodec)
 [![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)](#)
 [![Platform: Windows/Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue.svg)](#)
