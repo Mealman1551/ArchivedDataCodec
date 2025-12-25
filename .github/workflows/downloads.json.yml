@@ -6,12 +6,12 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-downloads:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
 
     steps:
       - name: Checkout repo
@@ -23,43 +23,31 @@ jobs:
       - name: Fetch GitHub downloads
         run: |
           GH_TOTAL=$(curl -s https://api.github.com/repos/Mealman1551/ArchivedDataCodec/releases | jq '[.[] .assets[].download_count] | add // 0')
-          echo "GitHub total: $GH_TOTAL"
           echo "GH_TOTAL=$GH_TOTAL" >> $GITHUB_ENV
 
       - name: Fetch SourceForge downloads
         run: |
           TODAY=$(date +%F)
-          echo "Fetching SourceForge stats JSON..."
           curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
 
-          echo "SourceForge raw response:"
-          cat sf.json
-
-          echo "SourceForge downloads array keys:"
-          jq 'if has("downloads") then .downloads[0] else "no downloads key" end' sf.json || true
-
-          # Attempt to sum numeric fields from each array element
-          SF_TOTAL=$(jq -r '
+          SF_TOTAL=$(jq '
             if has("downloads") then
-              [.downloads[] | to_entries[] | select(.value | type == "number") | .value] | add // 0
-            else
-              0
-            end
+              [.downloads[] | to_entries[] | select(.value | type=="number") | .value] | add // 0
+            else 0 end
           ' sf.json)
-          echo "Computed SourceForge total: $SF_TOTAL"
-          echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
+          echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
       - name: Create downloads.json
         run: |
           TOTAL=$(($GH_TOTAL + $SF_TOTAL))
-          echo "{\"total_downloads\": $TOTAL, \"github\": $GH_TOTAL, \"sourceforge\": $SF_TOTAL}" > downloads.json
-          cat downloads.json
+          mkdir -p .github
+          echo "{\"total_downloads\": $TOTAL, \"github\": $GH_TOTAL, \"sourceforge\": $SF_TOTAL}" > .github/downloads.json
 
       - name: Commit downloads.json
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add downloads.json
+          git add .github/downloads.json
           git commit -m "Update download stats" || echo "Nothing to commit"
           git push
