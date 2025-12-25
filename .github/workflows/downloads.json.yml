@@ -1,36 +1,43 @@
-name: update download counts JSON
+name: Update downloads.json
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
 
 jobs:
-  build:
+  update-downloads:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Fetch GitHub downloads
         run: |
-          GH=$(curl -s https://api.github.com/repos/Mealman1551/ArchivedDataCodec/releases)
-          GH_TOTAL=$(echo "$GH" | jq '[.[] .assets[].download_count] | add')
+          GH_TOTAL=$(curl -s https://api.github.com/repos/Mealman1551/ArchivedDataCodec/releases | jq '[.[] .assets[].download_count] | add // 0')
+          echo "GitHub total: $GH_TOTAL"
+          echo "GH_TOTAL=$GH_TOTAL" >> $GITHUB_ENV
 
       - name: Fetch SourceForge downloads
         run: |
-          SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/best_download?format=json" | jq '.total_downloads')
+          SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$(date +%F)" | jq '[.downloads[].value] | add // 0')
+          echo "SourceForge total: $SF_TOTAL"
+          echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
-      - name: Combine
+      - name: Create downloads.json
         run: |
           TOTAL=$(($GH_TOTAL + $SF_TOTAL))
           echo "{\"total_downloads\": $TOTAL, \"github\": $GH_TOTAL, \"sourceforge\": $SF_TOTAL}" > downloads.json
+          cat downloads.json
 
-      - name: Commit JSON
+      - name: Commit downloads.json
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add downloads.json
-          git commit -m "Update download stats" || true
+          git commit -m "Update download stats" || echo "Nothing to commit"
           git push
