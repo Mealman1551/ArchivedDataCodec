@@ -7,6 +7,7 @@
 IRC: OFTC - #adc-archiver (Only used for meetings and events)
 
 # ADC (ArchivedDataCodec)
+
 [![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)](#)
 [![Platform: Windows/Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue.svg)](#)
 [![Development](https://img.shields.io/badge/Development-Active-brightgreen)](#)
@@ -19,7 +20,9 @@ IRC: OFTC - #adc-archiver (Only used for meetings and events)
 [![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
 
-Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
+[![GitHub All Releases Downloads](https://img.shields.io/github/downloads/Mealman1551/ArchivedDataCodec/total.svg)](https://github.com/Mealman1551/ArchivedDataCodec/releases)
+
+Compatible with: `<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/>` **&** `<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>`
 
 # Index / Quick Links
 
@@ -37,20 +40,17 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Update Schedule](#update-schedule)
 * [Contributing](#contributing)
 * [Contact](#contact)
-* [Build & Sync Status](#build--sync-status)
+* [Build &amp; Sync Status](#build--sync-status)
 * [Supported Versions](#supported-versions)
-
-
 * [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
 
   * [Start building on windows .2](#start-building-on-windows)
   * [Start building on Linux .2](#start-building-on-linux)
 
-
 For Build Status and GitLab Sync status go [here](https://github.com/Mealman1551/ADC?tab=readme-ov-file#build--sync-status)
 
-**ADC (ArchivedDataCodec)** is an open-source <img src="https://raw.githubusercontent.com/Mealman1551/ADC/362a969f45ab6f17883ec68cb6172dc4ad3ce58b/img/svg/open-source-icn.svg" alt="Open-Source" width="30"/> file extension and archiving/compression tool that uses Zlib for efficient compression and decompression of various file types. With a simple command-line interface, ADC supports both Windows and Linux, making it easy for users to archive and extract files.
+**ADC (ArchivedDataCodec)** is an open-source `<img src="https://raw.githubusercontent.com/Mealman1551/ADC/362a969f45ab6f17883ec68cb6172dc4ad3ce58b/img/svg/open-source-icn.svg" alt="Open-Source" width="30"/>` file extension and archiving/compression tool that uses Zlib for efficient compression and decompression of various file types. With a simple command-line interface, ADC supports both Windows and Linux, making it easy for users to archive and extract files.
 
 ADC Archiver uses a byte-key of 8, meaning that it can create archives without limitations
 
@@ -73,11 +73,13 @@ Test files [here](https://github.com/The-ADC-Archiver-Project/adc-example-archiv
 
 ***Users***
 Windows
+
 - Windows 8 or higher
-Linux
+  Linux
 - A Modern Linux distro that has at least glibc 2.31
 
 ***Developers:***
+
 - Python3
 - zlib
 - tkinter
@@ -91,10 +93,10 @@ Linux
 - json
 - ssl
 
-
 ## Installation
 
 ### Windows
+
 1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc1.4.3_amd64setup.exe)
 
 ### Linux
@@ -110,37 +112,36 @@ To remove run `remove.sh` in the same tarball.
 #### Command
 
 Dependencies:
+
 1. Wget
 2. xz-utils
 
 Run:
+
 ```bash
 mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://gitlab.com/adc-project/tars/-/raw/main/adc.tar.xz?inline=false" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
 ```
+
 to install ADC without leaving any garbage
 
 To remove ADC you can run:
+
 ```bash
 wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
 ```
 
 ADC has multiple mirrors
+
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/tag/v1.4.3#:~:text=Assets)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
-
 
 ### Unix (BSD, Solaris)
 
 1. Install Python3
-
 2. Install `requirements.txt`
-
 3. Install python3-tk
-
 4. Download the source code from /src
-
 5. Run the source code in python3
-
 
 ## Usage
 
@@ -150,42 +151,30 @@ Download the program for Windows or Linux. Tarballs and setups available in the 
 
 This project is licensed under the [GNU GPL-3.0 License](LICENSE). You are free to use, modify, and distribute it under the terms of the license.
 
-
 ## Why ADC
 
 * **ADC is a purpose-built archiving format**
   No historical baggage, no legacy compromises. ADC is designed with a single, clear structure and a strict data layout.
-
 * **Linear and predictable archive layout**
   Archives are written and read sequentially from start to end. No central directories, no backward seeks, no hidden tables.
-
 * **Straightforward to implement in any language**
   The format is compact and explicit. A complete reader or writer can be implemented without complex or specialized libraries.
-
 * **Full control over the archive contents**
   Each file is processed, compressed, and stored individually. There is no implicit metadata or opaque behavior.
-
 * **Built-in modern encryption**
   Optional password protection is integrated into the format using proven cryptography, not external tooling.
-
 * **Deterministic behavior**
   ADC behaves consistently and predictably. The same input produces the same structural output every time.
-
 * **Tooling-first design**
   ADC is designed as a technical foundation. The CLI is an interface on top of the format, not the core of it.
-
 * **Extensible without legacy constraints**
   The format can evolve without being locked into decades of backward-compatibility decisions.
-
 * **Cross-platform by design**
   ADC archives behave identically across supported operating systems.
-
 * **Fully transparent and open**
   The format is inspectable, understandable, and auditable. No black boxes, no closed specifications.
-
 * **Built for engineers**
   ADC is focused, explicit, and controlled. It is designed for people who want to understand and own their tooling.
-
 
 ## Issues
 
@@ -222,6 +211,7 @@ Unstable (Aurora) is only on GitHub!
 ---
 
 For Canary/continuous live development see: [ADC Canary on GitLab](https://gitlab.com/Mealman1551/adc-canary)
+
 #### ***DO NOT USE THE CANARY REPO AS MAIN SOURCE, THIS IS LIVE DEVELOPMENT ONLY!***
 
 ---
@@ -238,13 +228,14 @@ Syncing to GitLab is done via the [`gitlab-sync.yml`](https://github.com/Mealman
 
 ## Notes
 
-If you want to support the project please consider a small donation: <a href="https://www.paypal.com/donate/?hosted_button_id=LEE83CJJ2BEJC">
-	<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>
-</a>
+If you want to support the project please consider a small donation: `<a href="https://www.paypal.com/donate/?hosted_button_id=LEE83CJJ2BEJC">`
+	`<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>`
+`</a>`
 
 ---
 
 ### No macOS support
+
 ADC Archiver does **NOT** support macOS, and it never will.
 This is a deliberate decision to take a stand against the growing dominance of proprietary ecosystems and Apple’s developer restrictions.
 This project supports **open platforms only**: Windows and Linux/Unix.
@@ -255,11 +246,11 @@ You can ofc run the source code but official binaries and/or setups are not comp
 
 ## Build & Sync Status
 
-| Workflow      | Status        |
-|---------------|---------------|
-| **Build Status** | [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml) |
+| Workflow               | Status                                                                                                                                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Build Status** | [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)                               |
 | **GitLab Sync**  | [![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml) |
-|               |               |
+|                        |                                                                                                                                                                                      |
 
 **Build Status**: Builds and compiles ADC's source code with Nuitka and testing binary after it for errors.
 
@@ -267,20 +258,18 @@ You can ofc run the source code but official binaries and/or setups are not comp
 
 ## Supported Versions
 
-| Version | Release Type | Supported          | EOL (End Of Life) |
-| ------- | ------------ | ------------------ | ----------------- |
-| 1.4.x   | LTS          | :white_check_mark: | 18-10-2029        |
-| 1.3.x   | Regular      | :white_check_mark: | 15-05-2027        |
-| 1.2.0   | Regular      | :white_check_mark: | 15-11-2026        |
-| 1.1.0   | Regular      | :white_check_mark: | 15-05-2026        |
-| 1.0.0   | Regular      | ❌ | 15-11-2025        |
-
-
+| Version | Release Type | Supported | EOL (End Of Life) |
+| ------- | ------------ | --------- | ----------------- |
+| 1.4.x   | LTS          | ✅        | 18-10-2029        |
+| 1.3.x   | Regular      | ✅        | 15-05-2027        |
+| 1.2.0   | Regular      | ✅        | 15-11-2026        |
+| 1.1.0   | Regular      | ✅        | 15-05-2026        |
+| 1.0.0   | Regular      | ❌        | 15-11-2025        |
 
 ## Build ADC
 
->[!Note]
->For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required > >via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
+> [!Note]
+> For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required > >via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
 Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.3. Use `make windows` or `make linux` for the latest version (1.4.3), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
@@ -347,12 +336,12 @@ make deps-windows
 
 #### Start building on Windows
 
->[!Warning]
->Do ***NOT*** run the binary while compiling!
+> [!Warning]
+> Do ***NOT*** run the binary while compiling!
 
->[!Warning]
->Do ***NOT*** install MinGW64 if Nuitka asks for it.
->You ***CAN*** install depends.exe if Nuitka asks for it.
+> [!Warning]
+> Do ***NOT*** install MinGW64 if Nuitka asks for it.
+> You ***CAN*** install depends.exe if Nuitka asks for it.
 
 Compile the latest version:
 
@@ -465,12 +454,12 @@ make debug-linux
 
 Specific old versions can be compiled with commands like `make 1.1.0-windows` or `make 1.2.0-linux`. Version 1.0.0 is deprecated; compilation is possible but not recommended.
 
-
 ---
 
 ###### Made with 💚 by Mealman1551
 
 ---
 
-###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](contributors.txt)  
+###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](contributors.txt)
+
 ###### Licensed under the GNU GPL v3.0 or later.
