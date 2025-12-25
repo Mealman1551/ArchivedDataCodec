@@ -107,7 +107,7 @@ Download the tarball and run `install.sh`, this will copy the files to `/opt` an
 
 To remove run `remove.sh` in the same tarball.
 
-[Download tarball](https://gitlab.com/adc-project/tars/-/raw/main/adc.tar.xz?inline=false)
+[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc.tar.xz)
 
 #### Command
 
@@ -119,7 +119,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://gitlab.com/adc-project/tars/-/raw/main/adc.tar.xz?inline=false" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
 ```
 
 to install ADC without leaving any garbage
