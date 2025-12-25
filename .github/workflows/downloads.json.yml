@@ -26,9 +26,31 @@ jobs:
       - name: Fetch SourceForge downloads
         run: |
           TODAY=$(date +%F)
+<<<<<<< Updated upstream
           SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" | jq '[.downloads[].value] | add // 0')
           echo "SourceForge total: $SF_TOTAL"
+=======
+          echo "Fetching SourceForge stats JSON..."
+          curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
+
+          echo "SourceForge raw response:"
+          cat sf.json
+
+          echo "SourceForge downloads array keys:"
+          jq 'if has("downloads") then .downloads[0] else "no downloads key" end' sf.json || true
+
+          # Attempt to sum numeric fields from each array element
+          SF_TOTAL=$(jq -r '
+            if has("downloads") then
+              [.downloads[] | to_entries[] | select(.value | type == "number") | .value] | add // 0
+            else
+              0
+            end
+          ' sf.json)
+          echo "Computed SourceForge total: $SF_TOTAL"
+>>>>>>> Stashed changes
           echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
+
 
       - name: Create downloads.json
         run: |
