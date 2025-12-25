@@ -26,10 +26,6 @@ jobs:
       - name: Fetch SourceForge downloads
         run: |
           TODAY=$(date +%F)
-<<<<<<< Updated upstream
-          SF_TOTAL=$(curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" | jq '[.downloads[].value] | add // 0')
-          echo "SourceForge total: $SF_TOTAL"
-=======
           echo "Fetching SourceForge stats JSON..."
           curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
 
@@ -48,7 +44,6 @@ jobs:
             end
           ' sf.json)
           echo "Computed SourceForge total: $SF_TOTAL"
->>>>>>> Stashed changes
           echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
 
