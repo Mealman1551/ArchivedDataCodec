@@ -19,7 +19,7 @@ IRC: OFTC - #adc-archiver (Only used for meetings and events)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](#)
 [![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
-![All Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/downloads.json&query=$.total_downloads&label=Total%20Downloads&color=blue)
+![All Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/downloads.json&query=$.total_downloads&label=Downloads&color=97CA00)
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
 
@@ -39,7 +39,6 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Update Schedule](#update-schedule)
 * [Contributing](#contributing)
 * [Contact](#contact)
-* [Build &amp; Sync Status](#build--sync-status)
 * [Supported Versions](#supported-versions)
 * [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
@@ -242,18 +241,6 @@ This project supports **open platforms only**: Windows and Linux/Unix.
 You can ofc run the source code but official binaries and/or setups are not compiled for macOS!
 
 ---
-
-## Build & Sync Status
-
-| Workflow               | Status                                                                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Build Status** | [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)                               |
-| **GitLab Sync**  | [![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml) |
-|                        |                                                                                                                                                                                      |
-
-**Build Status**: Builds and compiles ADC's source code with Nuitka and testing binary after it for errors.
-
-**GitLab Sync**: Syncing Main branch to GitLab.
 
 ## Supported Versions
 
