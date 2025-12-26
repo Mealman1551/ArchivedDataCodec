@@ -48,7 +48,9 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
   * [Start building on windows .2](#start-building-on-windows)
   * [Start building on Linux .2](#start-building-on-linux)
 
-For Build Status and GitLab Sync status go [here](https://github.com/Mealman1551/ADC?tab=readme-ov-file#build--sync-status)
+### Contributors welcome! Beginners friendly • Python • No prior context required
+
+Contribute to the Canary repo.
 
 **ADC (ArchivedDataCodec)** is an open-source `<img src="https://raw.githubusercontent.com/Mealman1551/ADC/362a969f45ab6f17883ec68cb6172dc4ad3ce58b/img/svg/open-source-icn.svg" alt="Open-Source" width="30"/>` file extension and archiving/compression tool that uses Zlib for efficient compression and decompression of various file types. With a simple command-line interface, ADC supports both Windows and Linux, making it easy for users to archive and extract files.
 
