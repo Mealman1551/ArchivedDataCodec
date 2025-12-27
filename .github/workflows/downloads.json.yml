@@ -30,10 +30,17 @@ jobs:
           TODAY=$(date +%F)
           curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
 
-          SF_TOTAL=$(jq '
+          # Toon raw JSON voor debug
+          echo "SourceForge JSON:"
+          cat sf.json
+
+          # Sum alle numerieke velden binnen downloads[] array
+          SF_TOTAL=$(jq -r '
             if has("downloads") then
-              [.downloads[] | to_entries[] | select(.value | type=="number") | .value] | add // 0
-            else 0 end
+              [.downloads[] | .[]? | select(type=="number")] | add // 0
+            else
+              0
+            end
           ' sf.json)
 
           echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
