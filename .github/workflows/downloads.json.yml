@@ -22,7 +22,7 @@ jobs:
 
       - name: Fetch GitHub downloads
         run: |
-          GH_TOTAL=$(curl -s https://api.github.com/repos/Mealman1551/ArchivedDataCodec/releases | jq '[.[] .assets[].download_count] | add // 0')
+          GH_TOTAL=$(curl -s https://api.github.com/repos/Mealman1551/ArchivedDataCodec/releases | jq '[.[] | .assets // [] | map(.download_count) | add // 0] | add // 0')
           echo "GH_TOTAL=$GH_TOTAL" >> $GITHUB_ENV
 
       - name: Fetch SourceForge downloads
@@ -30,7 +30,7 @@ jobs:
           TODAY=$(date +%F)
           curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
 
-          # Toon raw JSON voor debug
+          # Debug JSON
           echo "SourceForge JSON:"
           cat sf.json
 
