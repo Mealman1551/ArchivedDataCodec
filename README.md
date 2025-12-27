@@ -196,7 +196,7 @@ Contributions are welcome! See the CONTRIBUTING.md file.
 
 ## Contact
 
-Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:adc@linuxmail.org).
+Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
 
 ## GitLab
 
