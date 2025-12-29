@@ -1,6 +1,6 @@
 ---
 name: Make a new issue
-about: issue
+about: Use this option to make reports easier
 title: ''
 labels: bug, documentation, feature request, question
 assignees: ''
