@@ -4,4 +4,4 @@
 - [x] Add command args
 - [x] Add ADC to command table and invokable direct from terminal
 - [ ] Support Python 3.14
-- [ ] Make tarballs GitHub only via releases
+- [x] Make tarballs GitHub only via releases
