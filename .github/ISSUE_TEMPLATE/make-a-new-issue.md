@@ -1,19 +1,18 @@
 ---
 name: Make a new issue
 about: issue
-title: New Issue
+title: ''
 labels: bug, documentation, feature request, question
 assignees: ''
 
 ---
 
----
-name: ADC Archiver Issue
-about: Bug reports and feature requests for ADC Archiver
-title: "[ADC]: "
-labels: needs-triage
-assignees: 
----
+<!-- To select an option add a 'x' inside of the square brackets,
+like this:
+
+[x]
+
+ -->
 
 **What kind of issue do you have?**  
 - [ ] Bug  
