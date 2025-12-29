@@ -1,3 +1,4 @@
+
 NAME=ADC_Archiver_1.4.3
 SRC=src/ADC_Archiver_1.4.3.py
 
@@ -10,7 +11,7 @@ windows:
 deps-linux:
 	pip install -r requirements.txt --break-system-packages
 	pip install nuitka scons --break-system-packages
-
+	sudo apt install python3-tk
 deps-windows:
 	python -m pip install -r requirements.txt
 	python -m pip install nuitka scons
@@ -57,8 +58,7 @@ clean-linux:
 install:
 	@echo "Installing ADC Archiver to /opt/adc..."
 	sudo mkdir -p /opt/adc
-	sudo cp -r dist/* /opt/adc/
-	sudo find /opt/adc -type f -executable -exec mv {} /opt/adc/adc \;
+	sudo cp dist/ADC_Archiver_1.4.3.bin /opt/adc/adc
 	sudo chmod +x /opt/adc/adc
 	sudo ln -sf /opt/adc/adc /usr/local/bin/adc
 	@echo "ADC Archiver installed successfully!"
