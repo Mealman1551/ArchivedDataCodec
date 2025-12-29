@@ -1,4 +1,4 @@
-<img src="https://github.com/Mealman1551-ADC-Project/Assets/blob/main/banner/ADC%20banner.jpg?raw=true" alt="ADC Banner" width=200>
+<img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width=200>
 
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
