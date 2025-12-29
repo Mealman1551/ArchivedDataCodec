@@ -53,3 +53,19 @@ clean-linux:
 1.0.0-linux:
 	@echo This version is deprecated, please use at least 1.1.0
 	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist src/older/1.0.0/src1.0.0.py
+
+install:
+	@echo "Installing ADC Archiver to /opt/adc..."
+	sudo mkdir -p /opt/adc
+	sudo cp -r dist/* /opt/adc/
+	sudo find /opt/adc -type f -executable -exec mv {} /opt/adc/adc \;
+	sudo chmod +x /opt/adc/adc
+	sudo ln -sf /opt/adc/adc /usr/local/bin/adc
+	@echo "ADC Archiver installed successfully!"
+	@echo "You can now run 'adc' from anywhere in the terminal"
+
+remove:
+	@echo "Removing ADC Archiver from /opt/adc..."
+	sudo rm -rf /opt/adc
+	sudo rm -f /usr/local/bin/adc
+	@echo "ADC Archiver removed successfully!"
