@@ -1,5 +1,5 @@
 ---
-name: issueConcept1
+name: Make a new issue
 about: issue
 title: New Issue
 labels: bug, documentation, feature request, question
