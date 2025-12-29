@@ -28,20 +28,18 @@ jobs:
       - name: Fetch SourceForge downloads
         run: |
           TODAY=$(date +%F)
-          curl -s "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" > sf.json
+          curl -sf "https://sourceforge.net/projects/adc-archiver/files/stats/json?start_date=2010-01-01&end_date=$TODAY" -o sf.json || echo '{}' > sf.json
 
-          # Debug JSON
           echo "SourceForge JSON:"
           cat sf.json
 
-          # Sum alle numerieke velden binnen downloads[] array
           SF_TOTAL=$(jq -r '
             if has("downloads") then
               [.downloads[] | .[]? | select(type=="number")] | add // 0
-            else
-              0
+          else
+            0
             end
-          ' sf.json)
+          ' sf.json 2>/dev/null || echo 0)
 
           echo "SF_TOTAL=$SF_TOTAL" >> $GITHUB_ENV
 
