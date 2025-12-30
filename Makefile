@@ -57,12 +57,20 @@ clean-linux:
 
 install:
 	@echo "Installing ADC Archiver to /opt/adc..."
-	sudo mkdir -p /opt/adc
-	sudo cp dist/ADC_Archiver_1.4.3.bin /opt/adc/adc
-	sudo chmod +x /opt/adc/adc
+	@if [ ! -d dist ]; then echo "dist not found. Build first."; exit 1; fi
+	@sudo mkdir -p /opt/adc
+	@bin=$$(ls dist/*.bin 2>/dev/null | head -n1) ; \
+	if [ -z "$$bin" ]; then echo "No .bin found in dist"; exit 1; fi ; \
+	echo "Using $$bin" ; \
+	sudo cp "$$bin" /opt/adc/adc ; \
+	sudo chmod +x /opt/adc/adc ; \
 	sudo ln -sf /opt/adc/adc /usr/local/bin/adc
 	@echo "ADC Archiver installed successfully!"
 	@echo "You can now run 'adc' from anywhere in the terminal"
+
+install-w:
+	@echo "Installing ADC Archiver to 'C:\\Program Files\\ADC Archiver' (elevated, Python)..."
+	@python -u scripts\install_windows.py
 
 remove:
 	@echo "Removing ADC Archiver from /opt/adc..."
