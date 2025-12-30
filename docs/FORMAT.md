@@ -97,6 +97,6 @@ The specification in this document is considered authoritative, not just the beh
 
 ---
 
-###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](contributors.txt)  
+###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](/contributors.txt)  
 ###### Licensed under the GNU GPL v3.0 or later.
 
