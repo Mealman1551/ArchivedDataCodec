@@ -312,7 +312,7 @@ Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\
 Then:
 
 ```powershell
-cd ArchivedDataCodec-main
+cd ArchivedDataCodec-1.4.3
 ```
 
 Then:
@@ -409,20 +409,20 @@ make linux
 Or specific version:
 
 ```bash
-make 1.3.0-linux
+make 1.3.1-linux
 ```
 
 Run the binary:
 
 ```bash
 cd dist
-./ADC_Archiver_1.4.2.bin
+./ADC_Archiver_1.4.3.bin
 ```
 
 or
 
 ```bash
-./ADC_Archiver_1.3.0.bin
+./ADC_Archiver_1.3.1.bin
 ```
 
 Clean build:
