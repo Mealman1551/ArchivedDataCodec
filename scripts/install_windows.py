@@ -104,6 +104,14 @@ def main():
 
         copy_dist_to_dst(src, dst)
 
+        # If repo has ADCIcon.ico, copy it into the install folder and use it for shortcuts
+        repo_icon = os.path.join(cwd, "ADCIcon.ico")
+        if os.path.exists(repo_icon):
+            try:
+                shutil.copy2(repo_icon, dst)
+            except Exception:
+                pass
+
         exe = find_first_exe(dst)
         if exe:
             target_exe = os.path.join(dst, "ADC Archiver.exe")
@@ -128,7 +136,7 @@ def main():
                 create_shortcut_url(
                     target_exe_path,
                     os.path.join(desktop, "ADC Archiver.url"),
-                    icon="/ADCIcon.ico",
+                    icon=icon,
                 )
 
             lnk_start = os.path.join(start_folder, "ADC Archiver.lnk")
