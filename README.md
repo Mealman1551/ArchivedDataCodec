@@ -447,6 +447,6 @@ Specific old versions can be compiled with commands like `make 1.1.0-windows` or
 
 ---
 
-###### © 2024 - 2025 Mealman1551 – The ADC Project and [contributors](contributors.txt)
+###### © 2024 - 2026 Mealman1551 – The ADC Project and [contributors](contributors.txt)
 
 ###### Licensed under the GNU GPL v3.0 or later.
