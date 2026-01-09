@@ -68,10 +68,6 @@ install:
 	@echo "ADC Archiver installed successfully!"
 	@echo "You can now run 'adc' from anywhere in the terminal"
 
-install-w:
-	@echo "Installing ADC Archiver to 'C:\\Program Files\\ADC Archiver' (elevated, Python)..."
-	@python -u scripts\install_windows.py
-
 remove:
 	@echo "Removing ADC Archiver from /opt/adc..."
 	sudo rm -rf /opt/adc
