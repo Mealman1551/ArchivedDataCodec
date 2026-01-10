@@ -1,6 +1,6 @@
 
-NAME=ADC_Archiver_1.4.3
-SRC=src/ADC_Archiver_1.4.3.py
+NAME=ADC_Archiver_1.4.4
+SRC=adc.py
 
 linux:
 	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist $(SRC)
