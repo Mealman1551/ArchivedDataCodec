@@ -1,0 +1,3 @@
+nuitka --standalone --enable-plugin=tk-inter --follow-imports "adc.py" #Linux
+
+nuitka --standalone --enable-plugin=tk-inter --follow-imports --windows-icon-from-ico="D:\Github Git Repo clones\ADC\ADCIcon.ico" "adc.py" #Windows
