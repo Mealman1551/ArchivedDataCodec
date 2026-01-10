@@ -148,7 +148,15 @@ Download the program for Windows or Linux. Tarballs and setups available in the 
 
 ## License
 
-This project is licensed under the [GNU GPL-3.0 License](LICENSE). You are free to use, modify, and distribute it under the terms of the license.
+ADC Archiver is dual-licensed.
+
+You may use, modify and distribute ADC Archiver under the terms of the
+GNU General Public License v3 (GPLv3).
+
+If you provide ADC Archiver as a network service, SaaS, or through a remote
+or online virtual machine environment, the GNU Affero General Public License v3 (AGPLv3) applies.
+
+See [LICENSE](LICENSE) and [LICENSE_AGPLv3](LICENSE_AGPLv3) for the full license texts.
 
 ## Why ADC
 
@@ -346,7 +354,7 @@ Run the binary:
 
 ```powershell
 cd dist
-./ADC_Archiver_1.4.3.exe
+./adc.exe
 ```
 
 or
@@ -416,7 +424,7 @@ Run the binary:
 
 ```bash
 cd dist
-./ADC_Archiver_1.4.3.bin
+./adc.bin
 ```
 
 or
@@ -449,4 +457,4 @@ Specific old versions can be compiled with commands like `make 1.1.0-windows` or
 
 ###### © 2024 - 2026 Mealman1551 – The ADC Project and [contributors](contributors.txt)
 
-###### Licensed under the GNU GPL v3.0 or later.
+###### Licensed under the GNU GPL v3.0.
