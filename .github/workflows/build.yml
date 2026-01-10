@@ -46,7 +46,5 @@ jobs:
       run: |
         chmod +x ./dist/ADC_Archiver_1.4.3.bin
         echo -e "q" | ./dist/ADC_Archiver_1.4.3.bin
-# (c) 2025 Mealman1551
-
 
 
