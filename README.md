@@ -96,7 +96,7 @@ Windows
 
 ### Windows
 
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc1.4.3_amd64setup.exe)
+1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc1.4.4_amd64setup.exe)
 
 ### Linux
 
@@ -106,7 +106,7 @@ Download the tarball and run `install.sh`, this will copy the files to `/opt` an
 
 To remove run `remove.sh` in the same tarball.
 
-[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc.tar.xz)
+[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz)
 
 #### Command
 
@@ -118,7 +118,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.3/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
 ```
 
 to install ADC without leaving any garbage
@@ -131,7 +131,7 @@ wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
 
 ADC has multiple mirrors
 
-- [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/tag/v1.4.3#:~:text=Assets)
+- [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
 
 ### Unix (BSD, Solaris)
@@ -264,9 +264,9 @@ You can ofc run the source code but official binaries and/or setups are not comp
 ## Build ADC
 
 > [!Note]
-> For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required > >via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
+> For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.3. Use `make windows` or `make linux` for the latest version (1.4.3), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
+Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.4. Use `make windows` or `make linux` for the latest version (1.4.4), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
@@ -294,7 +294,7 @@ choco install make
 
 ##### Downloading and extracting source code
 
-1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.3.zip)
+1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.4.zip)
 
 ##### Installing Python and VS Build Tools
 
@@ -320,7 +320,7 @@ Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\
 Then:
 
 ```powershell
-cd ArchivedDataCodec-1.4.3
+cd ArchivedDataCodec-1.4.4
 ```
 
 Then:
@@ -457,4 +457,4 @@ Specific old versions can be compiled with commands like `make 1.1.0-windows` or
 
 ###### © 2024 - 2026 Mealman1551 – The ADC Project and [contributors](contributors.txt)
 
-###### Licensed under the GNU GPL v3.0.
+###### Licensed under the GNU GPL v3.0 - ADC is Libre software.
