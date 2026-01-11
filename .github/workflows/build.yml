@@ -40,11 +40,9 @@ jobs:
 
     - name: Compile with Nuitka
       run: |
-        nuitka --standalone --onefile --output-dir=./dist --plugin-enable=tk-inter src/ADC_Archiver_1.4.3.py
+        nuitka --standalone --onefile --output-dir=./dist --plugin-enable=tk-inter adc.py
 
     - name: Test compiled binary
       run: |
-        chmod +x ./dist/ADC_Archiver_1.4.3.bin
-        echo -e "q" | ./dist/ADC_Archiver_1.4.3.bin
-
-
+        chmod +x ./dist/adc.bin
+        echo -e "q" | ./dist/adc.bin
