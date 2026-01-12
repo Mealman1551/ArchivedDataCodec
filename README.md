@@ -1,5 +1,13 @@
 <img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width=200>
 
+---
+
+Vote for ADC on FreeBSD:
+
+[https://strawpoll.com/ajnE1MoqmnW](https://strawpoll.com/ajnE1MoqmnW)
+
+---
+
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
 [Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
