@@ -2,7 +2,7 @@
 
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
-[Forum](https://groups.google.com/g/adc-archiver) (Main announcement channel)
+[Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
 
 IRC: OFTC - #adc-archiver (Only used for meetings and events)
 
