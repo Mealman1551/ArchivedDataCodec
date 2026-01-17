@@ -2,12 +2,6 @@
 
 ---
 
-Vote for ADC on FreeBSD:
-
-[https://strawpoll.com/ajnE1MoqmnW](https://strawpoll.com/ajnE1MoqmnW)
-
----
-
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
 [Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
