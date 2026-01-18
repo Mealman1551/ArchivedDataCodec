@@ -22,9 +22,9 @@ Latest news can be found on the forum [here.](https://groups.google.com/g/adc-ar
 
 [binaries on GitLab](gitlab.com/adc-project/aurora-binaries)
 
-> ### New features in the December update (ADC_Aur_2025.12.1.py):
-> Added new Ascii logos for Windows, Linux and Other OS'es
-> Added optimizations by removing unnecessary comments
+> ### New features in the January update (ADC_Aur_2026.01.1.py):
+> Added 7Zip support
+> Slightly improved info panel
 
 
 ### What is Aurora?
