@@ -131,6 +131,13 @@ To remove ADC you can run:
 wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
 ```
 
+### ADC is installed but command `adc` doesn't work?
+
+Run this:
+```bash
+sudo ln -sf /opt/adc/adc /usr/local/bin/adc && hash -r && adc
+```
+
 ADC has multiple mirrors
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
