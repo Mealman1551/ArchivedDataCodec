@@ -24,6 +24,7 @@ Latest news can be found on the forum [here.](https://groups.google.com/g/adc-ar
 
 > ### New features in the January update (ADC_Aur_2026.01.1.py):
 > Added 7Zip support
+> 
 > Slightly improved info panel
 
 
@@ -120,4 +121,5 @@ You can ofc run the source code but official binary and/or setups are not compil
 ---
 
 ###### © 2025 Mealman1551
+
 
