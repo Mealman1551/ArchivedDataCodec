@@ -1,8 +1,5 @@
 # TODO.md
 
-## Prio 1
-- [ ] sudo ln -sf /opt/adc/adc /usr/local/bin/adc && hash -r && adc (Arch, RHEL)
-
 
 ## Main
 
