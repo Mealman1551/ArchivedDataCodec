@@ -1,3 +1,4 @@
 progress
 colorama
 cryptography
+py7zr
