@@ -2,12 +2,6 @@
 
 ---
 
-Vote for ADC on FreeBSD:
-
-[https://strawpoll.com/ajnE1MoqmnW](https://strawpoll.com/ajnE1MoqmnW)
-
----
-
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
 
 [Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
@@ -135,6 +129,13 @@ To remove ADC you can run:
 
 ```bash
 wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
+```
+
+### ADC is installed but command `adc` doesn't work?
+
+Run this:
+```bash
+sudo ln -sf /opt/adc/adc /usr/local/bin/adc && hash -r && adc
 ```
 
 ADC has multiple mirrors
