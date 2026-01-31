@@ -1,5 +1,5 @@
 NAME=ADC_Archiver_1.4.4
-SRC=adc.py
+SRC=src/adc/adc.py
 INSTALL_DIR=/opt/adc
 BINARY_NAME=adc
 DESKTOP_FILE=adc-archiver.desktop
@@ -10,7 +10,7 @@ linux:
 	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist $(SRC)
 
 windows:
-	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
+	python -m nuitka --standalone --onefile --enable-plugin=tk-inter  --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
 
 deps-linux:
 	pip install -r requirements.txt --break-system-packages
