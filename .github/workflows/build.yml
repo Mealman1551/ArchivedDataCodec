@@ -40,7 +40,7 @@ jobs:
 
     - name: Compile with Nuitka
       run: |
-        nuitka --standalone --onefile --output-dir=./dist --plugin-enable=tk-inter adc.py
+        nuitka --standalone --onefile --output-dir=./dist --plugin-enable=tk-inter src/adc/adc.py
 
     - name: Test compiled binary
       run: |
