@@ -1,5 +1,5 @@
 NAME=ADC_Archiver_1.4.4
-SRC=src/adc/adc.py
+SRC=adc.py
 INSTALL_DIR=/opt/adc
 BINARY_NAME=adc
 DESKTOP_FILE=adc-archiver.desktop
