@@ -1,8 +1,5 @@
 <img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width=200>
 
-
-test
-
 ---
 
 [ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
