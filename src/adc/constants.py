@@ -5,9 +5,6 @@
 # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-"""
-Color constants and configuration values for ADC Archiver 1.4.4 LTS.
-"""
 
 RED = "\033[31m"
 GREEN = "\033[32m"
@@ -57,5 +54,5 @@ PBKDF2_ITERATIONS = 390000
 SALT_SIZE = 16
 
 # Update checking
-UPDATE_JSON_URL = "https://gitlab.com/adc-project/update-repository/-/raw/main/lts.json?ref_type=heads"
+UPDATE_JSON_URL = "https://gitlab.com/adc-project/update-repository/-/raw/main/lts.json"
 UPDATE_CHECK_TIMEOUT = 5
