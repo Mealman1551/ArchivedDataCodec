@@ -87,7 +87,7 @@ Windows
 - progress
 - colorama
 - cryptography
-- bas64
+- base64
 - zipfile
 - webbrowser
 - urlib
