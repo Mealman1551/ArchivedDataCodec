@@ -3,7 +3,7 @@
 ![Status](https://img.shields.io/badge/Status-Unstable-teal)
 ![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)
 ![Platform: Windows/Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue.svg)
-![Python Version](https://img.shields.io/badge/Python-3.12.x-yellow.svg)
+![Python Version](https://img.shields.io/badge/Python-3.13.x-yellow.svg)
 ![Development](https://img.shields.io/badge/Development-Active-brightgreen)
 <!--![Latest version](https://img.shields.io/badge/Latest%20version-2025.09.1-purple)-->
 
@@ -22,10 +22,8 @@ Latest news can be found on the forum [here.](https://groups.google.com/g/adc-ar
 
 [binaries on GitLab](gitlab.com/adc-project/aurora-binaries)
 
-> ### New features in the January update (ADC_Aur_2026.01.1.py):
-> Added 7Zip support
-> 
-> Slightly improved info panel
+> ### New features in the February update (ADC_Aur_2026.02.1.py):
+> Added folder as output instead of littering the current extract directory
 
 
 ### What is Aurora?
