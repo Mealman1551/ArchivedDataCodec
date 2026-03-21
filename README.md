@@ -10,7 +10,7 @@ IRC: OFTC - #adc-archiver (Only used for meetings and events)
 
 [Matrix](https://matrix.to/#/#adc-archiver:matrix.org)
 
-[XMPP](xmpp:urijotay@chat.yax.im?join)
+XMPP: urijotay@chat.yax.im
 
 # ADC (ArchivedDataCodec)
 
