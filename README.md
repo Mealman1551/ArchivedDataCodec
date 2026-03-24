@@ -6,8 +6,7 @@
 
 [Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
 
-IRC: OFTC - #adc-archiver (Only used for meetings and events)
-
+IRC: OFTC - #adc-archiver
 [Matrix](https://matrix.to/#/#adc-archiver:matrix.org)
 
 XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
