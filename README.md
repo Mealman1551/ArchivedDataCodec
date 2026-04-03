@@ -272,14 +272,14 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | 1.1.0   | Regular      | ✅        | 15-05-2026        |
 | 1.0.0   | Regular      | ❌        | 15-11-2025        |
 
-Current version is: 1.4
+Current version is: 1.4.x
 
 ## Build ADC
 
 > [!Note]
 > For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.4. Use `make windows` or `make linux` for the latest version (1.4.4), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
+Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.5. Use `make windows` or `make linux` for the latest version (1.4.5), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
@@ -333,7 +333,7 @@ Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\
 Then:
 
 ```powershell
-cd ArchivedDataCodec-1.4.4
+cd ArchivedDataCodec-1.4.5
 ```
 
 Then:
