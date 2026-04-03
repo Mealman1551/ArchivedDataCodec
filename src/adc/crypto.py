@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.4 LTS - Cryptography Module
+# ADC Archiver 1.4.5 LTS - Cryptography Module
 # This code is licensed under the GNU General Public License v3.0.
 
 """
@@ -14,16 +14,7 @@ from .constants import PBKDF2_ITERATIONS
 
 
 def derive_key_from_password(password: str, salt: bytes) -> bytes:
-    """
-    Derives a cryptographic key from a password using PBKDF2.
-    
-    Args:
-        password: The password string to derive key from
-        salt: Random salt bytes for key derivation
-        
-    Returns:
-        Base64 encoded key suitable for Fernet encryption
-    """
+
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=32,

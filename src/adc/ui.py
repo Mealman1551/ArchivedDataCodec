@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.4 LTS - UI Module
+# ADC Archiver 1.4.5 LTS - UI Module
 # This code is licensed under the GNU General Public License v3.0.
 
 """
@@ -10,12 +10,7 @@ from tkinter import filedialog
 
 
 def select_files_for_archiving():
-    """
-    Opens file selection dialog for archiving.
-    
-    Returns:
-        List of file paths selected by the user
-    """
+
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)
@@ -25,12 +20,7 @@ def select_files_for_archiving():
 
 
 def select_directory_for_extraction():
-    """
-    Opens a directory selection dialog for extraction destination.
-    
-    Returns:
-        Directory path selected by the user
-    """
+
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)
@@ -40,15 +30,7 @@ def select_directory_for_extraction():
 
 
 def save_archive_file(format="adc"):
-    """
-    Opens a save file dialog for creating an archive.
-    
-    Args:
-        format: Archive format (adc or zip)
-        
-    Returns:
-        File path where the archive should be saved
-    """
+
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)
@@ -68,12 +50,7 @@ def save_archive_file(format="adc"):
 
 
 def open_archive_file():
-    """
-    Opens a file selection dialog for selecting an ADC archive to extract.
-    
-    Returns:
-        File path of the selected archive
-    """
+
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)

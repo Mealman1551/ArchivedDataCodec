@@ -1,14 +1,14 @@
-# ADC Archiver 1.4.4 LTS Package
+# ADC Archiver 1.4.5 LTS Package
 # This code is based on Aurora 2025.09.1 code and is licensed under the GNU General Public License v3.0.
 
 """
-ADC Archiver 1.4.4 "Grand Canyon" LTS - A multi-format archive tool with encryption support.
+ADC Archiver 1.4.5 "Grand Canyon" LTS - A multi-format archive tool with encryption support.
 
 This package provides functionality for creating and extracting archives
 in ADC (custom) and ZIP formats, with optional password-based encryption.
 
-ADC 1.4.4 is considered stable and production ready.
-ADC 1.4.4 is LTS (Long Term Support) and will receive updates for a long time.
+ADC 1.4.5 is considered stable and production ready.
+ADC 1.4.5 is LTS (Long Term Support) and will receive updates for a long time.
 
 Modules:
     - constants: Color codes and configuration values
@@ -44,6 +44,8 @@ __author__ = "Mealman1551"
 __email__ = EMAIL
 __copyright__ = COPYRIGHT
 __license__ = LICENSE
+__github_url__ = GITHUB_URL
+
 
 __all__ = [
     "create_adc_archive",

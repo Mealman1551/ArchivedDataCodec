@@ -1,9 +1,8 @@
-# This is the main source code file for ADC Archiver 1.4.4.
-
+# This is the __main__.py module for ADC Archiver 1.4.5.
 # With great power comes great responsibility.
 
 # ADC Archiver
-# Version: 1.4.4
+# Version: 1.4.5
 # byte-key: 8
 # GitHub page: https://github.com/Mealman1551/ADC
 # Webpage: https://mealman1551.github.io/adc.html
@@ -15,12 +14,12 @@
 # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-# ADC 1.4.4 is considered stable and production ready.
+# ADC 1.4.5 is considered stable and production ready.
 
-# ADC 1.4.4 is LTS (Long Term Support) and will receive updates for a long time.
+# ADC 1.4.5 is LTS (Long Term Support) and will receive updates for a long time.
 
 """
-ADC Archiver 1.4.4 LTS - Main Entry Point
+ADC Archiver 1.4.5 LTS - Main Entry Point
 Command-line interface for creating and extracting archives.
 """
 

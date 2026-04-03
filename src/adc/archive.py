@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.4 LTS - Archive Module
+# ADC Archiver 1.4.5 LTS - Archive Module
 # This code is licensed under the GNU General Public License v3.0.
 
 """
@@ -18,15 +18,7 @@ from .constants import ADC_HEADER, SALT_SIZE
 
 
 def create_adc_archive(file_paths, output_path, format="adc"):
-    """
-    Creates an archive from given files.
-    
-    Args:
-        file_paths: List of file paths to include
-        output_path: Path where the archive should be created
-        format: Archive format (adc or zip)
-    """
-    # Handle ZIP format
+
     if format == "zip":
         with zipfile.ZipFile(output_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
             with Bar("Compressing files...", max=len(file_paths)) as bar:
@@ -74,14 +66,7 @@ def create_adc_archive(file_paths, output_path, format="adc"):
 
 
 def extract_adc_archive(archive_path, output_dir, format=None):
-    """
-    Extracts files from an archive.
-    
-    Args:
-        archive_path: Path to the archive file
-        output_dir: Directory where files should be extracted
-        format: Archive format (auto-detected if None)
-    """
+
     base_name = os.path.splitext(os.path.basename(archive_path))[0]
     dest_dir = os.path.join(output_dir, base_name)
     os.makedirs(dest_dir, exist_ok=True)
