@@ -101,7 +101,7 @@ Windows
 
 ### Windows
 
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc1.4.4_amd64setup.exe)
+1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
 
 ### Linux
 
@@ -111,7 +111,7 @@ Download the tarball and run `install.sh`, this will copy the files to `/opt` an
 
 To remove run `remove.sh` in the same tarball.
 
-[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz)
+[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz)
 
 #### Command
 
@@ -123,7 +123,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
 ```
 
 to install ADC without leaving any garbage
@@ -267,8 +267,8 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | Version | Release Type | Supported | EOL (End Of Life) |
 | ------- | ------------ | --------- | ----------------- |
 | 1.4.x   | LTS          | ✅        | 18-10-2029        |
-| 1.3.x   | Regular      | ✅        | 15-05-2027        |
-| 1.2.0   | Regular      | ✅        | 15-11-2026        |
+| 1.3.x   | Regular      | ✅        | 15-08-2026        |
+| 1.2.0   | Regular      | ✅        | 15-05-2026        |
 | 1.1.0   | Regular      | ✅        | 15-05-2026        |
 | 1.0.0   | Regular      | ❌        | 15-11-2025        |
 
