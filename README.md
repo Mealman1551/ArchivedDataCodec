@@ -307,7 +307,7 @@ choco install make
 
 ##### Downloading and extracting source code
 
-1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.4.zip)
+1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.5.zip)
 
 ##### Installing Python and VS Build Tools
 
@@ -406,7 +406,7 @@ Ensure Python 3.10+:
 python3 --version
 ```
 
-Download and extract source: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.4.tar.gz)
+Download and extract source: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.5.tar.gz)
 
 Install additional dependencies:
 
