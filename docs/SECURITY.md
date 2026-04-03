@@ -5,12 +5,12 @@
 | Version | Release Type | Supported          | EOL (End Of Life) |
 | ------- | ------------ | ------------------ | ----------------- |
 | 1.4   | LTS          | :white_check_mark: | 18-10-2029        |
-| 1.3   | Regular      | :white_check_mark: | 15-05-2027        |
-| 1.2   | Regular      | :white_check_mark: | 15-11-2026        |
+| 1.3   | Regular      | :white_check_mark: | 15-08-2026        |
+| 1.2   | Regular      | :white_check_mark: | 15-05-2026        |
 | 1.1   | Regular      | :white_check_mark: | 15-05-2026        |
 | 1.0   | Regular      | ❌ | 15-11-2025        |
 
-current version is: 1.4.0 LTS
+current version is: 1.4 LTS
 
 
 ## Reporting a Vulnerability
