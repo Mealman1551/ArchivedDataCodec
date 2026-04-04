@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.4 LTS - Constants Module
+# ADC Archiver 1.4.5 LTS - Constants Module
 # This code is based on Aurora 2025.09.1 code and is licensed under the GNU General Public License v3.0.
 # You can redistribute it and/or modify it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -36,7 +36,7 @@ reset = "\033[0m"
 
 # Application metadata
 APP_NAME = "ADC Archiver"
-VERSION = "1.4.4"
+VERSION = "1.4.5"
 VERSION_CODENAME = "Grand Canyon"
 BYTE_KEY = 8
 GITHUB_URL = "https://github.com/Mealman1551/ADC"
@@ -45,6 +45,7 @@ WEBPAGE_2 = "https://mealman1551.github.io/ADC"
 EMAIL = "nathandubuy4+adc@gmail.com"
 COPYRIGHT = "(c) 2026 Mealman1551"
 LICENSE = "GNU General Public License v3.0"
+GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 
 # Archive header for encrypted ADC files
 ADC_HEADER = b"ADCARCH\x00"

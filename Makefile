@@ -1,4 +1,4 @@
-NAME=ADC_Archiver_1.4.4
+NAME=ADC_Archiver_1.4.5
 SRC=adc.py
 INSTALL_DIR=/opt/adc
 BINARY_NAME=adc

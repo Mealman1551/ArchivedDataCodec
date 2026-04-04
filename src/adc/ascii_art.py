@@ -1,8 +1,8 @@
-# ADC Archiver 1.4.4 LTS - ASCII Art Module
+# ADC Archiver 1.4.5 LTS - ASCII Art Module
 # This code is licensed under the GNU General Public License v3.0.
 
 """
-ASCII art banners for ADC Archiver 1.4.4 LTS.
+ASCII art banners for ADC Archiver 1.4.5 LTS.
 """
 
 import os
@@ -36,14 +36,6 @@ def print_banner():
 
 
 def get_info_banner(dev, name, opr):
-    """
-    Returns the info ASCII art with system information.
-
-    Args:
-        dev: Device hostname
-        name: Username
-        opr: Operating system platform
-    """
     return f"""
              {RED}####{reset}        {PURPLE}%%%%%%%%%%%{reset}         {GREEN}********{reset}  
             {RED}######{reset}       {PURPLE}%%%%%%%%%%%{reset}      {GREEN}*************{reset}
@@ -55,12 +47,12 @@ def get_info_banner(dev, name, opr):
       {RED}####       ###{reset}   {PURPLE}%%%%%%%%%%%%{reset}      {GREEN}************{reset}   
      {RED}####        ####{reset}  {PURPLE}%%%%%%%%%{reset}          {GREEN}*******{reset}  
 
-    | ADC Archiver | Version: 1.4.4 "Grand Canyon" LTS |
+    | ADC Archiver | Version: 1.4.5 "Grand Canyon" LTS |
 
         
-        GitHub page: https://github.com/Mealman1551/ADC
+        GitHub page: https://github.com/Mealman1551/ArchivedDataCodec
         Webpage: https://mealman1551.github.io/adc.html
-        Webpage 2: https://mealman1551.github.io/ADC
+        Webpage 2: https://mealman1551.github.io/ArchivedDataCodec/
         E-mail: nathandubuy4+adc@gmail.com
 
         ---------

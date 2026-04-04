@@ -101,7 +101,7 @@ Windows
 
 ### Windows
 
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc1.4.4_amd64setup.exe)
+1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
 
 ### Linux
 
@@ -111,7 +111,7 @@ Download the tarball and run `install.sh`, this will copy the files to `/opt` an
 
 To remove run `remove.sh` in the same tarball.
 
-[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz)
+[Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz)
 
 #### Command
 
@@ -123,7 +123,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.4/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
 ```
 
 to install ADC without leaving any garbage
@@ -223,7 +223,7 @@ Have questions or want to learn more? Feel free to reach out via [this mail addr
 
 I have 2 ADC Repos on Gitlab, one is a continuously updated mirror of the Main branch (Stable only), and the other is the Canary repo, meant to be before Aurora.
 
-Mirror/Main(Stable) GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/Mealman1551/ADC\n)
+Mirror/Main(Stable) GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/Mealman1551/ADC)
 
 Unstable (Aurora) is only on GitHub!
 
@@ -267,17 +267,19 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | Version | Release Type | Supported | EOL (End Of Life) |
 | ------- | ------------ | --------- | ----------------- |
 | 1.4.x   | LTS          | ✅        | 18-10-2029        |
-| 1.3.x   | Regular      | ✅        | 15-05-2027        |
-| 1.2.0   | Regular      | ✅        | 15-11-2026        |
+| 1.3.x   | Regular      | ✅        | 15-08-2026        |
+| 1.2.0   | Regular      | ✅        | 15-05-2026        |
 | 1.1.0   | Regular      | ✅        | 15-05-2026        |
 | 1.0.0   | Regular      | ❌        | 15-11-2025        |
+
+Current version is: 1.4.x
 
 ## Build ADC
 
 > [!Note]
 > For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.4. Use `make windows` or `make linux` for the latest version (1.4.4), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
+Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.5. Use `make windows` or `make linux` for the latest version (1.4.5), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
@@ -305,7 +307,7 @@ choco install make
 
 ##### Downloading and extracting source code
 
-1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.4.zip)
+1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.5.zip)
 
 ##### Installing Python and VS Build Tools
 
@@ -331,7 +333,7 @@ Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\
 Then:
 
 ```powershell
-cd ArchivedDataCodec-1.4.4
+cd ArchivedDataCodec-1.4.5
 ```
 
 Then:
@@ -404,7 +406,7 @@ Ensure Python 3.10+:
 python3 --version
 ```
 
-Download and extract source: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.4.tar.gz)
+Download and extract source: [source_code.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.5.tar.gz)
 
 Install additional dependencies:
 

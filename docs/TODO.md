@@ -9,8 +9,7 @@
 - [x] Add command args
 - [x] Add ADC to command table and invokable direct from terminal
 - [ ] Support Python 3.14
-- [x] Make tarballs GitHub only via releases
-- [ ] Headless mode
+- [x] Headless mode
 
 ## Makefile
 

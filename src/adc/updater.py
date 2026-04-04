@@ -1,10 +1,6 @@
-# ADC Archiver 1.4.4 LTS - Updater Module
+# ADC Archiver 1.4.5 LTS - Updater Module
 # This code is licensed under the GNU General Public License v3.0.
 
-"""
-Update checking functionality for ADC Archiver.
-Checks for new versions and displays update notifications.
-"""
 
 import urllib.request
 import json
@@ -18,15 +14,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 def show_update_banner(title, body, url, severity="info"):
-    """
-    Shows a GUI popup with update information.
 
-    Args:
-        title: Update banner title
-        body: Update banner body text
-        url: URL to download the update
-        severity: Severity level (info, warning, critical)
-    """
     root = tk.Tk()
     root.withdraw()
     root.attributes("-topmost", True)
@@ -55,15 +43,7 @@ def show_update_banner(title, body, url, severity="info"):
 
 
 def _version_tuple(v):
-    """
-    Converts a version string to a tuple for comparison.
 
-    Args:
-        v: Version string (e.g., "1.4.4")
-
-    Returns:
-        Tuple of integers (e.g., (1, 4, 4))
-    """
     parts = [p for p in v.split(".")]
     nums = []
     for p in parts:
@@ -77,16 +57,7 @@ def _version_tuple(v):
 
 
 def _is_newer(remote, local):
-    """
-    Checks if remote version is newer than local version.
 
-    Args:
-        remote: Remote version string
-        local: Local version string
-
-    Returns:
-        True if remote is newer, False otherwise
-    """
     try:
         return _version_tuple(remote) > _version_tuple(local)
     except:
@@ -94,16 +65,7 @@ def _is_newer(remote, local):
 
 
 def fetch_update_json(url, timeout=UPDATE_CHECK_TIMEOUT):
-    """
-    Fetches update information from a JSON URL.
 
-    Args:
-        url: URL to the update JSON file
-        timeout: Request timeout in seconds
-
-    Returns:
-        Parsed JSON data as dictionary
-    """
     req = urllib.request.Request(url, headers={"User-Agent": "ADC-Update-Checker/1.0"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = r.read()
@@ -111,13 +73,7 @@ def fetch_update_json(url, timeout=UPDATE_CHECK_TIMEOUT):
 
 
 def check_and_show_update(url=UPDATE_JSON_URL, local_version=VERSION):
-    """
-    Checks for updates and shows notification if available.
 
-    Args:
-        url: URL to the update JSON file
-        local_version: Current local version string
-    """
     try:
         data = fetch_update_json(url)
     except Exception as e:
