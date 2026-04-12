@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adc-archiver"
+version = "1.4.5"
+description = "A future-proof archiving tool using simple file blocks"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.09"
+dependencies = [
+    "cffi==2.0.0",
+    "colorama==0.4.6",
+    "cryptography==46.0.7",
+    "progress==1.6.1",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[project.scripts]
+adc = "adc.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/adc"]
