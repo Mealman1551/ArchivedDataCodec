@@ -2,14 +2,26 @@
 
 ---
 
-[ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
+Mailing list
+<ul>
+    <li><a href="https://www.freelists.org/list/adc">Subscribe</a></li>
+    <li><a href="https://www.freelists.org/archive/adc">Mailing list archive</a></li>
+</ul>
 
-[Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
+<hr>
+
+[Forum](https://groups.google.com/g/adc-archiver)
+
+<hr>
 
 IRC: OFTC - #adc-archiver
 [Matrix](https://matrix.to/#/#adc-archiver:matrix.org)
 
+<hr>
+
 XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
+
+<hr>
 
 # ADC (ArchivedDataCodec)
 
