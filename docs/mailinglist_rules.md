@@ -21,6 +21,7 @@ To keep the list organized, always use a subject prefix:
 - [DISCUSS] General discussion
 - [RFC] Proposals and design ideas
 - [HELP] Questions and user support
+- [TEST] Mail tests, no action required
 - [MISC] Miscellaneous
 
 Messages without a prefix may be ignored or corrected.
