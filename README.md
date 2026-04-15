@@ -8,6 +8,8 @@ Mailing list
     <li><a href="https://www.freelists.org/archive/adc">Mailing list archive</a></li>
 </ul>
 
+Main announcement list: [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive/)
+
 <hr>
 
 [Forum](https://groups.google.com/g/adc-archiver)
