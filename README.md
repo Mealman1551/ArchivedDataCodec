@@ -8,7 +8,8 @@ Mailing list
     <li><a href="https://www.freelists.org/archive/adc">Mailing list archive</a></li>
 </ul>
 
-Main announcement list: [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive/)
+Main announcement list: [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive)
+Look for the "[ANN]" label in the archive, these are announcements
 
 <hr>
 
