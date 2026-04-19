@@ -10,7 +10,7 @@ if [[ ! -f "$script_path" ]]; then
 fi
 
 nuitka \
-  --standalone \
+  --onefile \
   --enable-plugin=tk-inter \
   --follow-imports \
   --output-dir=dist \

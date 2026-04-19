@@ -18,7 +18,7 @@ if not exist "%icon_path%" (
 )
 
 nuitka ^
-  --standalone ^
+  --onefile ^
   --enable-plugin=tk-inter ^
   --follow-imports ^
   --windows-icon-from-ico="%icon_path%" ^
