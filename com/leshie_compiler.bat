@@ -17,7 +17,7 @@ if not exist "%icon_path%" (
     exit /b 1
 )
 
-nuitka ^
+python3 -m nuitka ^
   --onefile ^
   --enable-plugin=tk-inter ^
   --follow-imports ^
