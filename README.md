@@ -1,44 +1,40 @@
+<div align="center">
+
 # ADC Archiver Aurora
+
+  <img src="https://raw.githubusercontent.com/Mealman1551-ADC-Project/Assets/6c2f2d61b3096a8f49b6ce872d3f4cbe6630ceb3/svg/ADC%20Aurora%20current%20logo.svg" width="75" />
 
 ![Status](https://img.shields.io/badge/Status-Unstable-teal)
 ![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)
 ![Platform: Windows/Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue.svg)
 ![Python Version](https://img.shields.io/badge/Python-3.13.x-yellow.svg)
 ![Development](https://img.shields.io/badge/Development-Active-brightgreen)
-<!--![Latest version](https://img.shields.io/badge/Latest%20version-2025.09.1-purple)-->
-
-
-
-<img src="https://raw.githubusercontent.com/Mealman1551-ADC-Project/Assets/6c2f2d61b3096a8f49b6ce872d3f4cbe6630ceb3/svg/ADC%20Aurora%20current%20logo.svg" alt="Aurora" width="100"/>
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
 
-Latest news can be found on the forum [here.](https://groups.google.com/g/adc-archiver)
+Latest news can be found on the mailing list [here.](https://freelists.org/list/adc)
 
-[ADC contact e-mailadres](mailto:nathandubuy4+aurora@gmail.com)
+> ### New features in the April update:
+>
+> Changed to modules instead of one file
+> Added better security
+> Added caching feature for compression
 
-
-### Aurora has precompiled binaries. Please note that the binaries aren't signed. 
-
-[binaries on GitLab](gitlab.com/adc-project/aurora-binaries)
-
-> ### New features in the February update (ADC_Aur_2026.02.1.py):
-> Added folder as output instead of littering the current extract directory
-
+</div>
 
 ### What is Aurora?
 
-Aurora is the unstable/rolling release of ADC Archiver that features a newer version than stable and is only usable as a Python script.
+Aurora is the unstable release of ADC Archiver that features a newer version than stable, the name "Unstable" means that the code is in a testing phase before being pushed to stable.
 
 Aurora is the release after [ADC Canary](https://gitlab.com/Mealman1551/adc-canary), ADC Canary is only for live development and **NOT** for using!
 
 ### Which Python version is needed?
 
-Aurora and the main branch use Python 3.13.x
+Aurora and the main branch use Python 3.11 and above.
 
 ### When to use Aurora?
 
-Aurora is perfect for users who prefer cutting-edge updates over stability.
+Aurora is used as a testing ground for new features and bug fixes. So developers/technical users can test new features before they are pushed to stable.
 
 ### Where can I request features or get support?
 
@@ -48,9 +44,13 @@ GitHub issues related to Aurora will not be handled!
 
 ### How to use Aurora?
 
-Aurora follows a rolling release model by updating the source code to a higher version.
+Run the `adc.py` file.
+
+### Aurora Binaries
 
 Binaries are available [here](https://gitlab.com/adc-project/aurora-binaries)
+
+> **Note:** Aurora Binaries are not signed.
 
 ### Folder Selection Feature | NEW!
 
@@ -71,45 +71,36 @@ ADC Archiver Aurora now supports archiving entire folders while preserving the c
    - The relative paths of files within folders are maintained
    - Empty directories are also preserved in the archive
 
-
 ### Python packages required
 
-- os
-- zlib
-- tkinter
-- socket
-- progress
-- colorama
-- cryptography
-- base64
-- tarfile
-- zipfile
+See [requirements.txt](requirements.txt)
 
 ### Additional Installation Requirements
 
-The `progress`, `cryptography` and `colorama` modules need to be installed separately, `TKinter` only on Linux with `sudo apt install python3-tk`.
+ADC requires `tkinter`, on Linux you can install it with `sudo apt install python3-tk`. or `sudo dnf install python3-tkinter`
 
 ---
 
-The requirements.txt is also available. install it with:
+The requirements.txt is installable with:
+
 ```python
 pip install -r requirements.txt
 ```
 
 ---
 
-
 #### Other comments
 
 ---
 
 If you want to support the project please consider a small donation: <a href="https://www.paypal.com/donate/?hosted_button_id=LEE83CJJ2BEJC">
-	<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>
+<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>
 </a>
 
 ## Notes
 
 ### No macOS support
+
 ADC Archiver does **not** support macOS, and it never will.
 This is a deliberate decision to take a stand against the growing dominance of proprietary ecosystems and Apple’s developer restrictions.
 This project supports **open platforms only**: Windows and Linux.
@@ -118,6 +109,4 @@ You can ofc run the source code but official binary and/or setups are not compil
 
 ---
 
-###### © 2025 Mealman1551
-
-
+###### © 2026 Mealman1551

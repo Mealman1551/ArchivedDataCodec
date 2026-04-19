@@ -12,7 +12,7 @@ cffi==2.0.0
     # via cryptography
 colorama==0.4.6
     # via -r requirements.in
-cryptography==46.0.5
+cryptography==46.0.7
     # via -r requirements.in
 inflate64==1.0.4
     # via py7zr
