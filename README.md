@@ -294,7 +294,6 @@ Current version is: 1.4.x
 > [!Note]
 > For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.5. Use `make windows` or `make linux` for the latest version (1.4.5), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
 
 ### Building on Windows
 
@@ -372,23 +371,11 @@ Compile the latest version:
 make windows
 ```
 
-Or specific version:
-
-```powershell
-make 1.3.1-windows
-```
-
 Run the binary:
 
 ```powershell
 cd dist
 ./adc.exe
-```
-
-or
-
-```bash
-./ADC_Archiver_1.3.1.exe
 ```
 
 Clean build:
@@ -436,16 +423,13 @@ Restart or logoff to apply packages.
 > [!Warning]
 > Do ***NOT*** run the binary while compiling!
 
+> [!Note]
+> Reboot or logoff after installing via ``make linux``
+
 Compile latest version:
 
 ```bash
 make linux
-```
-
-Or specific version:
-
-```bash
-make 1.3.1-linux
 ```
 
 Run the binary:
@@ -453,12 +437,6 @@ Run the binary:
 ```bash
 cd dist
 ./adc.bin
-```
-
-or
-
-```bash
-./ADC_Archiver_1.3.1.bin
 ```
 
 Clean build:
@@ -472,10 +450,6 @@ Debug build (optional):
 ```bash
 make debug-linux
 ```
-
-#### Notes
-
-Specific old versions can be compiled with commands like `make 1.1.0-windows` or `make 1.2.0-linux`. Version 1.0.0 is deprecated; compilation is possible but not recommended.
 
 ---
 
