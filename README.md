@@ -294,6 +294,9 @@ Current version is: 1.4.x
 > [!Note]
 > For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
+```bash
+make install #Only works on Linux.
+```
 
 ### Building on Windows
 
@@ -424,7 +427,7 @@ Restart or logoff to apply packages.
 > Do ***NOT*** run the binary while compiling!
 
 > [!Note]
-> Reboot or logoff after installing via ``make linux``
+> Reboot or logoff after installing via ``make install``
 
 Compile latest version:
 
