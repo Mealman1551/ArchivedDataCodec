@@ -60,6 +60,8 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Update Schedule](#update-schedule)
 * [Contributing](#contributing)
 * [Contact](#contact)
+* [GitLab](#gitlab)
+* [ADC Core Util](#adc-core-util)
 * [Supported Versions](#supported-versions)
 * [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
@@ -236,11 +238,9 @@ Have questions or want to learn more? Feel free to reach out via [this mail addr
 
 ## GitLab
 
-I have 2 ADC Repos on Gitlab, one is a continuously updated mirror of the Main branch (Stable only), and the other is the Canary repo, meant to be before Aurora.
+I have 2 ADC Repos on Gitlab, one is a continuously updated mirror of the Main branch , and the other is the Canary repo, meant to be before Aurora.
 
-Mirror/Main(Stable) GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/Mealman1551/ADC)
-
-Unstable (Aurora) is only on GitHub!
+Mirror GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/adc-project/ADC-mirror)
 
 ---
 
@@ -250,15 +250,14 @@ For Canary/continuous live development see: [ADC Canary on GitLab](https://gitla
 
 ---
 
-ADC Core Utils are for OEM manufacturers or people who only want to open a `.adc` file:
+## ADC Core Util
+
+ADC Core Util are for OEM manufacturers or people who only want to open a `.adc` file:
 
 [ADC-Core-Util](https://github.com/The-ADC-Archiver-Project/ADC-Core-Util)
 
 ---
 
-### Syncing to GitLab
-
-Syncing to GitLab is done via the [gitlab-sync.yml](https://github.com/Mealman1551/ADC/blob/main/.github/workflows/gitlab-sync.yml) file in `/.github/workflows/gitlab-sync.yml`
 
 ## Notes
 
