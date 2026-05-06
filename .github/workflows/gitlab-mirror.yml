@@ -1,0 +1,36 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout full repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup git identity
+        run: |
+          git config --global user.name "mirror-bot"
+          git config --global user.email "mirror@github.com"
+
+      - name: Add GitLab remote
+        run: |
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/adc-project/ADC-mirror.git
+
+      - name: Fetch all refs (extra safety)
+        run: |
+          git fetch --all --tags --prune
+
+      - name: Mirror push everything
+        run: |
+          git push --mirror gitlab
