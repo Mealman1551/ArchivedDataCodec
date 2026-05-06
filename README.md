@@ -37,7 +37,6 @@ XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
 [![GitHub issues](https://img.shields.io/github/issues/Mealman1551/ADC)](https://github.com/Mealman1551/ADC/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Mealman1551/ADC)](#)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](#)
-[![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
 ![Total Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/.github/downloads.json&query=$.total_downloads&label=Total%20Downloads&color=97CA00)
 
@@ -50,7 +49,6 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Features](#features)
 * [Getting Started](#getting-started)
 * [Installation](#installation)
-
   * [Windows](#windows)
   * [Linux](#linux)
 * [Usage](#usage)
@@ -77,7 +75,7 @@ For the unstable/rolling release see: [ADC Aurora](https://github.com/Mealman155
 
 Please note: ~~ADC can currently only pack files, folders aren't supported yet.~~ [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable) supports this now!
 
-Test files [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
+Test archives [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
 
 For container/format info go to [FORMAT.md](docs/FORMAT.md)
 
@@ -140,7 +138,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+wget -O- "https://raw.githubusercontent.com/The-ADC-Archiver-Project/webscripts/refs/heads/main/install.sh" | bash
 ```
 
 to install ADC without leaving any garbage
@@ -148,7 +146,7 @@ to install ADC without leaving any garbage
 To remove ADC you can run:
 
 ```bash
-wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
+wget -O- https://raw.githubusercontent.com/The-ADC-Archiver-Project/webscripts/refs/heads/main/uninstall.sh | bash
 ```
 
 ### ADC is installed but command `adc` doesn't work?
@@ -162,6 +160,7 @@ ADC has multiple mirrors
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
+- [GitLab](https://gitlab.com/adc-project/ADC-mirror)
 
 ### Unix (BSD, Solaris)
 
@@ -236,13 +235,7 @@ Contributions are welcome! See the CONTRIBUTING.md file.
 
 Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
 
-## GitLab
-
-I have 2 ADC Repos on Gitlab, one is a continuously updated mirror of the Main branch , and the other is the Canary repo, meant to be before Aurora.
-
-Mirror GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/adc-project/ADC-mirror)
-
----
+## ADC Canary
 
 For Canary/continuous live development see: [ADC Canary on GitLab](https://gitlab.com/Mealman1551/adc-canary)
 
@@ -307,7 +300,7 @@ Please disable Windows Defender as it may block compilation.
 
 Options to install GNU Make:
 
-**Option 1 — WinGet (Recommended)**
+**Option 1 — WinGet**
 
 ```
 winget install GnuWin32.Make
@@ -315,7 +308,7 @@ winget install GnuWin32.Make
 
 Add Make to PATH. [More info](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)
 
-**Option 2 — Chocolatey**
+**Option 2 — Chocolatey (Recommended)**
 
 ```
 choco install make
