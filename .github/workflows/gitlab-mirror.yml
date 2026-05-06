@@ -34,10 +34,16 @@ jobs:
       run: |
         git fetch origin --prune --tags --force
 
-    - name: Push branches
+    - name: Create local branches from origin
+      run: |
+        for branch in $(git branch -r | grep -v '\->'); do
+          git branch --track "${branch#origin/}" "$branch" || true
+        done
+
+    - name: Push branches (mirror)
       run: |
         git push --prune gitlab +refs/heads/*:refs/heads/*
 
-    - name: Push tags
+    - name: Push tags (mirror)
       run: |
         git push --prune gitlab +refs/tags/*:refs/tags/*
