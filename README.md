@@ -1,30 +1,6 @@
-<img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width=200>
-
----
-
-Mailing list
-<ul>
-    <li><a href="https://www.freelists.org/list/adc">Subscribe</a></li>
-    <li><a href="https://www.freelists.org/archive/adc">Mailing list archive</a></li>
-</ul>
-
-Main announcement list: [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive)
-Look for the "[ANN]" label in the archive, these are announcements
-
-<hr>
-
-[Forum](https://groups.google.com/g/adc-archiver)
-
-<hr>
-
-IRC: OFTC - #adc-archiver
-[Matrix](https://matrix.to/#/#adc-archiver:matrix.org)
-
-<hr>
-
-XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
-
-<hr>
+<div style="text-align:center;">
+  <img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width="200">
+</div>
 
 # ADC (ArchivedDataCodec)
 
@@ -39,6 +15,13 @@ XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](#)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
 ![Total Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/.github/downloads.json&query=$.total_downloads&label=Total%20Downloads&color=97CA00)
+
+
+**Mailing list:** [Subscribe](https://www.freelists.org/list/adc) | [Archive](https://www.freelists.org/archive/adc)
+
+**Main announcements:** [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive) (look for "[ANN]" label)
+
+**Community:** [Forum](https://groups.google.com/g/adc-archiver) | IRC: OFTC #adc-archiver | [Matrix](https://matrix.to/#/#adc-archiver:matrix.org) | [XMPP](xmpp:vuwirer@chat.disroot.org?join)
 
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
