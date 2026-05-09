@@ -1,9 +1,5 @@
 # ADC Archiver 1.4.5 LTS - Constants Module
-# This code is based on Aurora 2025.09.1 code and is licensed under the GNU General Public License v3.0.
-# You can redistribute it and/or modify it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# This code is licensed under the GNU General Public License v3.0.
 
 
 RED = "\033[31m"
