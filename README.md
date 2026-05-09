@@ -1,6 +1,6 @@
-<div style="text-align:center;">
+<p align="center">
   <img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width="200">
-</div>
+</p>
 
 # ADC (ArchivedDataCodec)
 
