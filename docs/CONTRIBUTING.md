@@ -6,6 +6,6 @@ Canary is the live development repo on GitLab, after a working function or bugfi
 
 You can find the repo and contributing.md for Canary here: [https://gitlab.com/Mealman1551/adc-canary](https://gitlab.com/Mealman1551/adc-canary).
 
-I hope to see your contribution soon :D
+I hope to see your contribution soon.
 
 ###### &copy; Mealman1551 - The ADC Project
