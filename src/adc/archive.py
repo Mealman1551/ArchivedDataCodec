@@ -1,40 +1,96 @@
-# ADC Archiver 1.4.5 LTS - Archive Module
-# This code is licensed under the GNU General Public License v3.0.
+# ADC Archiver - Archive Module
+# (c) 2026 Mealman1551
 
-"""
-Archive creation and extraction functions.
-Supports: ADC (custom format with optional encryption) and ZIP.
-"""
 
 import os
 import zipfile
+import tarfile
+import py7zr
 import getpass
+import zlib
 from progress.bar import Bar
 from cryptography.fernet import Fernet
 
 from .compression import parma_compress, parma_decompress, read_binary_file
+
+_list_cache = {}
 from .crypto import derive_key_from_password
-from .constants import ADC_HEADER, SALT_SIZE
+from .constants import ADC_HEADER, ADC_HEADER_V1, SALT_SIZE
+
+
+def _list_files_in_path(path):
+    if os.path.isdir(path):
+        mtime = os.path.getmtime(path)
+        cache_key = (path, mtime)
+        if cache_key in _list_cache:
+            return _list_cache[cache_key]
+
+        files = []
+        for root_dir, dirs, file_names in os.walk(path):
+            for f in file_names:
+                files.append(os.path.join(root_dir, f))
+        _list_cache[cache_key] = files
+        return files
+    else:
+        return [path]
 
 
 def create_adc_archive(file_paths, output_path, format="adc"):
+    all_files = []
+    for path in file_paths:
+        all_files.extend(_list_files_in_path(path))
+    if format.startswith("tar"):
+        mode = "w"
+        if output_path.endswith(".tar.gz"):
+            mode = "w:gz"
+        elif output_path.endswith(".tar.xz"):
+            mode = "w:xz"
+        elif output_path.endswith(".tar.bz2"):
+            mode = "w:bz2"
+            
+        with tarfile.open(output_path, mode) as tar:
+            with Bar("Compressing files...", max=len(all_files)) as bar:
+                for file_path in all_files:
+                    tar.add(
+                        file_path,
+                        arcname=os.path.relpath(
+                            file_path, os.path.dirname(file_paths[0])
+                        ),
+                    )
+                    bar.next()
+        print(f"TAR archive created: {output_path}")
+        return
 
     if format == "zip":
         with zipfile.ZipFile(output_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-            with Bar("Compressing files...", max=len(file_paths)) as bar:
-                for file_path in file_paths:
-                    zf.write(file_path, arcname=os.path.basename(file_path))
+            with Bar("Compressing files...", max=len(all_files)) as bar:
+                for file_path in all_files:
+                    zf.write(
+                        file_path,
+                        arcname=os.path.relpath(
+                            file_path, os.path.dirname(file_paths[0])
+                        ),
+                    )
                     bar.next()
         print(f"ZIP archive created: {output_path}")
         return
 
-    # Handle ADC format with optional encryption
-    use_password = (
-        input("Do you want to protect this archive with a password? (y/n): ")
-        .strip()
-        .lower()
-        == "y"
-    )
+    if format == "7z":
+        with py7zr.SevenZipFile(output_path, "w") as archive:
+            with Bar("Compressing files...", max=len(all_files)) as bar:
+                for file_path in all_files:
+                    if os.path.isdir(file_path):
+                        bar.next()
+                        continue
+                    arcname = os.path.relpath(file_path, os.path.dirname(file_paths[0]))
+                    archive.write(file_path, arcname)
+                    bar.next()
+        print(f"7z archive created: {output_path}")
+        return
+
+    use_password = input(
+        "Do you want to protect this archive with a password? (y/n): "
+    ).strip().lower() in ("y", "yes")
     if use_password:
         pwd = getpass.getpass("Create a password for this archive: ")
         salt = os.urandom(SALT_SIZE)
@@ -42,14 +98,24 @@ def create_adc_archive(file_paths, output_path, format="adc"):
         fernet = Fernet(key)
 
     with open(output_path, "wb") as archive_file:
+        archive_file.write(ADC_HEADER_V1)
         if use_password:
-            archive_file.write(ADC_HEADER)
+            archive_file.write(b'\x01')  # encrypted flag
             archive_file.write(salt)
+        else:
+            archive_file.write(b'\x00')  # not encrypted flag
 
-        with Bar("Compressing files...", max=len(file_paths)) as bar:
-            for file_path in file_paths:
-                filename = os.path.basename(file_path).encode("utf-8")
+        with Bar("Compressing files...", max=len(all_files)) as bar:
+            for file_path in all_files:
+                if os.path.isdir(file_path):
+                    bar.next()
+                    continue
+
+                filename = os.path.relpath(
+                    file_path, os.path.dirname(file_paths[0])
+                ).encode("utf-8")
                 original_data = read_binary_file(file_path)
+                crc32 = zlib.crc32(original_data) & 0xFFFFFFFF
                 compressed_data = parma_compress(original_data)
 
                 if use_password:
@@ -60,49 +126,92 @@ def create_adc_archive(file_paths, output_path, format="adc"):
                 archive_file.write(len(filename).to_bytes(2, "big"))
                 archive_file.write(filename)
                 archive_file.write(len(data_to_write).to_bytes(8, "big"))
+                archive_file.write(crc32.to_bytes(4, "big"))
                 archive_file.write(data_to_write)
                 bar.next()
-    print(f"Archive created: {output_path}")
+    print(f"ADC archive created: {output_path}")
 
 
 def extract_adc_archive(archive_path, output_dir, format=None):
+    if not format:
+        if archive_path.lower().endswith((".tar", ".tar.gz", ".tar.xz", ".tar.bz2")):
+            format = "tar"
+        elif archive_path.lower().endswith(".7z"):
+            format = "7z"
+        elif archive_path.lower().endswith(".zip"):
+            format = "zip"
+        else:
+            format = "adc"
 
     base_name = os.path.splitext(os.path.basename(archive_path))[0]
     dest_dir = os.path.join(output_dir, base_name)
     os.makedirs(dest_dir, exist_ok=True)
 
-    # Auto-detect format if not specified
-    if not format:
-        format = "zip" if archive_path.lower().endswith(".zip") else "adc"
+    if format == "tar":
+        with tarfile.open(archive_path, "r:*") as tar:
+            members = tar.getmembers()
+            with Bar("Extracting files...", max=len(members)) as bar:
+                for member in members:
+                    tar.extract(member, path=output_dir)
+                    bar.next()
+        print(f"TAR archive extracted to: {output_dir}")
+        return
 
-    # Handle ZIP format
     if format == "zip":
         with zipfile.ZipFile(archive_path, "r") as zf:
             file_list = zf.namelist()
             with Bar("Extracting files...", max=len(file_list)) as bar:
                 for f in file_list:
-                    zf.extract(f, path=dest_dir)
+                    zf.extract(f, path=output_dir)
                     bar.next()
-        print(f"ZIP archive extracted to: {dest_dir}")
+        print(f"ZIP archive extracted to: {output_dir}")
         return
 
-    # Handle ADC format with optional decryption
+    if format == "7z":
+        with py7zr.SevenZipFile(archive_path, "r") as archive:
+            try:
+                allnames = archive.getnames()
+            except Exception:
+                allnames = []
+            with Bar(
+                "Extracting files...", max=len(allnames) if allnames else 1
+            ) as bar:
+                archive.extractall(path=output_dir)
+                for _ in allnames or [None]:
+                    bar.next()
+        print(f"7z archive extracted to: {output_dir}")
+        return
+
     with open(archive_path, "rb") as archive_file:
         header = archive_file.read(8)
-        if header == ADC_HEADER:
+        if header == ADC_HEADER_V1:
+            encrypted_flag = archive_file.read(1)
+            if encrypted_flag == b'\x01':
+                salt = archive_file.read(SALT_SIZE)
+                pwd = getpass.getpass("Enter password for archive: ")
+                key = derive_key_from_password(pwd, salt)
+                fernet = Fernet(key)
+                encrypted = True
+            else:
+                encrypted = False
+            has_crc = True
+        elif header == ADC_HEADER:
+            # V0 encrypted
             salt = archive_file.read(SALT_SIZE)
             pwd = getpass.getpass("Enter password for archive: ")
             key = derive_key_from_password(pwd, salt)
             fernet = Fernet(key)
             encrypted = True
+            has_crc = False
         else:
+            # V0 non-encrypted
             archive_file.seek(0)
             encrypted = False
+            has_crc = False
 
         file_count = 0
         files_to_extract = []
 
-        # Read all files from archive
         while True:
             filename_len_bytes = archive_file.read(2)
             if not filename_len_bytes:
@@ -111,22 +220,30 @@ def extract_adc_archive(archive_path, output_dir, format=None):
             filename = archive_file.read(filename_len).decode("utf-8", errors="ignore")
             data_len_bytes = archive_file.read(8)
             data_len = int.from_bytes(data_len_bytes, "big")
+            if has_crc:
+                crc32_bytes = archive_file.read(4)
+                crc32_expected = int.from_bytes(crc32_bytes, "big")
+            else:
+                crc32_expected = None
             data = archive_file.read(data_len)
 
             try:
                 if encrypted:
                     data = fernet.decrypt(data)
-                files_to_extract.append((filename, data))
+                files_to_extract.append((filename, data, crc32_expected))
                 file_count += 1
             except Exception as e:
                 print(f"Error decrypting {filename}: {e}")
                 continue
 
-        # Extract all files
         with Bar("Extracting files...", max=file_count) as bar:
-            for filename, compressed_data in files_to_extract:
+            for filename, compressed_data, crc32_expected in files_to_extract:
                 decompressed_data = parma_decompress(compressed_data)
                 if decompressed_data is not None:
+                    if crc32_expected is not None:
+                        calculated_crc32 = zlib.crc32(decompressed_data) & 0xFFFFFFFF
+                        if calculated_crc32 != crc32_expected:
+                            print(f"CRC32 integrity check failed for {filename}: expected {crc32_expected:08x}, got {calculated_crc32:08x}")
                     output_path = os.path.join(dest_dir, filename)
                     os.makedirs(os.path.dirname(output_path), exist_ok=True)
                     with open(output_path, "wb") as output_file:
@@ -134,4 +251,4 @@ def extract_adc_archive(archive_path, output_dir, format=None):
                 else:
                     print(f"Error decompressing {filename}")
                 bar.next()
-        print(f"Extraction complete to {dest_dir}")
+        print(f"ADC archive extracted to {dest_dir}")

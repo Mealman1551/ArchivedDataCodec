@@ -1,151 +1,158 @@
-# This is the __main__.py module for ADC Archiver 1.4.5.
-# With great power comes great responsibility.
-
-# ADC Archiver
-# Version: 1.4.5
-# byte-key: 8
-# GitHub page: https://github.com/Mealman1551/ADC
-# Webpage: https://mealman1551.github.io/adc.html
-# Webpage 2: https://mealman1551.github.io/ADC.html
-
-# This code is based on Aurora 2025.09.1 code and is licensed under the GNU General Public License v3.0.
-# You can redistribute it and/or modify it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-# ADC 1.4.5 is considered stable and production ready.
-
-# ADC 1.4.5 is LTS (Long Term Support) and will receive updates for a long time.
-
-"""
-ADC Archiver 1.4.5 LTS - Main Entry Point
-Command-line interface for creating and extracting archives.
-"""
+# ADC Archiver - main module
+# (c) 2026 Mealman1551
 
 import os
 import sys
 import socket
 import getpass
+import platform
 from colorama import init
 
-from .constants import YELLOW, reset
+from .constants import YELLOW, PURPLE, GREEN, reset, VERSION
+from .updater import check_and_show_update
 from .ascii_art import print_banner, get_info_banner
 from .archive import create_adc_archive, extract_adc_archive
 from .ui import (
     select_files_for_archiving,
     select_directory_for_extraction,
     save_archive_file,
-    open_archive_file
+    open_archive_file,
 )
-from .updater import check_and_show_update
+
+
+def has_display():
+    # On Windows, always assume display is available
+    if platform.system().lower() == "windows":
+        return True
+    # On Linux/Unix, check for DISPLAY or WAYLAND_DISPLAY
+    return bool(os.environ.get("DISPLAY") or os.environ.get("WAYLAND_DISPLAY"))
+
 
 init(autoreset=True)
 
 
+dev = socket.gethostname()
+name = getpass.getuser()
+opr = platform.system().lower()
+
+
 def run():
-    """Entry point for the application."""
     main()
 
 
-# System information
-dev = socket.gethostname()
-name = getpass.getuser()
-opr = os.sys.platform
-
-
 def main():
-    """
-    Main function that handles command-line arguments and interactive mode.
-    """
-    # Print banner
+    
+    #check_and_show_update()
+    
+    #print("ADC build version:", VERSION)
+    
+    headless_flag = "--headless" in sys.argv
+
+    adc_file_arg = None
+    if len(sys.argv) == 2 and not sys.argv[1].startswith("--"):
+        arg = sys.argv[1]
+        if os.path.isfile(arg) and arg.lower().endswith(".adc"):
+            adc_file_arg = arg
+
+    if adc_file_arg:
+        output_dir = os.path.dirname(os.path.abspath(adc_file_arg))
+        print(f"{YELLOW}Auto-extracting {adc_file_arg} to {output_dir}{reset}")
+        extract_adc_archive(adc_file_arg, output_dir)
+        return
+
+    has_cli_args = len([arg for arg in sys.argv[1:] if arg != "--headless"]) > 0
+
+    if headless_flag or not has_display() or has_cli_args:
+        from .headless import run_headless_flow
+
+        filtered_args = [arg for arg in sys.argv if arg != "--headless"]
+        run_headless_flow(filtered_args)
+    else:
+        run_interactive()
+
+
+def run_interactive():
     print_banner()
-    
-    # Check for updates
-    check_and_show_update()
-    
-    # Auto-extract when the program is launched by double-clicking an .adc file
-    if len(sys.argv) > 1:
-        first_arg = sys.argv[1]
-        if os.path.isfile(first_arg) and first_arg.lower().endswith(".adc"):
-            output_dir = os.path.dirname(os.path.abspath(first_arg))
-            print(f"{YELLOW}Auto-extracting {first_arg} to {output_dir}{reset}")
-            extract_adc_archive(first_arg, output_dir)
-            return
 
-    # Handle command-line subcommands
-    if len(sys.argv) > 1:
-        subcommand = sys.argv[1]
-        if subcommand == "c":
-            if len(sys.argv) < 4:
-                print("Use: adc.exe or adc c <files...> <output.adc>")
-                return
-            files = sys.argv[2:-1]
-            output = sys.argv[-1]
-            create_adc_archive(files, output)
-            return
-        elif subcommand == "e":
-            if len(sys.argv) < 3:
-                print("Use: adc.exe or adc e <archive.adc> [output_folder]")
-                return
-            archive = sys.argv[2]
-            folder = sys.argv[3] if len(sys.argv) >= 4 else os.getcwd()
-            extract_adc_archive(archive, folder)
-            return
-        else:
-            print("Unknown command.")
-            print(
-                "Use:\n  adc.exe or adc c <files...> <output.adc>\n  adc.exe or adc e <archive.adc> [output_folder]"
-            )
-            return
 
-    # Interactive mode
+    print(
+        f"""
+You are using ADC, this code is not stable and may not work!
+If you are using this on accident quit by pressing 'q'.
+
+You can download the stable version of ADC Archiver on GitHub:
+{PURPLE}https://github.com/Mealman1551/ArchivedDataCodec{reset}
+        """
+    )
+
     while True:
         command = (
             input(
-                f"Welcome to the ADC Archiver! Enter command ('c' to create, 'e' to extract, 'i' for info, 'q' to quit): "
+                f"Welcome to ADC Archiver {VERSION} | Enter command ('c' to create, 'e' to extract, 'i' for info, 'q' to quit): "
             )
             .strip()
             .lower()
         )
-        
-        if command in ("c", "create"):
-            files_to_archive = select_files_for_archiving()
-            if files_to_archive:
-                fmt = input("Choose format: [1] ADC (default), [2] ZIP: ").strip()
-                fmt = "zip" if fmt == "2" else "adc"
 
-                output_archive = save_archive_file(format=fmt)
-                if output_archive:
-                    create_adc_archive(files_to_archive, output_archive, format=fmt)
-                else:
-                    print("No output file specified. Aborting.")
-            else:
+        if command in ("c", "create"):
+            files = select_files_for_archiving()
+            if not files:
                 print("No files selected. Aborting.")
+                continue
+
+            fmt = input(
+                "Choose format: [1] ADC (default), [2] ZIP, [3] TAR, [4] TAR.GZ, [5] TAR.XZ, [6] TAR.BZ2, [7] 7Z]: "
+            ).strip()
+            fmt_map = {
+                "2": "zip",
+                "3": "tar",
+                "4": "tar.gz",
+                "5": "tar.xz",
+                "6": "tar.bz2",
+                "7": "7z",
+            }
+            fmt = fmt_map.get(fmt, "adc")
+
+            output_archive = save_archive_file(format=fmt)
+            if output_archive:
+                create_adc_archive(files, output_archive, format=fmt)
+                print(f"\n[INFO] Archive created: {output_archive}\n")
+            else:
+                print("No output file specified. Aborting.")
 
         elif command in ("e", "extract"):
-            archive_to_extract = open_archive_file()
-            if archive_to_extract:
-                extraction_directory = select_directory_for_extraction()
-                if extraction_directory:
-                    extract_adc_archive(archive_to_extract, extraction_directory)
-                else:
-                    print("No output directory specified. Aborting.")
-            else:
+            archive = open_archive_file()
+            if not archive:
                 print("No archive selected. Aborting.")
+                continue
+
+            extraction_dir = select_directory_for_extraction() or "."
+            extract_adc_archive(archive, extraction_dir)
+            print(f"\n[INFO] Archive extracted to: {extraction_dir}\n")
 
         elif command == "i":
             info = get_info_banner(dev, name, opr)
             print(info)
 
-        elif command in ("q", "exit", "quit"):
-            print(f"Thank you for using ADC Archiver!")
+        elif command in (
+            "q",
+            "quit",
+            "exit",
+            "stop",
+            "bye",
+            "goodbye",
+            "end",
+            "close",
+            "terminate",
+            "shutdown",
+            "leave",
+            "byebye",
+        ):
+            print(f"Thank you for using ADC Archiver {VERSION}!")
             break
 
         else:
-            print(
-                "Invalid command. Please type 'c' to create, 'e' to extract, 'i' for info or 'q' to quit."
-            )
+            print("Invalid command. Please type 'c', 'e', 'i' or 'q'.")
 
 
 if __name__ == "__main__":

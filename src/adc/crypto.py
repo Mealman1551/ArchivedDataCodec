@@ -1,10 +1,5 @@
-# ADC Archiver 1.4.5 LTS - Cryptography Module
+# ADC Archiver - Cryptography Module
 # This code is licensed under the GNU General Public License v3.0.
-
-"""
-Cryptography functions for password-based encryption/decryption.
-Uses PBKDF2 for key derivation and Fernet for symmetric encryption.
-"""
 
 import base64
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
