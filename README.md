@@ -1,15 +1,6 @@
-<img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width=200>
-
----
-
-[ADC contact e-mail address](mailto:nathandubuy4+adc@gmail.com)
-
-[Mailinglist](https://groups.google.com/g/adc-archiver) (Main announcement channel)
-
-IRC: OFTC - #adc-archiver
-[Matrix](https://matrix.to/#/#adc-archiver:matrix.org)
-
-XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/The-ADC-Archiver-Project/Assets/refs/heads/main/banner/ADC%20banner.jpg" alt="ADC Banner" width="200">
+</p>
 
 # ADC (ArchivedDataCodec)
 
@@ -22,9 +13,15 @@ XMPP: [xmpp:vuwirer@chat.disroot.org?join](xmpp:vuwirer@chat.disroot.org?join)
 [![GitHub issues](https://img.shields.io/github/issues/Mealman1551/ADC)](https://github.com/Mealman1551/ADC/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Mealman1551/ADC)](#)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](#)
-[![GitLab Sync Status](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ADC/actions/workflows/gitlab-sync.yml)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
 ![Total Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/.github/downloads.json&query=$.total_downloads&label=Total%20Downloads&color=97CA00)
+
+
+**Mailing list:** [Subscribe](https://www.freelists.org/list/adc) | [Archive](https://www.freelists.org/archive/adc)
+
+**Main announcements:** [Mail archive](https://the-adc-archiver-project.github.io/adc-mail-archive) (look for "[ANN]" label)
+
+**Community:** [Forum](https://groups.google.com/g/adc-archiver) | IRC: OFTC #adc-archiver | [Matrix](https://matrix.to/#/#adc-archiver:matrix.org) | [XMPP](xmpp:vuwirer@chat.disroot.org?join)
 
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
@@ -35,7 +32,6 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Features](#features)
 * [Getting Started](#getting-started)
 * [Installation](#installation)
-
   * [Windows](#windows)
   * [Linux](#linux)
 * [Usage](#usage)
@@ -45,6 +41,8 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Update Schedule](#update-schedule)
 * [Contributing](#contributing)
 * [Contact](#contact)
+* [GitLab](#gitlab)
+* [ADC Core Util](#adc-core-util)
 * [Supported Versions](#supported-versions)
 * [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
@@ -60,7 +58,7 @@ For the unstable/rolling release see: [ADC Aurora](https://github.com/Mealman155
 
 Please note: ~~ADC can currently only pack files, folders aren't supported yet.~~ [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable) supports this now!
 
-Test files [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
+Test archives [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
 
 For container/format info go to [FORMAT.md](docs/FORMAT.md)
 
@@ -123,7 +121,7 @@ Dependencies:
 Run:
 
 ```bash
-mkdir -p ~/adc-temp && cd ~/adc-temp && wget -O adc.tar.xz "https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz" && tar -xJf adc.tar.xz && sudo ./install.sh && cd ~ && rm -rf ~/adc-temp
+wget -O- "https://raw.githubusercontent.com/The-ADC-Archiver-Project/webscripts/refs/heads/main/install.sh" | bash
 ```
 
 to install ADC without leaving any garbage
@@ -131,7 +129,7 @@ to install ADC without leaving any garbage
 To remove ADC you can run:
 
 ```bash
-wget -O- "https://gitlab.com/adc-project/bash/-/raw/main/remove.sh" | bash
+wget -O- https://raw.githubusercontent.com/The-ADC-Archiver-Project/webscripts/refs/heads/main/uninstall.sh | bash
 ```
 
 ### ADC is installed but command `adc` doesn't work?
@@ -145,6 +143,7 @@ ADC has multiple mirrors
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
+- [GitLab](https://gitlab.com/adc-project/ADC-mirror)
 
 ### Unix (BSD, Solaris)
 
@@ -219,15 +218,7 @@ Contributions are welcome! See the CONTRIBUTING.md file.
 
 Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
 
-## GitLab
-
-I have 2 ADC Repos on Gitlab, one is a continuously updated mirror of the Main branch (Stable only), and the other is the Canary repo, meant to be before Aurora.
-
-Mirror/Main(Stable) GitLab repo of ADC: [ADC on GitLab](https://gitlab.com/Mealman1551/ADC)
-
-Unstable (Aurora) is only on GitHub!
-
----
+## ADC Canary
 
 For Canary/continuous live development see: [ADC Canary on GitLab](https://gitlab.com/Mealman1551/adc-canary)
 
@@ -235,15 +226,14 @@ For Canary/continuous live development see: [ADC Canary on GitLab](https://gitla
 
 ---
 
-ADC Core Utils are for OEM manufacturers or people who only want to open a `.adc` file:
+## ADC Core Util
+
+ADC Core Util are for OEM manufacturers or people who only want to open a `.adc` file:
 
 [ADC-Core-Util](https://github.com/The-ADC-Archiver-Project/ADC-Core-Util)
 
 ---
 
-### Syncing to GitLab
-
-Syncing to GitLab is done via the [gitlab-sync.yml](https://github.com/Mealman1551/ADC/blob/main/.github/workflows/gitlab-sync.yml) file in `/.github/workflows/gitlab-sync.yml`
 
 ## Notes
 
@@ -279,7 +269,9 @@ Current version is: 1.4.x
 > [!Note]
 > For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
 
-Supported versions: 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.4.5. Use `make windows` or `make linux` for the latest version (1.4.5), or `x.x.x-windows` / `x.x.x-linux` for a specific version.
+```bash
+make install #Only works on Linux.
+```
 
 ### Building on Windows
 
@@ -291,7 +283,7 @@ Please disable Windows Defender as it may block compilation.
 
 Options to install GNU Make:
 
-**Option 1 — WinGet (Recommended)**
+**Option 1 — WinGet**
 
 ```
 winget install GnuWin32.Make
@@ -299,7 +291,7 @@ winget install GnuWin32.Make
 
 Add Make to PATH. [More info](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)
 
-**Option 2 — Chocolatey**
+**Option 2 — Chocolatey (Recommended)**
 
 ```
 choco install make
@@ -357,23 +349,11 @@ Compile the latest version:
 make windows
 ```
 
-Or specific version:
-
-```powershell
-make 1.3.1-windows
-```
-
 Run the binary:
 
 ```powershell
 cd dist
 ./adc.exe
-```
-
-or
-
-```bash
-./ADC_Archiver_1.3.1.exe
 ```
 
 Clean build:
@@ -421,16 +401,13 @@ Restart or logoff to apply packages.
 > [!Warning]
 > Do ***NOT*** run the binary while compiling!
 
+> [!Note]
+> Reboot or logoff after installing via ``make install``
+
 Compile latest version:
 
 ```bash
 make linux
-```
-
-Or specific version:
-
-```bash
-make 1.3.1-linux
 ```
 
 Run the binary:
@@ -438,12 +415,6 @@ Run the binary:
 ```bash
 cd dist
 ./adc.bin
-```
-
-or
-
-```bash
-./ADC_Archiver_1.3.1.bin
 ```
 
 Clean build:
@@ -457,10 +428,6 @@ Debug build (optional):
 ```bash
 make debug-linux
 ```
-
-#### Notes
-
-Specific old versions can be compiled with commands like `make 1.1.0-windows` or `make 1.2.0-linux`. Version 1.0.0 is deprecated; compilation is possible but not recommended.
 
 ---
 
