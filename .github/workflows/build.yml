@@ -3,10 +3,10 @@ name: Build
 on:
   push:
     branches:
-      - main
+      - stable/1.4
   pull_request:
     branches:
-      - main
+      - stable/1.4
 
 permissions:
   contents: read
