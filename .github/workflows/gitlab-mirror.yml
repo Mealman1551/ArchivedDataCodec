@@ -1,0 +1,51 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches:
+    - '**'
+    tags:
+    - '**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout full repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        fetch-tags: true
+
+    - name: Setup git identity
+      run: |
+        git config --global user.name "mirror-bot"
+        git config --global user.email "mirror@github.com"
+
+    - name: Add GitLab remote (idempotent)
+      run: |
+        git remote remove gitlab || true
+        git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/Mealman1551/ADC-mirror.git
+
+    - name: Fetch everything (full sync)
+      run: |
+        git fetch origin --prune --tags --force
+
+    - name: Create local branches from origin
+      run: |
+        for branch in $(git branch -r | grep -v '\->'); do
+          git branch --track "${branch#origin/}" "$branch" || true
+        done
+
+    - name: Push branches (mirror)
+      run: |
+        git push --prune gitlab +refs/heads/*:refs/heads/*
+
+    - name: Push tags (mirror)
+      run: |
+        git push --prune gitlab +refs/tags/*:refs/tags/*
