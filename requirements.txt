@@ -2,3 +2,4 @@ cffi==2.0.0
 colorama==0.4.6
 cryptography==46.0.7
 progress==1.6.1
+py7zr==1.1.0

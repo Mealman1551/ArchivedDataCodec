@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.5 LTS - Constants Module
+# ADC Archiver - Constants Module
 # This code is licensed under the GNU General Public License v3.0.
 
 
@@ -32,12 +32,12 @@ reset = "\033[0m"
 
 # Application metadata
 APP_NAME = "ADC Archiver"
-VERSION = "1.4.5"
-VERSION_CODENAME = "Grand Canyon"
+VERSION = ""
+VERSION_CODENAME = ""
 BYTE_KEY = 8
-GITHUB_URL = "https://github.com/Mealman1551/ADC"
+GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 WEBPAGE_1 = "https://mealman1551.github.io/adc.html"
-WEBPAGE_2 = "https://mealman1551.github.io/ADC"
+WEBPAGE_2 = "https://mealman1551.github.io/ArchivedDataCodec"
 EMAIL = "nathandubuy4+adc@gmail.com"
 COPYRIGHT = "(c) 2026 Mealman1551"
 LICENSE = "GNU General Public License v3.0"
@@ -45,6 +45,7 @@ GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 
 # Archive header for encrypted ADC files
 ADC_HEADER = b"ADCARCH\x00"
+ADC_HEADER_V1 = b"ADCARCH\x01"
 
 # Cryptography settings
 PBKDF2_ITERATIONS = 390000

@@ -1,20 +1,19 @@
-# ADC Archiver 1.4.5 LTS - Compression Module
-# This code is licensed under the GNU General Public License v3.0.
+# ADC Archiver - Compression Module
+# (c) 2026 Mealman1551
 
-"""
-Compression and decompression functions using zlib.
-"""
+
 
 import zlib
+from functools import lru_cache
+import os
 
-
+@lru_cache(maxsize=256)
 def parma_compress(data):
-
     return zlib.compress(data)
 
 
+@lru_cache(maxsize=256)
 def parma_decompress(compressed_data):
-    
     try:
         return zlib.decompress(compressed_data)
     except zlib.error as e:
@@ -22,7 +21,13 @@ def parma_decompress(compressed_data):
         return None
 
 
-def read_binary_file(file_path):
-
+# internal helper that includes mtime in the cache key
+@lru_cache(maxsize=128)
+def _read_binary_with_mtime(file_path, mtime):
     with open(file_path, "rb") as file:
         return file.read()
+
+
+def read_binary_file(file_path):
+    mtime = os.path.getmtime(file_path)
+    return _read_binary_with_mtime(file_path, mtime)
