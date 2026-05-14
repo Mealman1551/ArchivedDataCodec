@@ -201,6 +201,12 @@ python3 --version
  git clone --branch main --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
 ```
 
+Enter directory:
+
+```bash
+cd ArchivedDataCodec
+```
+
 Install additional dependencies:
 
 ```bash
