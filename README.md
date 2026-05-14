@@ -204,25 +204,17 @@ I select a date myself what is the best time, cuz i have work. Meanwhile, the ro
 
 #### Release flow
 
-1. [ADC Canary](https://gitlab.com/Mealman1551/adc-canary), live updated repo, not meant to use.
-2. after ADC Canary the working code will be ported to ADC Aurora asap.
-3. Stable version will be based on Aurora's source code after testing the code, if there are bugs i will use a stable Aurora script.
-
-<img src=https://raw.githubusercontent.com/Mealman1551-ADC-Project/Assets/d7a7c8b12a17b4c2ec9f6d6dbc5ce71ccda0c699/flowchart/ADC%20Release%20flow.svg width=500>
+1. Development starts on the `Main` branch
+2. When code is stable on `Main`, it will me snapshoted to an Aurora (Testing) tag (You need to compile yourself)
+3. If Aurora is stable it will be ported to a stable build. 
 
 ## Contributing
 
-Contributions are welcome! See the CONTRIBUTING.md file.
+Contributions are welcome! See the [ONTRIBUTING.md](/docs/CONTRIBUTING.md) file.
 
 ## Contact
 
 Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
-
-## ADC Canary
-
-For Canary/continuous live development see: [ADC Canary on GitLab](https://gitlab.com/Mealman1551/adc-canary)
-
-#### ***DO NOT USE THE CANARY REPO AS MAIN SOURCE, THIS IS LIVE DEVELOPMENT ONLY!***
 
 ---
 
@@ -237,8 +229,8 @@ ADC Core Util are for OEM manufacturers or people who only want to open a `.adc`
 
 ## Notes
 
-If you want to support the project please consider a small donation: <a href="https://www.paypal.com/donate/?hosted_button_id=LEE83CJJ2BEJC">`
-	`<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>
+If you want to support the project please consider a small donation: <a href="https://www.paypal.com/donate/?hosted_button_id=LEE83CJJ2BEJC">
+<img src="https://centerproject.org/wp-content/uploads/2021/11/paypal-donate-button-high-quality-png-1_orig.png" alt="Donate button" width="100"/>
   
   ---
 
