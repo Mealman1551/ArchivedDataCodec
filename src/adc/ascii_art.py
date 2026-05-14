@@ -80,7 +80,7 @@ def get_info_banner(dev, name, opr):
       {RED}####       ###{reset}   {PURPLE}%%%%%%%%%%%%{reset}      {GREEN}************{reset}   
      {RED}####        ####{reset}  {PURPLE}%%%%%%%%%{reset}          {GREEN}*******{reset}  
 
-        | ADC Archiver {YELLOW}Canary{reset} | Version: {VERSION} |
+        | ADC Archiver | Version: {VERSION} |
 
         
         GitHub page: https://github.com/Mealman1551/ArchivedDataCodec
@@ -88,15 +88,13 @@ def get_info_banner(dev, name, opr):
 
         {BOLD}PLEASE READ{reset}
         
-        {ITALIC}You are using ADC Archiver {YELLOW}CANARY{reset}
+        {ITALIC}You are using ADC Archiver {VERSION}, which is a development version of ADC Archiver.
 
         {ITALIC}This is a live development version of ADC Archiver.
         It is not recommended for use in this state.
         
         If you want to use ADC Archiver stable, You can find the stable version on the GitHub page.
         
-        ADC {YELLOW}Canary{reset} {ITALIC}may not work!{reset}
-
         ---------
 
         You are hosting ADC on: {ORANGE}{dev}{reset}
