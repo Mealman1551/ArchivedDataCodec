@@ -1,4 +1,4 @@
 cffi==2.0.0
 colorama==0.4.6
-cryptography==46.0.6
+cryptography==46.0.7
 progress==1.6.1
