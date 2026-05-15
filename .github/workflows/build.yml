@@ -40,10 +40,18 @@ jobs:
 
     - name: Compile with Nuitka
       run: |
-        nuitka --standalone --onefile --output-dir=./dist --plugin-enable=tk-inter adc.py
+        python -m nuitka adc.py \
+          --standalone \
+          --onefile \
+          --follow-imports \
+          --include-package=adc \
+          --include-package=libadc \
+          --include-package-data=adc \
+          --include-package-data=libadc \
+          --enable-plugin=tk-inter \
+          --output-dir=dist
 
     - name: Test compiled binary
       run: |
         chmod +x ./dist/adc.bin
-
         echo -e "q" | ./dist/adc.bin
