@@ -44,6 +44,8 @@ jobs:
           --standalone \
           --onefile \
           --follow-imports \
+          --include-package=libadc \
+          --include-package=adc \
           --enable-plugin=tk-inter \
           --output-dir=dist
 
