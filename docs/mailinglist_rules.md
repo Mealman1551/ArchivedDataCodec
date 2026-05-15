@@ -22,7 +22,6 @@ To keep the list organized, always use a subject prefix:
 - [RFC] Proposals and design ideas
 - [HELP] Questions and user support
 - [TEST] Mail tests, no action required
-- [CANARY] ADC Canary mails
 - [AURORA] ADC Aurora mails
 - [MISC] Miscellaneous
 
