@@ -40,14 +40,14 @@ jobs:
 
     - name: Compile with Nuitka
       run: |
-        python -m nuitka adc.py \
-          --standalone \
-          --onefile \
-          --follow-imports \
-          --include-package=libadc \
-          --include-package=adc \
-          --enable-plugin=tk-inter \
-          --output-dir=dist
+        PYTHONPATH=src python -m nuitka src/adc.py \
+        --standalone \
+        --onefile \
+        --follow-imports \
+        --include-package=libadc \
+        --include-package=adc \
+        --enable-plugin=tk-inter \
+        --output-dir=dist
 
     - name: Test compiled binary
       run: |
