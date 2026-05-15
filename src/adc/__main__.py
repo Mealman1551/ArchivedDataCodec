@@ -8,10 +8,10 @@ import getpass
 import platform
 from colorama import init
 
-from .constants import YELLOW, PURPLE, GREEN, reset, VERSION
+from libadc.constants import YELLOW, PURPLE, GREEN, reset, VERSION
 from .updater import check_and_show_update
 from .ascii_art import print_banner, get_info_banner
-from .archive import create_adc_archive, extract_adc_archive
+from libadc.archive import create_adc_archive, extract_adc_archive
 from .ui import (
     select_files_for_archiving,
     select_directory_for_extraction,
@@ -41,11 +41,6 @@ def run():
 
 
 def main():
-    
-    #check_and_show_update()
-    
-    #print("ADC build version:", VERSION)
-    
     headless_flag = "--headless" in sys.argv
 
     adc_file_arg = None

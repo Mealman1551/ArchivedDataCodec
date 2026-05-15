@@ -1,4 +1,4 @@
-from adc.constants import ADC_HEADER, VERSION
+from libadc.constants import ADC_HEADER, VERSION
 
 def test_constants():
     assert ADC_HEADER == b"ADCARCH\x00"

@@ -1,4 +1,4 @@
-from adc.archive import create_adc_archive, extract_adc_archive
+from libadc.archive import create_adc_archive, extract_adc_archive
 
 def test_create_and_extract(tmp_path, monkeypatch):
     file_path = tmp_path / "hello.txt"

@@ -5,7 +5,7 @@
 import os
 import shlex
 from pathlib import Path
-from .archive import create_adc_archive, extract_adc_archive
+from libadc.archive import create_adc_archive, extract_adc_archive
 
 
 def parse_path_input(value):

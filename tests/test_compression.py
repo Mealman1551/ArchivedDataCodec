@@ -1,4 +1,4 @@
-from adc.compression import parma_compress, parma_decompress
+from libadc.compression import parma_compress, parma_decompress
 
 def test_compression_roundtrip():
     data = b"example data"

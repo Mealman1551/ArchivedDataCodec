@@ -3,7 +3,7 @@
 
 
 import platform
-from .constants import TEAL, BLUE, LIGHT_GREEN, reset, VERSION
+from libadc.constants import TEAL, BLUE, LIGHT_GREEN, reset, VERSION
 
 
 def get_linux_banner():
@@ -67,7 +67,7 @@ def print_banner():
 
 def get_info_banner(dev, name, opr):
 
-    from .constants import RED, PURPLE, GREEN, YELLOW, ORANGE, BOLD, ITALIC, reset
+    from libadc.constants import RED, PURPLE, GREEN, YELLOW, ORANGE, BOLD, ITALIC, reset
 
     return f"""
              {RED}####{reset}        {PURPLE}%%%%%%%%%%%{reset}         {GREEN}********{reset}  

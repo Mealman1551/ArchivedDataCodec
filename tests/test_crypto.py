@@ -1,4 +1,4 @@
-from adc.crypto import derive_key_from_password
+from libadc.crypto import derive_key_from_password
 import base64
 
 def test_derive_key_from_password():

@@ -8,7 +8,7 @@ import ssl
 import tkinter as tk
 import webbrowser
 
-from .constants import UPDATE_JSON_URL, UPDATE_CHECK_TIMEOUT, VERSION
+from libadc.constants import UPDATE_JSON_URL, UPDATE_CHECK_TIMEOUT, VERSION
 
 ssl._create_default_https_context = ssl._create_unverified_context
 

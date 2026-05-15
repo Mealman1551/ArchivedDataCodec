@@ -2,8 +2,8 @@
 # (c) 2026 Mealman1551
 
 
-from .constants import APP_NAME, VERSION, COPYRIGHT
-from .archive import create_adc_archive, extract_adc_archive
+from libadc.constants import APP_NAME, VERSION, COPYRIGHT
+from libadc.archive import create_adc_archive, extract_adc_archive
 from .ascii_art import print_banner
 
 __version__ = VERSION

@@ -1,4 +1,4 @@
-from adc.archive import create_adc_archive, extract_adc_archive
+from libadc.archive import create_adc_archive, extract_adc_archive
 from pathlib import Path
 
 def test_multiple_files(tmp_path, monkeypatch):
