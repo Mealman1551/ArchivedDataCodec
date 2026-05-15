@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adc"
+version = "dev"
+description = "ADC Archiver project"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GNU General Public License v3.0"}
+authors = [
+    {name = "Mealman1551"}
+]
+
+dependencies = [
+    "colorama",
+    "cryptography",
+    "py7zr",
+    "progress",
+    "cffi"
+
+]
