@@ -4,6 +4,7 @@
 
 import os
 import shlex
+import getpass
 from pathlib import Path
 from libadc.archive import create_adc_archive, extract_adc_archive
 
@@ -103,6 +104,17 @@ def prompt_for_extraction_output_dir():
     return parsed
 
 
+def prompt_for_password_if_needed(fmt):
+    """Prompt for password if creating an ADC archive."""
+    if fmt != "adc":
+        return None
+    
+    use_password = input("Do you want to protect this archive with a password? (y/n): ").strip().lower() == "y"
+    if use_password:
+        return getpass.getpass("Create a password for this archive: ")
+    return None
+
+
 def run_headless_flow(argv):
     if len(argv) < 2:
         print("Usage: adc c <paths> or adc e <archive> [output]")
@@ -130,8 +142,10 @@ def run_headless_flow(argv):
 
         fmt = prompt_for_output_archive_format()
         output = prompt_for_output_archive_path(fmt)
-
-        create_adc_archive(files, output, format=fmt)
+        
+        password = prompt_for_password_if_needed(fmt)
+        
+        create_adc_archive(files, output, format=fmt, password=password)
         print(f"Archive created: {output}")
 
     elif command in ("e", "extract"):

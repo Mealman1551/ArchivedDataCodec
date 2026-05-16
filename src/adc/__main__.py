@@ -110,7 +110,13 @@ You can download the stable version of ADC Archiver on GitHub:
 
             output_archive = save_archive_file(format=fmt)
             if output_archive:
-                create_adc_archive(files, output_archive, format=fmt)
+                password = None
+                if fmt == "adc":
+                    use_password = input("Do you want to protect this archive with a password? (y/n): ").strip().lower() == "y"
+                    if use_password:
+                        password = getpass.getpass("Create a password for this archive: ")
+                
+                create_adc_archive(files, output_archive, format=fmt, password=password)
                 print(f"\n[INFO] Archive created: {output_archive}\n")
             else:
                 print("No output file specified. Aborting.")
