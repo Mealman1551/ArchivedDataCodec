@@ -251,8 +251,8 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | ------- | ------------ | --------- | ----------------- |
 | 1.4.x   | LTS          | ✅        | 18-10-2029        |
 | 1.3.x   | Regular      | ✅        | 15-08-2026        |
-| 1.2.0   | Regular      | ✅        | 15-05-2026        |
-| 1.1.0   | Regular      | ✅        | 15-05-2026        |
+| 1.2.0   | Regular      | ❌        | 15-05-2026        |
+| 1.1.0   | Regular      | ❌         | 15-05-2026        |
 | 1.0.0   | Regular      | ❌        | 15-11-2025        |
 
 Current version is: 1.4.x
