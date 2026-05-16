@@ -44,29 +44,45 @@ install:
 	sudo cp "dist/$(BINARY_NAME).bin" "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	sudo chmod +x "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	echo '#!/bin/bash' | sudo tee "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'exec "$(INSTALL_DIR)/$(BINARY_NAME)" "$$@"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'TERMINAL=""' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'if command -v gnome-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    TERMINAL="gnome-terminal --"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'elif command -v xfce4-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    TERMINAL="xfce4-terminal -x"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'elif command -v mate-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    TERMINAL="mate-terminal -x"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'elif command -v konsole >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    TERMINAL="konsole -e"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'elif command -v xterm >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    TERMINAL="xterm -e"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'else' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    echo "No terminal emulator found. Please install gnome-terminal, xfce4-terminal, mate-terminal or xterm."' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo '    exit 1' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'fi' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'exec $$TERMINAL $(INSTALL_DIR)/$(BINARY_NAME) "$$@"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
 	sudo chmod +x "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)"; \
-	sudo ln -sf "$(INSTALL_DIR)/$(BINARY_NAME)" "/usr/local/bin/$(BINARY_NAME)"; \
+	sudo ln -sf "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" "/usr/local/bin/$(BINARY_NAME)"; \
 	echo "[Desktop Entry]" | sudo tee "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Name=ADC Archiver" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Comment=Extract ADC archives" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
-	echo "Exec=$(INSTALL_DIR)/$(WRAPPER_SCRIPT) %F" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
-	echo "Terminal=true" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
+	echo "Exec=$(INSTALL_DIR)/$(WRAPPER_SCRIPT) %f" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
+	echo "Terminal=false" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Type=Application" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "MimeType=application/x-adc-archive;" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "NoDisplay=true" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Categories=Utility;" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo '<?xml version="1.0" encoding="UTF-8"?>' | sudo tee "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
 	echo '<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
-	echo '  <mime-type type="application/x-adc-archive">' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
-	echo '    <comment>ADC Archive</comment>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
-	echo '    <glob pattern="*.adc"/>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
-	echo '  </mime-type>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
+	echo '    <mime-type type="application/x-adc-archive">' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
+	echo '        <comment>ADC Archive</comment>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
+	echo '        <glob pattern="*.adc"/>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
+	echo '    </mime-type>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
 	echo '</mime-info>' | sudo tee -a "/usr/share/mime/packages/$(MIME_FILE)" > /dev/null; \
 	command -v update-mime-database >/dev/null && sudo update-mime-database /usr/share/mime || true; \
 	command -v update-desktop-database >/dev/null && sudo update-desktop-database /usr/share/applications || true; \
 	xdg-mime default "$(DESKTOP_FILE)" application/x-adc-archive || true; \
-	echo "Installation complete!"
+	if command -v caja >/dev/null 2>&1; then caja -q; elif command -v nautilus >/dev/null 2>&1; then nautilus -q; fi; \
+	echo "Installation complete! You can now use 'adc' from anywhere or right-click .adc files."
 
 build-and-install: linux install
 
