@@ -1,5 +1,5 @@
 NAME=ADC_Archiver
-SRC=adc.py
+SRC=src/adc.py
 INSTALL_DIR=/opt/adc
 BINARY_NAME=adc
 DESKTOP_FILE=adc-archiver.desktop
@@ -7,10 +7,10 @@ MIME_FILE=adc.xml
 WRAPPER_SCRIPT=invterm.sh
 
 linux:
-	python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
 
 windows:
-	python -m nuitka --standalone --onefile --enable-plugin=tk-inter --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
 
 deps-linux:
 	pip install -r requirements.txt --break-system-packages
@@ -22,10 +22,10 @@ deps-windows:
 	python -m pip install nuitka scons
 
 debug-linux:
-	python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
 
 debug-windows:
-	python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
 
 clean-windows:
 	del /Q dist\*
@@ -35,13 +35,13 @@ clean-linux:
 
 install:
 	@echo "Installing ADC Archiver to $(INSTALL_DIR)..."
-	@if [ ! -f "dist/$(SRC:.py=.bin)" ]; then \
+	@if [ ! -f "dist/$(BINARY_NAME).bin" ]; then \
 		echo "Error: Binary not found. Run 'make linux' first."; \
 		exit 1; \
 	fi
 	@set -e; \
 	sudo mkdir -p "$(INSTALL_DIR)"; \
-	sudo cp "dist/$(SRC:.py=.bin)" "$(INSTALL_DIR)/$(BINARY_NAME)"; \
+	sudo cp "dist/$(BINARY_NAME).bin" "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	sudo chmod +x "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	echo '#!/bin/bash' | sudo tee "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
 	echo 'exec "$(INSTALL_DIR)/$(BINARY_NAME)" "$$@"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
