@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "adc"
 version = "dev"
-description = "ADC Archiver project"
+description = "ADC Archiver utility"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 license = {text = "GNU General Public License v3.0"}
 authors = [
-    {name = "Mealman1551"}
+    {name = "Nathan du Buy"}
 ]
 
 dependencies = [
@@ -19,5 +19,4 @@ dependencies = [
     "py7zr",
     "progress",
     "cffi"
-
 ]
