@@ -44,22 +44,8 @@ install:
 	sudo cp "dist/$(BINARY_NAME).bin" "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	sudo chmod +x "$(INSTALL_DIR)/$(BINARY_NAME)"; \
 	echo '#!/bin/bash' | sudo tee "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'TERMINAL=""' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'if command -v gnome-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    TERMINAL="gnome-terminal --"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'elif command -v xfce4-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    TERMINAL="xfce4-terminal -x"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'elif command -v mate-terminal >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    TERMINAL="mate-terminal -x"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'elif command -v konsole >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    TERMINAL="konsole -e"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'elif command -v xterm >/dev/null 2>&1; then' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    TERMINAL="xterm -e"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'else' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    echo "No terminal emulator found. Please install gnome-terminal, xfce4-terminal, mate-terminal or xterm."' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo '    exit 1' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'fi' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
-	echo 'exec $$TERMINAL $(INSTALL_DIR)/$(BINARY_NAME) "$$@"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'ADC="/opt/adc/adc"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
+	echo 'exec "$$ADC" "$$@"' | sudo tee -a "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" > /dev/null; \
 	sudo chmod +x "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)"; \
 	sudo ln -sf "$(INSTALL_DIR)/$(WRAPPER_SCRIPT)" "/usr/local/bin/$(BINARY_NAME)"; \
 	echo "[Desktop Entry]" | sudo tee "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
