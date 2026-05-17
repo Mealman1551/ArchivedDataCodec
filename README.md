@@ -249,6 +249,12 @@ Debug build (optional):
 make debug-linux
 ```
 
+To install:
+
+```bash
+make install # Linux only
+```
+
 ---
 
 ###### Made with 💚 by Mealman1551
