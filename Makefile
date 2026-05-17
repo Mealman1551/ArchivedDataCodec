@@ -52,7 +52,7 @@ install:
 	echo "Name=ADC Archiver" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Comment=Extract ADC archives" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Exec=$(INSTALL_DIR)/$(WRAPPER_SCRIPT) %f" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
-	echo "Terminal=false" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
+	echo "Terminal=true" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "Type=Application" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "MimeType=application/x-adc-archive;" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
 	echo "NoDisplay=true" | sudo tee -a "/usr/share/applications/$(DESKTOP_FILE)" > /dev/null; \
