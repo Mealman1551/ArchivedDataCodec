@@ -30,7 +30,6 @@ BOLD = "\033[1m"
 ITALIC = "\033[3m"
 reset = "\033[0m"
 
-# Application metadata
 APP_NAME = "ADC Archiver"
 VERSION = ""
 VERSION_CODENAME = ""
@@ -43,14 +42,11 @@ COPYRIGHT = "(c) 2026 Mealman1551"
 LICENSE = "GNU General Public License v3.0"
 GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 
-# Archive header for encrypted ADC files
 ADC_HEADER = b"ADCARCH\x00"
 ADC_HEADER_V1 = b"ADCARCH\x01"
 
-# Cryptography settings
 PBKDF2_ITERATIONS = 390000
 SALT_SIZE = 16
 
-# Update checking
 UPDATE_JSON_URL = "https://gitlab.com/adc-project/update-repository/-/raw/main/lts.json"
 UPDATE_CHECK_TIMEOUT = 5

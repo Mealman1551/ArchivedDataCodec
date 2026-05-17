@@ -19,15 +19,6 @@ _list_cache = {}
 
 
 def _list_files_in_path(path):
-    """
-    Recursively list all files in a path, with caching based on modification time.
-    
-    Args:
-        path: A file or directory path
-        
-    Returns:
-        A list of absolute file paths
-    """
     if os.path.isdir(path):
         mtime = os.path.getmtime(path)
         cache_key = (path, mtime)
@@ -45,18 +36,6 @@ def _list_files_in_path(path):
 
 
 def create_adc_archive(file_paths, output_path, format="adc", password=None):
-    """
-    Create an archive from the specified files.
-    
-    Supports multiple formats: ADC (custom), ZIP, TAR, TAR.GZ, TAR.XZ, TAR.BZ2, 7Z.
-    For ADC format, optional password-based encryption is supported.
-    
-    Args:
-        file_paths: List of file or directory paths to archive
-        output_path: Path where the archive will be created
-        format: Archive format ('adc', 'zip', 'tar', 'tar.gz', 'tar.xz', 'tar.bz2', '7z')
-        password: Optional password for ADC format encryption
-    """
     all_files = []
     for path in file_paths:
         all_files.extend(_list_files_in_path(path))
