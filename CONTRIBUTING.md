@@ -1,7 +1,5 @@
 # Contributing to ADC
 
-# Contributing to ADC Archiver
-
 ## 1. Project Overview
 
 ADC Archiver is an open-source archiving project focused on simplicity, performance, and maintainability.
@@ -76,6 +74,20 @@ They represent exact historical versions of the codebase.
 ### Step 1: Fork and Clone
 
 Fork the repository on GitHub and clone your fork locally.
+
+If you want to work from the upstream repository directly, use the main branch clone command from the README:
+
+```bash
+git clone --branch main --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
+```
+
+If you forked the repository, clone your fork and then add the upstream remote:
+
+```bash
+git clone https://github.com/<your-username>/ArchivedDataCodec.git
+cd ArchivedDataCodec
+git remote add upstream https://github.com/Mealman1551/ArchivedDataCodec.git
+```
 
 ---
 
