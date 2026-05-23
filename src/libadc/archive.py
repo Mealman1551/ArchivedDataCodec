@@ -8,6 +8,7 @@ import tarfile
 import py7zr
 import getpass
 import zlib
+from functools import lru_cache
 from progress.bar import Bar
 from cryptography.fernet import Fernet
 
@@ -15,24 +16,30 @@ from .compression import parma_compress, parma_decompress, read_binary_file
 from .crypto import derive_key_from_password
 from .constants import ADC_HEADER, ADC_HEADER_V1, SALT_SIZE
 
-_list_cache = {}
+
+def _normalize_path(path):
+    return os.path.normcase(os.path.abspath(path))
 
 
 def _list_files_in_path(path):
-    if os.path.isdir(path):
-        mtime = os.path.getmtime(path)
-        cache_key = (path, mtime)
-        if cache_key in _list_cache:
-            return _list_cache[cache_key]
+    normalized_path = _normalize_path(path)
+    if os.path.isdir(normalized_path):
+        mtime = os.path.getmtime(normalized_path)
+        return _list_files_in_path_cached(normalized_path, mtime)
+    return (normalized_path,)
 
-        files = []
-        for root_dir, dirs, file_names in os.walk(path):
-            for f in file_names:
-                files.append(os.path.join(root_dir, f))
-        _list_cache[cache_key] = files
-        return files
-    else:
-        return [path]
+
+@lru_cache(maxsize=128)
+def _list_files_in_path_cached(path, mtime):
+    files = []
+    for root_dir, dirs, file_names in os.walk(path):
+        for f in file_names:
+            files.append(os.path.join(root_dir, f))
+    return tuple(files)
+
+
+def clear_archive_cache():
+    _list_files_in_path_cached.cache_clear()
 
 
 def create_adc_archive(file_paths, output_path, format="adc", password=None):
