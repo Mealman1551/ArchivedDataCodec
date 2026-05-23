@@ -22,10 +22,10 @@ deps-windows:
 	python -m pip install nuitka scons
 
 debug-linux:
-	PYTHONPATH=src python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=adc --output-dir=dist $(SRC)
 
 debug-windows:
-	set PYTHONPATH=src && python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=adc --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
 
 clean-windows:
 	del /Q dist\*
