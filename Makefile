@@ -7,10 +7,10 @@ MIME_FILE=adc.xml
 WRAPPER_SCRIPT=invterm.sh
 
 linux:
-	PYTHONPATH=src python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=adc --output-dir=dist $(SRC)
 
 windows:
-	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
 
 deps-linux:
 	pip install -r requirements.txt --break-system-packages
