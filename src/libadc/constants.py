@@ -31,7 +31,7 @@ ITALIC = "\033[3m"
 reset = "\033[0m"
 
 APP_NAME = "ADC Archiver"
-VERSION = ""
+VERSION = "development version"
 VERSION_CODENAME = ""
 BYTE_KEY = 8
 GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
