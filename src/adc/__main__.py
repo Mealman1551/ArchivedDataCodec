@@ -72,11 +72,11 @@ def run_interactive():
 
     print(
         f"""
-You are using ADC, this code is not stable and may not work!
+You are using ADC {VERSION}, this code is not stable and may not work!
 If you are using this on accident quit by pressing 'q'.
 
-You can download the stable version of ADC Archiver on GitHub:
-{PURPLE}https://github.com/Mealman1551/ArchivedDataCodec{reset}
+You can download the stable version of ADC Archiver on GitHub releases:
+{PURPLE}https://github.com/Mealman1551/ArchivedDataCodec/releases/latest{reset}
         """
     )
 
