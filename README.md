@@ -59,8 +59,7 @@ Contributions are welcome! See the [CONTRIBUTING.md](docs/CONTRIBUTING.md) file.
 
 ## Contact
 
-Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
-
+Have questions or want to learn more? Open an issue in the GitHub repository. [Open the issues page](https://github.com/Mealman1551/ArchivedDataCodec/issues)
 ---
 
 ## Notes
