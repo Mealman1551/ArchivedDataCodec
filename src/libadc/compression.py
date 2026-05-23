@@ -7,6 +7,10 @@ from functools import lru_cache
 import os
 
 
+def _normalize_path(path):
+    return os.path.normcase(os.path.abspath(path))
+
+
 @lru_cache(maxsize=256)
 def parma_compress(data):
     return zlib.compress(data)
@@ -28,5 +32,12 @@ def _read_binary_with_mtime(file_path, mtime):
 
 
 def read_binary_file(file_path):
-    mtime = os.path.getmtime(file_path)
-    return _read_binary_with_mtime(file_path, mtime)
+    normalized_path = _normalize_path(file_path)
+    mtime = os.path.getmtime(normalized_path)
+    return _read_binary_with_mtime(normalized_path, mtime)
+
+
+def clear_compression_cache():
+    parma_compress.cache_clear()
+    parma_decompress.cache_clear()
+    _read_binary_with_mtime.cache_clear()
