@@ -68,7 +68,7 @@ def get_info_banner(dev, name, opr):
       {RED}####       ###{reset}   {PURPLE}%%%%%%%%%%%%{reset}      {GREEN}************{reset}   
      {RED}####        ####{reset}  {PURPLE}%%%%%%%%%{reset}          {GREEN}*******{reset}  
 
-        | ADC Archiver | Version: {VERSION} ({VERSION_CODENAME}) |
+        | ADC Archiver | Version: {VERSION} "{VERSION_CODENAME}" |
 
         
         GitHub page: https://github.com/Mealman1551/ArchivedDataCodec
