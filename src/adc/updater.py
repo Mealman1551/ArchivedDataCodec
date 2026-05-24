@@ -1,4 +1,4 @@
-# ADC Archiver 1.4.5 LTS - Updater Module
+# ADC Archiver - Updater Module
 # This code is licensed under the GNU General Public License v3.0.
 
 

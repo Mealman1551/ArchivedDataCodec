@@ -1,4 +1,4 @@
-# ADC Archiver - Constants Module
+# libadc - Constants Module
 # This code is licensed under the GNU General Public License v3.0.
 
 
@@ -39,7 +39,7 @@ WEBPAGE_1 = "https://mealman1551.github.io/adc.html"
 WEBPAGE_2 = "https://mealman1551.github.io/ArchivedDataCodec"
 EMAIL = "nathandubuy4+adc@gmail.com"
 COPYRIGHT = "(c) 2026 Mealman1551"
-LICENSE = "GNU General Public License v3.0"
+LICENSE = "GNU General Public License v3.0 & GNU General Affero General Public License v3.0"
 GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 
 ADC_HEADER = b"ADCARCH\x00"

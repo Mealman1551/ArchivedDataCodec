@@ -1,4 +1,4 @@
-# ADC Archiver - Package
+# libadc - Package
 # (c) 2026 Mealman1551
 
 
