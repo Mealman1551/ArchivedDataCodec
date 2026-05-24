@@ -41,8 +41,8 @@ Stable branches represent released versions of the software.
 
 Examples:
 
+* `stable/1.5`
 * `stable/1.4`
-* `stable/1.3`
 
 Stable branches are used for:
 
@@ -60,8 +60,8 @@ Tags represent immutable release snapshots.
 
 Examples:
 
+* `v1.5.0`
 * `v1.4.5`
-* `v1.3.1`
 
 Tags are never modified after creation.
 
