@@ -1,4 +1,4 @@
-# ADC Archiver - Compression Module
+# libadc - Compression Module
 # (c) 2026 Mealman1551
 
 

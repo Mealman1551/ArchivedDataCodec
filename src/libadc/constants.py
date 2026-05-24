@@ -1,4 +1,4 @@
-# ADC Archiver - Constants Module
+# libadc - Constants Module
 # This code is licensed under the GNU General Public License v3.0.
 
 
@@ -31,15 +31,15 @@ ITALIC = "\033[3m"
 reset = "\033[0m"
 
 APP_NAME = "ADC Archiver"
-VERSION = "development version"
-VERSION_CODENAME = ""
+VERSION = "1.5.0"
+VERSION_CODENAME = "Borealis"
 BYTE_KEY = 8
 GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 WEBPAGE_1 = "https://mealman1551.github.io/adc.html"
 WEBPAGE_2 = "https://mealman1551.github.io/ArchivedDataCodec"
 EMAIL = "nathandubuy4+adc@gmail.com"
 COPYRIGHT = "(c) 2026 Mealman1551"
-LICENSE = "GNU General Public License v3.0"
+LICENSE = "GNU General Public License v3.0 & GNU GENERAL AFFERO GENERAL PUBLIC LICENSE v3.0"
 GITHUB_URL = "https://github.com/Mealman1551/ArchivedDataCodec"
 
 ADC_HEADER = b"ADCARCH\x00"
@@ -48,5 +48,5 @@ ADC_HEADER_V1 = b"ADCARCH\x01"
 PBKDF2_ITERATIONS = 390000
 SALT_SIZE = 16
 
-UPDATE_JSON_URL = "https://gitlab.com/adc-project/update-repository/-/raw/main/lts.json"
+UPDATE_JSON_URL = "https://gitlab.com/adc-project/update-repository/-/raw/main/1.5.json"
 UPDATE_CHECK_TIMEOUT = 5

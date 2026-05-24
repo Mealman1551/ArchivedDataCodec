@@ -1,4 +1,4 @@
-# ADC Archiver - UI Module
+# ADC Archiver 1.5.0 - UI Module
 # (c) 2026 Mealman1551
 
 import tkinter as tk

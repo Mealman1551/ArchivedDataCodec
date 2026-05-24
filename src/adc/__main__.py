@@ -1,4 +1,4 @@
-# ADC Archiver - main module
+# ADC Archiver 1.5.0 - main module
 # (c) 2026 Mealman1551
 
 import os
@@ -38,9 +38,12 @@ opr = platform.system().lower()
 
 def run():
     main()
-
+    
 
 def main():
+    
+    check_and_show_update()
+    
     headless_flag = "--headless" in sys.argv
 
     adc_file_arg = None
@@ -68,17 +71,6 @@ def main():
 
 def run_interactive():
     print_banner()
-
-
-    print(
-        f"""
-You are using ADC {VERSION}, this code is not stable and may not work!
-If you are using this on accident quit by pressing 'q'.
-
-You can download the stable version of ADC Archiver on GitHub releases:
-{PURPLE}https://github.com/Mealman1551/ArchivedDataCodec/releases/latest{reset}
-        """
-    )
 
     while True:
         command = (

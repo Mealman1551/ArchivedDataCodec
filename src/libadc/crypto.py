@@ -1,4 +1,4 @@
-# ADC Archiver - Cryptography Module
+# libadc - Cryptography Module
 # This code is licensed under the GNU General Public License v3.0.
 
 import base64

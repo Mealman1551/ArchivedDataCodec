@@ -1,4 +1,4 @@
-# ADC Archiver - Archive Module
+# libadc - Archive Module
 # (c) 2026 Mealman1551
 
 

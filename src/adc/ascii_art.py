@@ -1,9 +1,9 @@
-# ADC Archiver - ASCII Art Module
+# ADC Archiver 1.5.0 - ASCII Art Module
 # (c) 2026 Mealman1551
 
 
 import platform
-from libadc.constants import TEAL, BLUE, LIGHT_GREEN, reset, VERSION
+from libadc.constants import TEAL, BLUE, LIGHT_GREEN, reset, VERSION, VERSION_CODENAME
 
 
 def get_linux_banner():
@@ -68,20 +68,12 @@ def get_info_banner(dev, name, opr):
       {RED}####       ###{reset}   {PURPLE}%%%%%%%%%%%%{reset}      {GREEN}************{reset}   
      {RED}####        ####{reset}  {PURPLE}%%%%%%%%%{reset}          {GREEN}*******{reset}  
 
-        | ADC Archiver | Version: {VERSION} |
+        | ADC Archiver | Version: {VERSION} ({VERSION_CODENAME}) |
 
         
         GitHub page: https://github.com/Mealman1551/ArchivedDataCodec
         Webpage: https://mealman1551.github.io/adc.html
-
-        {BOLD}PLEASE READ{reset}
         
-        {ITALIC}You are using ADC Archiver {VERSION}, which is a development version of ADC Archiver.
-
-        {ITALIC}This is a live development version of ADC Archiver.
-        It is not recommended for use in this state.
-        
-        If you want to use ADC Archiver stable, You can find the stable version on the GitHub page.
         
         ---------
 
