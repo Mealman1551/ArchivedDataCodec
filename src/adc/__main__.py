@@ -75,7 +75,7 @@ def run_interactive():
     while True:
         command = (
             input(
-                f"Welcome to ADC Archiver {VERSION} | Enter command ('c' to create, 'e' to extract, 'i' for info, 'q' to quit): "
+                f"Welcome to ADC Archiver | Enter command ('c' to create, 'e' to extract, 'i' for info, 'q' to quit): "
             )
             .strip()
             .lower()
