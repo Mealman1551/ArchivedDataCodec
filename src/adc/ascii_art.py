@@ -73,8 +73,7 @@ def get_info_banner(dev, name, opr):
         
         GitHub page: https://github.com/Mealman1551/ArchivedDataCodec
         Webpage: https://mealman1551.github.io/adc.html
-        
-        
+
         ---------
 
         You are hosting ADC on: {ORANGE}{dev}{reset}
