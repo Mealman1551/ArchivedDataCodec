@@ -237,7 +237,7 @@ You can ofc run the source code but official binaries and/or setups are not comp
 
 | Version | Release Type | Supported | EOL (End Of Life) |
 | ------- | ------------ | --------- | ----------------- |
-| 1.5.x   | Regular      | ✅        | not yet available |
+| 1.5.x   | Regular      | ✅        | 14-5-2027         |
 | 1.4.x   | LTS          | ✅        | 18-10-2029        |
 | 1.3.x   | Regular      | ✅        | 15-08-2026        |
 | 1.2.0   | Regular      | ❌        | 15-05-2026        |
