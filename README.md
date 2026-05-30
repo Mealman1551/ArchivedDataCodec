@@ -215,18 +215,9 @@ Contributions are welcome! See the [ONTRIBUTING.md](/docs/CONTRIBUTING.md) file.
 
 ## Contact
 
-Have questions or want to learn more? Feel free to reach out via [this mail address](mailto:nathandubuy4+adc@gmail.com).
+Have questions or want to learn more? open an issue on this repository.
 
 ---
-
-## ADC Core Util
-
-ADC Core Util are for OEM manufacturers or people who only want to open a `.adc` file:
-
-[ADC-Core-Util](https://github.com/The-ADC-Archiver-Project/ADC-Core-Util)
-
----
-
 
 ## Notes
 
