@@ -4,6 +4,7 @@
 
 | Version | Release Type | Supported          | EOL (End Of Life) |
 | ------- | ------------ | ------------------ | ----------------- |
+| 1.5   | Regular      | ✅                  |  Not yet available
 | 1.4   | LTS          | :white_check_mark: | 18-10-2029        |
 | 1.3   | Regular      | :white_check_mark: | 15-08-2026        |
 | 1.2   | Regular      | ❌| 15-05-2026        |
