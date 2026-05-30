@@ -43,7 +43,6 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Contributing](#contributing)
 * [Contact](#contact)
 * [GitLab](#gitlab)
-* [ADC Core Util](#adc-core-util)
 * [Supported Versions](#supported-versions)
 * [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
