@@ -54,9 +54,6 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 
 ADC Archiver uses a byte-key of 8, meaning that it can create archives without limitations
 
-For the unstable/rolling release see: [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable)
-
-Please note: ~~ADC can currently only pack files, folders aren't supported yet.~~ [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tree/ADC-Unstable) supports this now!
 
 Test archives [here](https://github.com/The-ADC-Archiver-Project/adc-example-archive)
 
