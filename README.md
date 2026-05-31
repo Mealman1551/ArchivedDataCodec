@@ -13,6 +13,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/Mealman1551/ADC)](https://github.com/Mealman1551/ADC/issues)
 [![GitHub stars](https://img.shields.io/github/stars/Mealman1551/ADC)](#)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](#)
+[![CodeQL](https://github.com/Mealman1551/ArchivedDataCodec/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Mealman1551/ArchivedDataCodec/actions/workflows/github-code-scanning/codeql)
 [![Build Status](https://github.com/Mealman1551/ADC/actions/workflows/build.yml/badge.svg)](https://github.com/Mealman1551/ADC/actions/workflows/build.yml)
 [![Mirror to GitLab](https://github.com/Mealman1551/ArchivedDataCodec/actions/workflows/gitlab-mirror.yml/badge.svg?branch=main)](https://github.com/Mealman1551/ArchivedDataCodec/actions/workflows/gitlab-mirror.yml)
 ![Total Downloads](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/Mealman1551/ArchivedDataCodec/main/.github/downloads.json&query=$.total_downloads&label=Total%20Downloads&color=97CA00)
