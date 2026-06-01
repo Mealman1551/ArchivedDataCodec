@@ -3,7 +3,7 @@ name: Update downloads.json
 on:
   push:
     branches:
-      - main
+      - develop
   workflow_dispatch:
 
 permissions:
