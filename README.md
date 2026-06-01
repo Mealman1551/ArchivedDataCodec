@@ -28,7 +28,9 @@
 
 Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows 11" width="20"/> **&** <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" width="20"/>
 
-# ADC Main development branch
+# ADC develop branch
+
+Realtime development
 
 
 ## License
@@ -49,7 +51,7 @@ Create an issue easily without the need for a GitHub account via [this form](htt
 
 #### Release flow
 
-1. the Main branch is an upstream development branch
+1. the develop branch is an upstream development branch
 2. if code works stable enough, a new tag is created for Aurora (testing branch)
 3. After Aurora is stable enough it will be ported to stable.
 
@@ -102,7 +104,7 @@ choco install make
 ##### Cloning the repository
 
 ```bash
- git clone --branch main --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
+ git clone --branch develop --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
 ```
 
 
@@ -195,7 +197,7 @@ python3 --version
 ##### Cloning the repository
 
 ```bash
- git clone --branch main --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
+ git clone --branch develop --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
 ```
 
 Enter directory:
