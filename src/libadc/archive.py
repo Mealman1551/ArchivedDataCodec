@@ -151,7 +151,11 @@ def extract_adc_archive(archive_path, output_dir, format=None):
     """
     Extract an archive to the specified directory.
     
-    Supports multiple formats and auto-detects if format is not specified.
+    Supports multiple archive formats and auto-detects ADC format versions:
+    - ADC V1 (current): Header 'ADCARCH\\x01' + optional encryption + 8-byte data length + CRC32
+    - ADC V0: Header 'ADCARCH\\x00' + encryption (always) + 8-byte data length
+    - ADC Legacy 1.2.0: No header, plain zlib compressed files + 4-byte data length
+    
     For encrypted ADC archives, prompts for password.
     
     Args:
@@ -211,6 +215,7 @@ def extract_adc_archive(archive_path, output_dir, format=None):
     with open(archive_path, "rb") as archive_file:
         header = archive_file.read(8)
         if header == ADC_HEADER_V1:
+            # V1 format: header + encryption flag + optional salt + files
             encrypted_flag = archive_file.read(1)
             if encrypted_flag == b'\x01':
                 salt = archive_file.read(SALT_SIZE)
@@ -221,19 +226,23 @@ def extract_adc_archive(archive_path, output_dir, format=None):
             else:
                 encrypted = False
             has_crc = True
+            data_len_bytes_count = 8
         elif header == ADC_HEADER:
-            # V0 encrypted
+            # V0 format: header + salt + encrypted files (always encrypted)
             salt = archive_file.read(SALT_SIZE)
             pwd = getpass.getpass("Enter password for archive: ")
             key = derive_key_from_password(pwd, salt)
             fernet = Fernet(key)
             encrypted = True
             has_crc = False
+            data_len_bytes_count = 8
         else:
-            # V0 non-encrypted
+            # Legacy 1.2.0 format: no header, plain zlib compressed files (4-byte data length)
             archive_file.seek(0)
             encrypted = False
             has_crc = False
+            data_len_bytes_count = 4
+            fernet = None
 
         file_count = 0
         files_to_extract = []
@@ -244,7 +253,7 @@ def extract_adc_archive(archive_path, output_dir, format=None):
                 break
             filename_len = int.from_bytes(filename_len_bytes, "big")
             filename = archive_file.read(filename_len).decode("utf-8", errors="ignore")
-            data_len_bytes = archive_file.read(8)
+            data_len_bytes = archive_file.read(data_len_bytes_count)
             data_len = int.from_bytes(data_len_bytes, "big")
             if has_crc:
                 crc32_bytes = archive_file.read(4)
