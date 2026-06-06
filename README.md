@@ -3,6 +3,8 @@
 </p>
 
 # ADC (ArchivedDataCodec)
+ADC - the future of simple archiving.
+
 
 [![GitHub license](https://img.shields.io/github/license/Mealman1551/ADC)](#)
 [![Platform: Windows/Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue.svg)](#)
