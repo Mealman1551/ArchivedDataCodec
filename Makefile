@@ -13,8 +13,8 @@ windows:
 	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
 
 deps-linux:
-	pip install -r requirements.txt --break-system-packages
-	pip install nuitka scons --break-system-packages
+	python3 -m pip install -r requirements.txt --break-system-packages
+	python3 -m pip install nuitka scons --break-system-packages
 	sudo apt install python3-tk
 
 deps-windows:
