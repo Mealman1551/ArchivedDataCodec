@@ -33,6 +33,16 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 Realtime development
 
 
+## Download
+
+ADC development branch Source code download 
+
+| Platform: | Download                                                                                                        |
+|-----------|-----------------------------------------------------------------------------------------------------------------|
+| Windows   | [sourcecode.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/develop.zip)       |
+| Linux     | [sourcecode.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/develop.tar.gz) |
+
+
 ## License
 
 ADC Archiver is dual-licensed.
