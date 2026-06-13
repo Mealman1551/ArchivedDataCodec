@@ -19,9 +19,9 @@ Core goals:
 
 The repository consists of two primary development layers.
 
-### Main Branch
+### Development Branch
 
-The `main` branch is the active development branch.
+The `develop` branch is the active development branch.
 
 It is used for:
 
@@ -31,7 +31,7 @@ It is used for:
 * Pre-release testing
 
 > [!Note]
-> The main branch may contain breaking changes at any time.
+> The develop branch may contain breaking changes at any time.
 
 ---
 
@@ -78,7 +78,7 @@ Fork the repository on GitHub and clone your fork locally.
 If you want to work from the upstream repository directly, use the main branch clone command from the README:
 
 ```bash
-git clone --branch main --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
+git clone --branch develop --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
 ```
 
 If you forked the repository, clone your fork and then add the upstream remote:
@@ -93,7 +93,7 @@ git remote add upstream https://github.com/Mealman1551/ArchivedDataCodec.git
 
 ### Step 2: Create a Branch
 
-All contributions should start from the `main` branch.
+All contributions should start from the `develop` branch.
 
 Create a feature branch before making changes:
 
@@ -114,7 +114,7 @@ Keep commits clean and focused:
 
 ### Step 4: Pull Request
 
-Submit a pull request into `main`.
+Submit a pull request into `develop`.
 
 Include:
 
@@ -140,14 +140,14 @@ All previous duplicate package identities have been deprecated.
 
 ## 6. Stable Release Workflow
 
-Stable branches are created from release tags on `main`.
+Stable branches are created from release tags on `develop`.
 
 Workflow:
 
-1. A release is tagged on `main`
+1. A release is tagged on `develop`
 2. A stable branch is created from that tag
 3. Stable maintenance branches receive only bug fixes
-4. Development continues on `main`
+4. Development continues on `develop`
 
 ---
 
