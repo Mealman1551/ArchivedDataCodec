@@ -96,6 +96,7 @@ For container/format info go to [FORMAT.md](docs/FORMAT.md)
 
 Release Canidate (RC) downloads can be found here: [Release Canidate Downloads](https://codeberg.org/Mealman1551/adc_1.5.0_rc_bin/releases)
 
+<!--
 ### Windows
 
 1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
@@ -141,7 +142,7 @@ ADC has multiple mirrors:
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
-- [GitLab](https://gitlab.com/Mealman1551/ADC-mirror)
+- [GitLab](https://gitlab.com/Mealman1551/ADC-mirror) -->
 
 ### Unix (BSD, Solaris)
 
