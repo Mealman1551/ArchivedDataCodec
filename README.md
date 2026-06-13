@@ -34,7 +34,7 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [ADC Overview](#adc-archiveddatacodec)
 * [Features](#features)
 * [Getting Started](#getting-started)
-* [Installation](#downloads)
+* [Downloads](#downloads)
   * [Windows](#windows)
   * [Linux](#linux)
 * [Usage](#usage)
