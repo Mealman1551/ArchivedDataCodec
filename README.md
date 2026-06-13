@@ -35,7 +35,7 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [ADC Overview](#adc-archiveddatacodec)
 * [Features](#features)
 * [Getting Started](#getting-started)
-* [Installation](#installation)
+* [Download](#download)
   * [Windows](#windows)
   * [Linux](#linux)
 * [Usage](#usage)
@@ -92,9 +92,18 @@ For container/format info go to [FORMAT.md](docs/FORMAT.md)
 - json
 - ssl
 
-## Installation
+## Download
 
 Release Canidate (RC) downloads can be found here: [Release Canidate Downloads](https://codeberg.org/Mealman1551/adc_1.5.0_rc_bin/releases)
+
+
+ADC 1.5.0 Source code download 
+
+| Platform: | Download                                                                                                        |
+|-----------|-----------------------------------------------------------------------------------------------------------------|
+| Windows   | [sourcecode.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/development/1.5.zip)       |
+| Linux     | [sourcecode.tar.gz](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/heads/development/1.5.tar.gz) |
+
 
 <!--
 ### Windows
