@@ -34,7 +34,7 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [ADC Overview](#adc-archiveddatacodec)
 * [Features](#features)
 * [Getting Started](#getting-started)
-* [Installation](#installation)
+* [Installation](#downloads)
   * [Windows](#windows)
   * [Linux](#linux)
 * [Usage](#usage)
@@ -94,7 +94,7 @@ Windows
 - json
 - ssl
 
-## Installation
+## Downloads
 
 ### Windows
 
@@ -142,7 +142,7 @@ ADC has multiple mirrors
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
-- [GitLab](https://gitlab.com/adc-project/ADC-mirror)
+- [GitLab](https://gitlab.com/Mealman1551/ArchivedDataCodec)
 
 ### Unix (BSD, Solaris)
 
