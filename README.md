@@ -141,7 +141,7 @@ ADC has multiple mirrors:
 
 - [GitHub (Recommended)](https://github.com/Mealman1551/ArchivedDataCodec/releases/latest)
 - [SourceForge](https://sourceforge.net/projects/adc-archiver)
-- [GitLab](https://gitlab.com/adc-project/ADC-mirror)
+- [GitLab](https://gitlab.com/Mealman1551/ADC-mirror)
 
 ### Unix (BSD, Solaris)
 
