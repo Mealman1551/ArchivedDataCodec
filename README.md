@@ -199,7 +199,7 @@ Create an issue easily without the need for a GitHub account via [this form](htt
 
 ## Update Schedule
 
-I select a date myself what is the best time, cuz i have work. Meanwhile, the rolling release Python source script [ADC Aurora](https://github.com/Mealman1551/ADC/tree/ADC-Unstable-(Aurora)) will be updated monthly.
+I select a date myself what is the best time
 
 #### Release flow
 
