@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "adc"
 version = "1.4.5"
-description = "ADC Archiver project"
+description = "ADC Archiver is an archiving program"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "GNU General Public License v3.0"}
