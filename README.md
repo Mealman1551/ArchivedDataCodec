@@ -197,10 +197,6 @@ See [LICENSE](LICENSE) and [LICENSE_AGPLv3](LICENSE_AGPLv3) for the full license
 
 Create an issue easily without the need for a GitHub account via [this form](https://docs.google.com/forms/u/0/d/e/1FAIpQLSckLmPxVy7rW30_va7YpE42GAY5UKZqD8tjQgrSGWdbfRJUvA/viewform?usp=form_confirm).
 
-## Update Schedule
-
-I select a date myself what is the best time
-
 #### Release flow
 
 1. Development starts on the `develop` branch
