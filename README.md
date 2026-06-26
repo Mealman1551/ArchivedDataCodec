@@ -46,10 +46,7 @@ Compatible with: <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W
 * [Contact](#contact)
 * [GitLab](#gitlab)
 * [Supported Versions](#supported-versions)
-* [Prepare Build environment on Windows .1](#preparing-build-environment-on-windows)
 * [Prepare Build environment on Linux .1](#preparing-build-environment-on-linux)
-
-  * [Start building on windows .2](#start-building-on-windows)
   * [Start building on Linux .2](#start-building-on-linux)
 
 **ADC (ArchivedDataCodec)** is an open-source <img src="https://raw.githubusercontent.com/Mealman1551/ADC/362a969f45ab6f17883ec68cb6172dc4ad3ce58b/img/svg/open-source-icn.svg" alt="Open-Source" width="30"/> file extension and archiving/compression tool that uses Zlib for efficient compression and decompression of various file types. With a simple command-line interface, ADC supports both Windows and Linux, making it easy for users to archive and extract files.
@@ -245,109 +242,7 @@ Current version is: 1.4.x
 
 ## Build ADC
 
-> [!Note]
-> For compiling on Python 3.13 and up, a C compiler is required. On Linux, GCC is sufficient. On Windows, MSVC (cl.exe) is required via Visual Studio Build Tools 2022. Python 3.12 can compile without a C compiler using MinGW64.
-
-```bash
-make install #Only works on Linux.
-```
-
-### Building on Windows
-
-#### Preparing build environment on Windows
-
-Please disable Windows Defender as it may block compilation.
-
-##### Installing Make
-
-Options to install GNU Make:
-
-**Option 1 — WinGet**
-
-```
-winget install GnuWin32.Make
-```
-
-Add Make to PATH. [More info](https://leangaurav.medium.com/how-to-setup-install-gnu-make-on-windows-324480f1da69)
-
-**Option 2 — Chocolatey (Recommended)**
-
-```
-choco install make
-```
-
-##### Downloading and extracting source code
-
-1. Download and extract: [source_code.zip](https://github.com/Mealman1551/ArchivedDataCodec/archive/refs/tags/v1.4.5.zip)
-
-##### Installing Python and VS Build Tools
-
-1. Install Python 3.13.x (64-bit). Ensure pip is installed and Python is added to PATH.
-
-```
-python --version
-```
-
-2. Install Visual Studio Build Tools 2022:
-
-```powershell
-winget install Microsoft.VisualStudio.2022.BuildTools --override "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
-```
-
-3. Open VS Developer PowerShell:
-
-```powershell
-Import-Module "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
-Enter-VsDevShell -VsInstallPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools" -DevCmdArguments "-arch=x64 -host_arch=x64"
-```
-
-Then:
-
-```powershell
-cd ArchivedDataCodec-1.4.5
-```
-
-Then:
-
-```
-make deps-windows
-```
-
-#### Start building on Windows
-
-> [!Warning]
-> Do ***NOT*** run the binary while compiling!
-
-> [!Warning]
-> Do ***NOT*** install MinGW64 if Nuitka asks for it.
-> You ***CAN*** install depends.exe if Nuitka asks for it.
-
-Compile the latest version:
-
-```powershell
-make windows
-```
-
-Run the binary:
-
-```powershell
-cd dist
-./adc.exe
-```
-
-Clean build:
-
-```powershell
-make clean-windows
-```
-
-Debug build (Optional) Only use if you really need to, normally `make windows` is the best option:
-
-```powershell
-make debug-windows
-```
-
----
+[Instructions on building on Windows](https://github.com/Mealman1551/ArchivedDataCodec/wiki/Building-ADC-on-Windows)
 
 ### Building on Linux
 
