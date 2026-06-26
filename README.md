@@ -95,7 +95,17 @@ Windows
 
 ### Windows
 
-1. Download the official installer here: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
+#### Option 1 (recommended):
+
+Use WinGet to install:
+
+```powershell
+winget install -e --id Mealman1551.ADCArchiver
+```
+
+#### Option 2:
+
+Manually download the installer: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
 
 ### Linux
 
