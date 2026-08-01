@@ -26,18 +26,18 @@ def parma_decompress(compressed_data):
 
 
 @lru_cache(maxsize=128)
-def _read_binary_with_mtime(file_path, mtime):
+def _read_binary_with_stat(file_path, mtime, size):
     with open(file_path, "rb") as file:
         return file.read()
 
 
 def read_binary_file(file_path):
     normalized_path = _normalize_path(file_path)
-    mtime = os.path.getmtime(normalized_path)
-    return _read_binary_with_mtime(normalized_path, mtime)
+    stat = os.stat(normalized_path)
+    return _read_binary_with_stat(normalized_path, stat.st_mtime, stat.st_size)
 
 
 def clear_compression_cache():
     parma_compress.cache_clear()
     parma_decompress.cache_clear()
-    _read_binary_with_mtime.cache_clear()
+    _read_binary_with_stat.cache_clear()

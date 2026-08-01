@@ -8,6 +8,7 @@ import tarfile
 import py7zr
 import getpass
 import zlib
+import pyzipper
 from functools import lru_cache
 from progress.bar import Bar
 from cryptography.fernet import Fernet
@@ -42,6 +43,14 @@ def clear_archive_cache():
     _list_files_in_path_cached.cache_clear()
 
 
+def _encode_password(password):
+    if password is None:
+        return None
+    if isinstance(password, bytes):
+        return password
+    return password.encode("utf-8")
+
+
 def create_adc_archive(file_paths, output_path, format="adc", password=None):
     all_files = []
     for path in file_paths:
@@ -69,16 +78,34 @@ def create_adc_archive(file_paths, output_path, format="adc", password=None):
         return
 
     if format == "zip":
-        with zipfile.ZipFile(output_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
-            with Bar("Compressing files...", max=len(all_files)) as bar:
-                for file_path in all_files:
-                    zf.write(
-                        file_path,
-                        arcname=os.path.relpath(
-                            file_path, os.path.dirname(file_paths[0])
-                        ),
-                    )
-                    bar.next()
+        if password is not None:
+            with pyzipper.AESZipFile(
+                output_path, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zf:
+                zf.setpassword(_encode_password(password))
+                zf.setencryption(pyzipper.WZ_AES, nbits=256)
+                with Bar("Compressing files...", max=len(all_files)) as bar:
+                    for file_path in all_files:
+                        zf.write(
+                            file_path,
+                            arcname=os.path.relpath(
+                                file_path, os.path.dirname(file_paths[0])
+                            ),
+                        )
+                        bar.next()
+        else:
+            with zipfile.ZipFile(
+                output_path, "w", compression=zipfile.ZIP_DEFLATED
+            ) as zf:
+                with Bar("Compressing files...", max=len(all_files)) as bar:
+                    for file_path in all_files:
+                        zf.write(
+                            file_path,
+                            arcname=os.path.relpath(
+                                file_path, os.path.dirname(file_paths[0])
+                            ),
+                        )
+                        bar.next()
         print(f"ZIP archive created: {output_path}")
         return
 
@@ -147,7 +174,7 @@ def create_adc_archive(file_paths, output_path, format="adc", password=None):
     print(f"ADC archive created: {output_path}")
 
 
-def extract_adc_archive(archive_path, output_dir, format=None):
+def extract_adc_archive(archive_path, output_dir, format=None, password=None):
     """
     Extract an archive to the specified directory.
     
@@ -182,19 +209,32 @@ def extract_adc_archive(archive_path, output_dir, format=None):
             members = tar.getmembers()
             with Bar("Extracting files...", max=len(members)) as bar:
                 for member in members:
-                    tar.extract(member, path=output_dir)
+                    tar.extract(member, path=dest_dir)
                     bar.next()
-        print(f"TAR archive extracted to: {output_dir}")
+        print(f"TAR archive extracted to: {dest_dir}")
         return
 
     if format == "zip":
-        with zipfile.ZipFile(archive_path, "r") as zf:
+        with pyzipper.AESZipFile(archive_path, "r") as zf:
+            encoded_password = _encode_password(password)
+            if encoded_password is not None:
+                zf.setpassword(encoded_password)
+
             file_list = zf.namelist()
             with Bar("Extracting files...", max=len(file_list)) as bar:
                 for f in file_list:
-                    zf.extract(f, path=output_dir)
+                    try:
+                        zf.extract(f, path=dest_dir)
+                    except RuntimeError as exc:
+                        if password is None and "password" in str(exc).lower():
+                            password = getpass.getpass("Enter password for archive: ")
+                            encoded_password = _encode_password(password)
+                            zf.setpassword(encoded_password)
+                            zf.extract(f, path=dest_dir)
+                        else:
+                            raise
                     bar.next()
-        print(f"ZIP archive extracted to: {output_dir}")
+        print(f"ZIP archive extracted to: {dest_dir}")
         return
 
     if format == "7z":
@@ -206,10 +246,10 @@ def extract_adc_archive(archive_path, output_dir, format=None):
             with Bar(
                 "Extracting files...", max=len(allnames) if allnames else 1
             ) as bar:
-                archive.extractall(path=output_dir)
+                archive.extractall(path=dest_dir)
                 for _ in allnames or [None]:
                     bar.next()
-        print(f"7z archive extracted to: {output_dir}")
+        print(f"7z archive extracted to: {dest_dir}")
         return
 
     with open(archive_path, "rb") as archive_file:
