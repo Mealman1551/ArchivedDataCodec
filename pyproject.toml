@@ -18,5 +18,6 @@ dependencies = [
     "cryptography",
     "py7zr",
     "progress",
-    "cffi"
+    "cffi",
+    "pyzipper"
 ]
