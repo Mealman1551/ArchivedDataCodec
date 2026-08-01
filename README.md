@@ -93,27 +93,12 @@ Windows
 
 ## Downloads
 
-### Windows
-
-#### Option 1 (recommended):
-
-Use WinGet to install:
-
-```powershell
-winget install -e --id Mealman1551.ADCArchiver
-```
-
-#### Option 2:
-
-Manually download the installer: [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)
-
-### Linux
-
-#### Tarball
-
-Download the tarball and run `install.sh`, this will copy the files to `/opt` and make a symlink to `/usr/local/bin`.
-
-To remove run `remove.sh` in the same tarball.
+| Platform | Option | Instructions | Notes |
+| --- | --- | --- | --- |
+| Windows | Option 1 (recommended) | `winget install -e --id Mealman1551.ADCArchiver` | Use WinGet |
+| Windows | Option 2 | Download installer | [adc1.4.5_amd64setup.exe](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe) |
+| Linux | Tarball | Download tarball and run `install.sh` | Installs to `/opt` and symlinks `/usr/local/bin` |
+| Linux | Removal | Run `remove.sh` from tarball | |
 
 [Download tarball](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz)
 
