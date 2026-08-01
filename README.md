@@ -205,12 +205,12 @@ Create an issue easily without the need for a GitHub account via [this form](htt
 
 ## Update Schedule
 
-I select a date myself what is the best time, cuz i have work. Meanwhile, the rolling release Python source script [ADC Aurora](https://github.com/Mealman1551/ADC/tree/ADC-Unstable-(Aurora)) will be updated monthly.
+I select a date myself what is the best time, cuz i have work. Meanwhile, the rolling release Python source script [ADC Aurora](https://github.com/Mealman1551/ArchivedDataCodec/tags) will be updated monthly.
 
 #### Release flow
 
-1. Development starts on the `Main` branch
-2. When code is stable on `Main`, it will me snapshoted to an Aurora (Testing) tag (You need to compile yourself)
+1. Development starts on the `Develop` branch
+2. When code is stable on `Develop`, it will me snapshoted to an Aurora (Testing) tag (You need to compile yourself)
 3. If Aurora is stable it will be ported to a stable build.
 
 ## Contributing
@@ -247,7 +247,7 @@ You can ofc run the source code but official binaries and/or setups are not comp
 | ------- | ------------ | --------- | ----------------- |
 | 1.5.x   | Regular      | ✅        | 14-5-2027         |
 | 1.4.x   | LTS          | ✅        | 18-10-2029        |
-| 1.3.x   | Regular      | ✅        | 15-08-2026        |
+| 1.3.x   | Regular      | ❌        | 15-08-2026        |
 | 1.2.0   | Regular      | ❌        | 15-05-2026        |
 | 1.1.0   | Regular      | ❌        | 15-05-2026        |
 | 1.0.0   | Regular      | ❌        | 15-11-2025        |
