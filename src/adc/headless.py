@@ -105,10 +105,10 @@ def prompt_for_extraction_output_dir():
 
 
 def prompt_for_password_if_needed(fmt):
-    """Prompt for password if creating an ADC archive."""
-    if fmt != "adc":
+    """Prompt for password if creating an ADC or ZIP archive."""
+    if fmt not in ("adc", "zip"):
         return None
-    
+
     use_password = input("Do you want to protect this archive with a password? (y/n): ").strip().lower() == "y"
     if use_password:
         return getpass.getpass("Create a password for this archive: ")
