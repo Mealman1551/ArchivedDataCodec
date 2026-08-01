@@ -38,6 +38,22 @@ def test_read_binary_file_refreshes_after_write(tmp_path):
     assert first_bytes != second_bytes
 
 
+def test_create_and_extract_zip_with_password(tmp_path):
+    file_path = tmp_path / "hello.txt"
+    file_path.write_bytes(b"Hello ZIP with password!")
+
+    archive_path = tmp_path / "test.zip"
+    create_adc_archive([str(file_path)], str(archive_path), format="zip", password="secret")
+    assert archive_path.exists()
+
+    output_dir = tmp_path / "extract"
+    output_dir.mkdir()
+    extract_adc_archive(str(archive_path), str(output_dir), password="secret")
+
+    extracted_file = output_dir.joinpath("test").joinpath("hello.txt")
+    assert extracted_file.read_bytes() == b"Hello ZIP with password!"
+
+
 def test_extract_legacy_1_2_0_format(tmp_path):
     """Test backwards compatibility with ADC 1.2.0 format (no header, 4-byte data length)"""
     # Create a legacy 1.2.0 format archive manually
