@@ -192,12 +192,12 @@ Create an issue easily without the need for a GitHub account via [this form](htt
 #### Release flow
 
 1. Development starts on the `develop` branch
-2. When code is stable on `develop`, it will me snapshoted to an Aurora (Testing) tag (You need to compile yourself)
+2. When code is stable on `develop`, it will be snapshoted to an Aurora (Testing) tag (You need to compile yourself)
 3. If Aurora is stable it will be ported to a stable build. 
 
 ## Contributing
 
-Contributions are welcome! See the [ONTRIBUTING.md](/docs/CONTRIBUTING.md) file.
+Contributions are welcome! See the [CONTRIBUTING.md](/docs/CONTRIBUTING.md) file.
 
 ## Contact
 
