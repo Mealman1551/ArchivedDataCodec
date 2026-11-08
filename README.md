@@ -161,7 +161,7 @@ I select a date myself what is the best time, cuz i have work. Meanwhile, the ro
 #### Release flow
 
 1. Development starts on the `Develop` branch
-2. When code is stable on `Develop`, it will me snapshoted to an Aurora (Testing) tag (You need to compile yourself)
+2. When code is stable on `Develop`, it will be snapshoted to an Aurora (Testing) tag (You need to compile yourself)
 3. If Aurora is stable it will be ported to a stable build.
 
 ## Contributing
