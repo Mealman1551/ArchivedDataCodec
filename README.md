@@ -243,11 +243,42 @@ Current version is: 1.4.x
 
 #### Preparing build environment on Linux
 
-Install dependencies:
+Install the system build dependencies using your distribution's package manager. The package named
+`build-essential` is specific to Debian-based distributions; other distributions provide the same
+compiler and build tools under different package names. Use the command for your distribution:
 
 ```bash
-sudo apt install build-essential pip python3-tk make patchelf ccache scons
+sudo apt install build-essential python3-pip patchelf ccache scons
 ```
+
+```bash
+# Fedora, RHEL, Rocky Linux, AlmaLinux
+sudo dnf install gcc gcc-c++ make python3-pip patchelf ccache scons
+```
+
+```bash
+# Arch Linux, Manjaro, EndeavourOS
+sudo pacman -S --needed base-devel python-pip patchelf ccache scons
+```
+
+```bash
+# openSUSE
+sudo zypper install gcc gcc-c++ make python3-pip patchelf ccache scons
+```
+
+```bash
+# Alpine Linux
+sudo apk add build-base python3-dev py3-pip patchelf ccache scons
+```
+
+These are examples for common distributions, not an exhaustive list. On another distro, install
+its equivalents of a C/C++ compiler toolchain, `make`, Python 3 and pip, `patchelf`, `ccache`,
+and `scons`. For example, on Gentoo use the system compiler and `emerge` to install the remaining
+packages; on NixOS, make the equivalent packages available in your development environment.
+
+Next, run `make deps-linux`. This installs the Python build dependencies and the Tkinter package
+for Debian-based, Fedora/RHEL-based, Arch-based, openSUSE, and Alpine systems. If your distro is
+not recognized, install its Tkinter package manually before continuing.
 
 Ensure Python 3.10+:
 
