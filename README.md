@@ -271,7 +271,7 @@ sudo zypper install gcc gcc-c++ make python3-pip patchelf ccache scons
 sudo apk add build-base python3-dev py3-pip patchelf ccache scons
 ```
 
-You might need the Python3-devel headers (in rare cases):
+You might need the Python3-devel headers (mostly RHEL):
 ```bash
 # Fedora, RHEL, Rocky Linux, AlmaLinux
 sudo dnf install python3.12-devel
