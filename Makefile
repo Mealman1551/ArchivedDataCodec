@@ -1,5 +1,5 @@
 NAME=ADC_Archiver_1.5.0
-SRC=src/adc.py
+SRC=adc.py
 INSTALL_DIR=/opt/adc
 BINARY_NAME=adc
 DESKTOP_FILE=adc-archiver.desktop
@@ -7,25 +7,69 @@ MIME_FILE=adc.xml
 WRAPPER_SCRIPT=invterm.sh
 
 linux:
-	PYTHONPATH=src python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=adc --output-dir=dist $(SRC)
 
 windows:
-	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --standalone --onefile --enable-plugin=tk-inter --include-package=adc --windows-icon-from-ico=assets/ADCIcon.ico --output-dir=dist $(SRC)
 
 deps-linux:
-	python3 -m pip install -r requirements.txt --break-system-packages
-	python3 -m pip install nuitka scons --break-system-packages
-	sudo apt install python3-tk
+	pip install -r requirements.txt --break-system-packages
+	pip install nuitka scons --break-system-packages
+	@set -eu; \
+	if [ ! -r /etc/os-release ]; then \
+		echo "Error: cannot identify this Linux distribution (/etc/os-release is missing)." >&2; \
+		exit 1; \
+	fi; \
+	. /etc/os-release; \
+	ID_LIKE=$${ID_LIKE:-}; \
+	case " $$ID $$ID_LIKE " in \
+		*" debian "*|*" ubuntu "*|*" linuxmint "*|*" pop "*|*" elementary "*|*" kali "*) \
+			if ! command -v apt-get >/dev/null 2>&1; then \
+				echo "Error: this Debian-based distribution requires apt-get to install python3-tk." >&2; \
+				exit 1; \
+			fi; \
+			sudo apt-get install -y python3-tk ;; \
+		*" fedora "*|*" rhel "*|*" centos "*|*" rocky "*|*" almalinux "*) \
+			if command -v dnf >/dev/null 2>&1; then \
+				sudo dnf install -y python3-tkinter; \
+			elif command -v yum >/dev/null 2>&1; then \
+				sudo yum install -y python3-tkinter; \
+			else \
+				echo "Error: this Fedora/RHEL-based distribution requires dnf or yum to install python3-tkinter." >&2; \
+				exit 1; \
+			fi ;; \
+		*" arch "*|*" manjaro "*|*" endeavouros "*) \
+			if ! command -v pacman >/dev/null 2>&1; then \
+				echo "Error: this Arch-based distribution requires pacman to install tk." >&2; \
+				exit 1; \
+			fi; \
+			sudo pacman -S --needed --noconfirm tk ;; \
+		*" opensuse "*|*" suse "*) \
+			if ! command -v zypper >/dev/null 2>&1; then \
+				echo "Error: this SUSE-based distribution requires zypper to install python3-tk." >&2; \
+				exit 1; \
+			fi; \
+			sudo zypper --non-interactive install python3-tk ;; \
+		*" alpine "*) \
+			if ! command -v apk >/dev/null 2>&1; then \
+				echo "Error: Alpine Linux requires apk to install py3-tkinter." >&2; \
+				exit 1; \
+			fi; \
+			sudo apk add py3-tkinter ;; \
+		*) \
+			echo "Error: unsupported Linux distribution '$$ID' (ID_LIKE='$$ID_LIKE'). Install its Tkinter package manually." >&2; \
+			exit 1 ;; \
+	esac
 
 deps-windows:
 	python -m pip install -r requirements.txt
 	python -m pip install nuitka scons
 
 debug-linux:
-	PYTHONPATH=src python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --output-dir=dist $(SRC)
+	PYTHONPATH=src python3 -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=adc --output-dir=dist $(SRC)
 
 debug-windows:
-	set PYTHONPATH=src && python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=libadc --include-package=adc --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
+	set PYTHONPATH=src && python -m nuitka --debug --onefile --standalone --enable-plugin=tk-inter --include-package=adc --windows-icon-from-ico=ADCIcon.ico --output-dir=dist $(SRC)
 
 clean-windows:
 	del /Q dist\*
