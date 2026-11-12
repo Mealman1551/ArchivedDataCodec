@@ -271,6 +271,14 @@ sudo zypper install gcc gcc-c++ make python3-pip patchelf ccache scons
 sudo apk add build-base python3-dev py3-pip patchelf ccache scons
 ```
 
+You might need the Python3-devel headers (in rare cases):
+```bash
+# Fedora, RHEL, Rocky Linux, AlmaLinux
+sudo dnf install python3.12-devel
+```
+
+
+
 These are examples for common distributions, not an exhaustive list. On another distro, install
 its equivalents of a C/C++ compiler toolchain, `make`, Python 3 and pip, `patchelf`, `ccache`,
 and `scons`. For example, on Gentoo use the system compiler and `emerge` to install the remaining
