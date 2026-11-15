@@ -276,7 +276,7 @@ python3 --version
 ##### Cloning the repository
 
 ```bash
-git clone --branch development/1.5 --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
+git clone --branch stable/1.5 --single-branch https://github.com/Mealman1551/ArchivedDataCodec.git
 ```
 
 Enter directory:
