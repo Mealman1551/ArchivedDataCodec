@@ -91,8 +91,21 @@ For container/format info go to [FORMAT.md](docs/FORMAT.md)
 
 ## Download
 
-Release Canidate (RC) downloads can be found here: [Release Canidate Downloads](https://codeberg.org/Mealman1551/adc_1.5.0_rc_bin/releases)
+ADC 1.5.0 binaries download 
 
+| Platform: | Download                                                                                                        |
+|-----------|-----------------------------------------------------------------------------------------------------------------|
+| Windows   | [setup.exe](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.5.0/adc1.5.0_amd64setup.exe)       |
+| Linux     | [tar.xz](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.5.0/adc1.5.0_amd64.tar.xz) |
+
+ADC 1.4.5 LTS binaries download 
+
+| Platform: | Download                                                                                                        |
+|-----------|-----------------------------------------------------------------------------------------------------------------|
+| Windows   | [setup.exe](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc1.4.5_amd64setup.exe)       |
+| Linux     | [tar.xz](https://github.com/Mealman1551/ArchivedDataCodec/releases/download/v1.4.5/adc.tar.xz) |
+
+#### Source code
 
 ADC 1.5.0 Source code download 
 
